@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>目录界面</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css" />
+    <script src="/js/jquery-3.2.1.min.js"></script>
+	<script src="/js/user.js"></script>
+    <style type="text/css">
+	.content{
+    	width: 300px;height: 200px;
+    	line-height: 30px;clear: both;
+    	margin-left:60px; 
+    	padding-top: 12px;
+    }
+    .content a:hover{
+    	border-bottom: 1px solid #8b3a80;
+    	color: #8b3a80;
+    }
+    .box1 {
+        width: 120px;
+        height: 150px;
+        margin-top: 30px;
+    }
+
+    .box1 a {
+        display: block;
+        width: 100px;
+        height: 30px;
+        margin-top: 15px;
+        border-radius: 8px;
+        margin-left: -10px;
+        padding-left: 10px;
+        padding-top: 18px;
+        font-weight: bold;
+        border-bottom: 1px dashed #dea5c7;
+    }
+
+    .box1 a:hover {
+        box-shadow: 1px 0 1px #dea5c7 inset, -1px -1px 1px #dea5c7 inset;
+        border-bottom: 1px solid #dea5c7;
+    }
+
+    .click {
+        box-shadow: 1px 0 1px #dea5c7 inset, -1px -1px 1px #dea5c7 inset;
+        border-bottom: 1px solid #dea5c7;
+    }
+
+    .box2 {
+        width: 120px;
+        height: 250px;
+        margin-top: 80px;
+    }
+
+    .box2 a {
+        display: block;
+        width: 90px;
+        height: 25px;
+        font-size: 14px;
+        line-height: 25px;
+        margin-top: 20px;
+        margin-left: -10px;
+        padding-left: 25px;
+        border-radius: 2px;
+    }
+
+    .box2 a:hover {
+        background: #f3afcc;
+    }
+
+    .clicks {
+        background: #f3afcc;
+    }
+	 .time {
+        margin-left: 40px;
+        margin-top: 10px;
+        float: left;
+        position: relative;
+    }
+    .time span{
+    	margin-left: 8px;font-weight: bold;
+    	font-size: 18px;
+    }
+    #time {
+        margin-left: 80px;
+        margin-top: 5px;
+    }
+
+    .logout {
+        margin-top: 30px;
+        float: right;
+        cursor: pointer;
+    }
+    .logout a:hover{
+		color: red;text-decoration: underline;
+    }
+    </style>
+</head>
+
+<body>
+<div>
+	<div class="time">
+    	<img src="img/logo.png" width="43" height="21" />
+        <span>欢迎name</span>
+        <p id="time">0000年00月00日&nbsp;00:00:00 星期x</p>
+    </div>
+    <div class="logout">
+        <a>退出</a>
+        <em>&nbsp; | &nbsp;</em>
+        <a>修改密码</a>
+    </div>
+</div>
+<div style="clear:both;">
+    <div class="box1">
+        <ul id="box1">
+            <li><a href="write.html" target="main">
+                <img src="img/menu2.png" width="35" height="28" />
+                <em>写信</em>
+            </a></li>
+            <li><a href="get.html" target="main">
+                <img src="img/menu1.png" width="35" height="25" />
+                <em>收信</em>
+            </a></li>
+            <li><a href="friend.html" target="main">
+                <img src="img/menu3.png" width="35" height="28" />
+                <em>通讯录</em>
+            </a></li>
+        </ul>
+    </div>
+    <div class="box2 userWrap">
+        <ul id="box2" class="userMenu">
+            <li data-id="receiveEmail"><a target="main"><span>收件邮箱</span></a></li>
+            <li data-id="get"><a target="main"><span>未读邮箱</span></a></li>
+            <li data-id="send"><a target="main"><span>发件邮箱</span></a></li>
+            <li data-id="moreSend"><a target="main"><span>群邮件箱</span></a></li>
+            <li data-id="draft"><a target="main"><span>草稿邮箱</span></a></li>
+            <li data-id="delete"><a target="main"><span>已删除邮箱</span></a></li>
+        </ul>
+    </div>
+</div>
+<div id="content">
+
+</div>
+
+<!--<div style="clear:both;float:right;" class="big_box">-->
+		<!--<div class="box">-->
+        	<!--<h1><span id="time">上午好</span>，name</h1>-->
+        	<!--<div class="content">-->
+        		<!--<img src="img/email.png" width="30" height="30" />&nbsp;&nbsp;-->
+        		<!--<a href="read.html">未读邮箱（0）</a>-->
+        	<!--</div>-->
+        <!--</div>-->
+<!--</div>-->
+
+    <script type="text/javascript">
+	var time = document.getElementById('time');
+    var weekend = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+	setInterval(function() {
+        clearInterval();
+        var myDate = new Date();
+        var year = myDate.getFullYear(); //获取完整的年份(4位,1970-????) 
+        var month = myDate.getMonth() + 1; //获取当前月份(0-11,0代表1月) 
+        var date = myDate.getDate(); //获取当前日(1-31) 
+        var week = weekend[myDate.getDay()]; //获取当前星期X(0-6,0代表星期天) 
+
+        var hours = myDate.getHours(); //获取当前小时数(0-23) 
+        var minutes = myDate.getMinutes(); //获取当前分钟数(0-59) 
+        var second = myDate.getSeconds(); //获取当前秒数(0-59)
+
+        if (month &gt;= 1 &amp;&amp; month &lt;= 9) {
+            month = "0" + month;
+        }
+        if (date &gt;= 1 &amp;&amp; date &lt;= 9) {
+            date = "0" + date;
+        }
+        if (hours &gt;= 0 &amp;&amp; hours &lt;= 9) {
+            hours = "0" + hours;
+        }
+        if (minutes &gt;= 0 &amp;&amp; minutes &lt;= 9) {
+            minutes = "0" + minutes;
+        }
+        if (second &gt;= 0 &amp;&amp; second &lt;= 9) {
+            second = "0" + second;
+        }
+
+        time.innerHTML = year + "年" + month + "月" + date + "日" + "&nbsp;" + hours + ":" + minutes + ":" + second + "&nbsp;" + week;
+
+    }, 1000);
+	
+    var change = function(ids, cls) {
+        var box = document.getElementById(ids);
+        var lis = box.getElementsByTagName('a');
+
+        for (var i = 0; i &lt; lis.length; i++) {
+            lis[i].onclick = function() {
+                for (var i = 0; i &lt; lis.length; i++) {
+                    lis[i].className = "";
+                }
+                this.className = cls;
+            }
+        }
+    }
+    change('box1', 'click');
+    change('box2', 'clicks');
+    </script>
+</body>
+
+</html>

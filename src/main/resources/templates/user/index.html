@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Email</title>
+</head>
+<body>
+    <div style="width: 89%;height: 70px;">
+        <iframe src="/top.html"></iframe>
+    </div>
+    <div>
+        <iframe src="resources/templates/user/menu.html"></iframe>
+    </div>
+    <div>
+        <iframe src="main.html"></iframe>
+    </div>
+    <frameset rows="70px,89%" frameborder="0">
+        <frame src="top.html" scrolling="no" />
+            <frameset cols="160px,85%" frameborder="0">
+                <frame src="menu.html" scrolling="no"/>
+                <frame src="main.html" scrolling="no" name = "main"/>
+            </frameset>
+    </frameset>
+
+</body>
+</html>

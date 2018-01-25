@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.cqgcxy.mapper.SendEmailMapper">
+  <resultMap id="BaseResultMap" type="edu.cqgcxy.model.SendEmail">
+    <id column="sendEmailID" jdbcType="INTEGER" property="sendemailid" />
+    <result column="userID" jdbcType="INTEGER" property="userid" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="message" jdbcType="VARCHAR" property="message" />
+    <result column="isSuccess" jdbcType="INTEGER" property="issuccess" />
+    <result column="isDel" jdbcType="INTEGER" property="isdel" />
+    <result column="isSave" jdbcType="INTEGER" property="issave" />
+    <result column="sendTime" jdbcType="TIMESTAMP" property="sendtime" />
+    <result column="receivePerson" jdbcType="VARCHAR" property="receiveperson" />
+    <result column="annexSign" jdbcType="VARCHAR" property="annexsign" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    sendEmailID, userID, title, message, isSuccess, isDel, isSave, sendTime, receivePerson, 
+    annexSign
+  </sql>
+  <select id="selectByExample" parameterType="edu.cqgcxy.model.SendEmailExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from send_email
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from send_email
+    where sendEmailID = #{sendemailid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from send_email
+    where sendEmailID = #{sendemailid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="edu.cqgcxy.model.SendEmailExample">
+    delete from send_email
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="edu.cqgcxy.model.SendEmail">
+    <selectKey keyProperty="sendemailid" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into send_email (userID, title, message, 
+      isSuccess, isDel, isSave, 
+      sendTime, receivePerson, annexSign
+      )
+    values (#{userid,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{message,jdbcType=VARCHAR}, 
+      #{issuccess,jdbcType=INTEGER}, #{isdel,jdbcType=INTEGER}, #{issave,jdbcType=INTEGER}, 
+      #{sendtime,jdbcType=TIMESTAMP}, #{receiveperson,jdbcType=VARCHAR}, #{annexsign,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="edu.cqgcxy.model.SendEmail">
+    <selectKey keyProperty="sendemailid" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into send_email
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        userID,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="message != null">
+        message,
+      </if>
+      <if test="issuccess != null">
+        isSuccess,
+      </if>
+      <if test="isdel != null">
+        isDel,
+      </if>
+      <if test="issave != null">
+        isSave,
+      </if>
+      <if test="sendtime != null">
+        sendTime,
+      </if>
+      <if test="receiveperson != null">
+        receivePerson,
+      </if>
+      <if test="annexsign != null">
+        annexSign,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="message != null">
+        #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="issuccess != null">
+        #{issuccess,jdbcType=INTEGER},
+      </if>
+      <if test="isdel != null">
+        #{isdel,jdbcType=INTEGER},
+      </if>
+      <if test="issave != null">
+        #{issave,jdbcType=INTEGER},
+      </if>
+      <if test="sendtime != null">
+        #{sendtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="receiveperson != null">
+        #{receiveperson,jdbcType=VARCHAR},
+      </if>
+      <if test="annexsign != null">
+        #{annexsign,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="edu.cqgcxy.model.SendEmailExample" resultType="java.lang.Long">
+    select count(*) from send_email
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update send_email
+    <set>
+      <if test="record.sendemailid != null">
+        sendEmailID = #{record.sendemailid,jdbcType=INTEGER},
+      </if>
+      <if test="record.userid != null">
+        userID = #{record.userid,jdbcType=INTEGER},
+      </if>
+      <if test="record.title != null">
+        title = #{record.title,jdbcType=VARCHAR},
+      </if>
+      <if test="record.message != null">
+        message = #{record.message,jdbcType=VARCHAR},
+      </if>
+      <if test="record.issuccess != null">
+        isSuccess = #{record.issuccess,jdbcType=INTEGER},
+      </if>
+      <if test="record.isdel != null">
+        isDel = #{record.isdel,jdbcType=INTEGER},
+      </if>
+      <if test="record.issave != null">
+        isSave = #{record.issave,jdbcType=INTEGER},
+      </if>
+      <if test="record.sendtime != null">
+        sendTime = #{record.sendtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.receiveperson != null">
+        receivePerson = #{record.receiveperson,jdbcType=VARCHAR},
+      </if>
+      <if test="record.annexsign != null">
+        annexSign = #{record.annexsign,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update send_email
+    set sendEmailID = #{record.sendemailid,jdbcType=INTEGER},
+      userID = #{record.userid,jdbcType=INTEGER},
+      title = #{record.title,jdbcType=VARCHAR},
+      message = #{record.message,jdbcType=VARCHAR},
+      isSuccess = #{record.issuccess,jdbcType=INTEGER},
+      isDel = #{record.isdel,jdbcType=INTEGER},
+      isSave = #{record.issave,jdbcType=INTEGER},
+      sendTime = #{record.sendtime,jdbcType=TIMESTAMP},
+      receivePerson = #{record.receiveperson,jdbcType=VARCHAR},
+      annexSign = #{record.annexsign,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="edu.cqgcxy.model.SendEmail">
+    update send_email
+    <set>
+      <if test="userid != null">
+        userID = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="message != null">
+        message = #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="issuccess != null">
+        isSuccess = #{issuccess,jdbcType=INTEGER},
+      </if>
+      <if test="isdel != null">
+        isDel = #{isdel,jdbcType=INTEGER},
+      </if>
+      <if test="issave != null">
+        isSave = #{issave,jdbcType=INTEGER},
+      </if>
+      <if test="sendtime != null">
+        sendTime = #{sendtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="receiveperson != null">
+        receivePerson = #{receiveperson,jdbcType=VARCHAR},
+      </if>
+      <if test="annexsign != null">
+        annexSign = #{annexsign,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where sendEmailID = #{sendemailid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="edu.cqgcxy.model.SendEmail">
+    update send_email
+    set userID = #{userid,jdbcType=INTEGER},
+      title = #{title,jdbcType=VARCHAR},
+      message = #{message,jdbcType=VARCHAR},
+      isSuccess = #{issuccess,jdbcType=INTEGER},
+      isDel = #{isdel,jdbcType=INTEGER},
+      isSave = #{issave,jdbcType=INTEGER},
+      sendTime = #{sendtime,jdbcType=TIMESTAMP},
+      receivePerson = #{receiveperson,jdbcType=VARCHAR},
+      annexSign = #{annexsign,jdbcType=VARCHAR}
+    where sendEmailID = #{sendemailid,jdbcType=INTEGER}
+  </update>
+</mapper>

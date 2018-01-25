@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>注册</title>
+</head>
+<body>
+<p class="advertisement">短信验证测试2.0</p>
+<div id="panelname" style="margin-left: 500px;width: 800px;">
+    <div id="registername"><p class="userregister">用户注册</p></div>
+    <span style="color:#3333ff;">   </span>
+    <div style="margin-bottom:20px">
+        <div>手机号码:</div>
+        <form action="register_add.action" onsubmit="return clickregister()">
+        <span style="color:#3333ff;">
+            <input class="easyui-textbox" id="telephonename"
+                   name="loginName"  maxlength="11" onkeyup="value=value.replace(/[^\d]/g,'') "
+                   onbeforepaste="clipboardData.setData('text',clipboardDa)"
+                   type="text" style="width: 300px; height: 30px;"/>
+           <input class="code" type="button" id="btnSendCode" onclick="sendMessage()" value="点击获取手机验证码" />
+        </span>
+            <span>111</span>
+        </form>
+        <span id="telephonenameTip"></span>
+    </div>
+
+</div>
+</body>
+<script>
+    function sendMessage() {
+        var phone = document.getElementById("telephonename").value;
+        if(phone.length != 11 ){
+            alert("请输入正确的电话号码!!!")
+        }else {
+            window.location.href = '/all/1/10';
+            alert(phone);
+        }
+
+    }
+</script>
+</html>
