@@ -2,14 +2,91 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="345953f7-7350-4619-899d-ce61bebd8f5a" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_1_11.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_1_11.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_0_11.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_spring_boot_starter_1_1_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_4.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_8_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_8_10.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_8_10.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_joda_2_8_10.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_8_10.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_1_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_5_0_3.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_autoconfigure_1_1_2.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_starter_1_1_2.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_2_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_1_0_Final.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__joda_time_joda_time_2_9_9.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_44.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_2_1.xml" />
       <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__nz_net_ultraq_thymeleaf_thymeleaf_layout_dialect_1_4_0.xml" />
       <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ognl_ognl_3_0_8.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_8_5_23.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_8_5_23.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_8_5_23.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_annotations_api_8_5_23.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_jdbc_8_5_23.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_juli_8_5_23.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_2_6_0.xml" />
       <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_groovy_groovy_2_4_13.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_validator_5_3_6_Final.xml" />
       <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_21_0_GA.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_1_Final.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_1_10_19.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_5.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_1_3_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_1_3_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_3.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_4_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_25.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_log4j_over_slf4j_1_7_25.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_1_5_9_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_1_5_9_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_1_5_9_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_1_5_9_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_1_5_9_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_1_5_9_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_1_5_9_RELEASE.xml" />
       <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_1_5_9_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_1_5_9_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_1_5_9_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_1_5_9_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_1_5_9_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_13_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_13_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_13_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_13_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_13_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_13_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_3_13_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_13_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_13_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_13_RELEASE.xml" />
       <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_2_1_6_RELEASE.xml" />
       <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring4_2_1_6_RELEASE.xml" />
       <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_0_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_17.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/slf4j_log4j12_1_5_2.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/email-yj.iml" />
       <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/service/ReceiveEmailBox.java" />
       <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/service/impl/ReceiveEmailImpl.java" />
       <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/img/login_bg.jpg" />
@@ -21,6 +98,74 @@
       <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/login.js" />
       <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/send.js" />
       <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/login.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/application.yml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/config.properties" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/generator/generatorConfig.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/mapping/AnnexMapper.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/mapping/PermissionsMapper.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/mapping/ReceiveEmailMapper.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/mapping/SendEmailMapper.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/mapping/UserBlackMapper.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/mapping/UserFriendMapper.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/mapping/UserMapper.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/mapping/UserPermissionsMapper.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/401.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/404.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/500.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/css/index.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/5.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/add_file.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/delete_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/draft_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/email.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/emoji.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/friend.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/login_bg.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/login_btn.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/main_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/menu1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/menu2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/menu3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/photo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/read.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/read_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/reads.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/receive.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/receives.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/register_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/search.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/send_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/unread.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/img/word.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/js/delete.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/js/draft.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/js/friend.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/js/index.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/js/jquery-3.2.1.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/js/jquery-3.2.1.slim.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/js/jquery-3.2.1.slim.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/js/login.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/js/send.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/js/user.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/templates/admin/userList.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/templates/user/delete.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/templates/user/draft.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/templates/user/friend.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/templates/user/friendAdd.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/templates/user/get.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/templates/user/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/templates/user/login.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/templates/user/main.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/templates/user/menu.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/templates/user/read.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/templates/user/read1.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/templates/user/register.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/templates/user/reply.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/templates/user/send.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/templates/user/top.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/templates/user/user.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/templates/user/write.html" />
       <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/UserController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/service/SendEmailBox.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/service/SendEmailBox.java" />
@@ -35,7 +180,8 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/friend.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/friend.html" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/friendadd.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/friendAdd.html" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/get.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/get.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/index1.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/index1.html" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/main.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/main.html" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/register.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/register.html" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/send.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/send.html" />
@@ -589,12 +735,12 @@
       <workItem from="1516841512500" duration="1702000" />
       <workItem from="1516843326271" duration="15370000" />
       <workItem from="1516928902221" duration="20166000" />
-      <workItem from="1517187576571" duration="14108000" />
+      <workItem from="1517187576571" duration="14264000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139787000" />
+    <option name="totallyTimeSpent" value="139943000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
