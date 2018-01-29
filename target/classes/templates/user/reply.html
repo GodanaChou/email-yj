@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>信件回复界面</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <style type="text/css">
+
+    .title {
+        margin-left: 40%;
+        margin-top: 30px;
+        color: #8b3a80;
+    }
+    .content h5{
+    	display: inline-block;
+    	width: 55px;height: 20px;
+    	text-align: right;
+    	margin-left: 8px;
+    	padding-right: 10px;
+    	font-size: 13px;
+    	color: #784872;
+        margin:0;
+    }
+    .content p{
+    	padding-top: 5px;
+    }
+    .content input,textarea{
+    box-shadow: 0 -1px 1px #dfa9bf;
+    	width: 75%;
+    }
+    .main{
+        width: 75%;
+    	height: 300px;
+    }
+    .textarea{
+        clear: both;
+    }
+    .add{
+        width: 75%;
+        margin-left: 80px;
+    }
+    .add span{
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    .add span:hover{
+        text-decoration: underline;
+    }
+    .buttons{
+        float: right;
+        margin-top: 5px;
+    }
+    .buttons button{
+        margin-left: 10px;
+    }
+    </style>
+</head>
+
+<body class="big_box">
+    <div class="box">
+        <h2 class="title">信件回复界面</h2>
+        <div class="content">
+        	<p><h5>收件人</h5>
+				<input type="text" name=""/>
+        	</p>
+        	<p><h5>主题</h5>
+				<input type="text" name=""/>
+        	</p>
+
+				<div class="add">
+					<span><img src="img/add_file.png" width="15" height="15" />&nbsp;添加附件</span>
+                    <em>|</em>
+					<span><img src="img/emoji.png" width="15" height="15"/>&nbsp;添加表情</span>
+                    <em>|</em>
+                    <span><img src="img/photo.png" width="15" height="15"/>&nbsp;添加图片</span>
+                    <em>|</em>
+                    <span><img src="img/word.png" width="15" height="15"/>&nbsp;选择格式</span>
+
+
+                    <div class="buttons">
+                        <button>发送</button>
+                        <button>存入草稿箱</button>
+                        <button>关闭</button>
+                    </div>
+				</div>
+        	<p><h5 class="textarea">正文</h5>
+				<textarea name="" class="main"> ></textarea>
+        	</p>
+
+        </div>
+    </div>
+</body>
+
+</html>

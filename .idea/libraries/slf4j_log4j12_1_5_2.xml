@@ -1,0 +1,64 @@
+<component name="libraryTable">
+  <library name="slf4j-log4j12-1.5.2">
+    <CLASSES>
+      <root url="jar://F:/codes/JavaDemo/lib/commons-discovery-0.2.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/xfire-aegis.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/commons-digester.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/commons-codec-1.6.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/AXMLPrinter2.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/aspectjrt.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/httpclient-4.1.2.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/log4j-1.2.14.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/httpmime-4.1.2.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/commons-collections.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/commons-lang-2.3.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/saaj.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/backport-util-concurrent.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/activation.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/jaxrpc.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/commons-io-2.4.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/bsf.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/stax-1.1.2-dev.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/dom4j-1.6.1.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/jsch-0.1.43.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/java_memcached-release_2.5.1.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/commons-fileupload-1.3.1.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/concurrent.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/commons-httpclient-3.0.1.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/stax-api-1.0.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/velocity-dep-1.4.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/cfgatewayadapter.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/commons-pool.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/commons-beanutils.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/jackson-all-1.6.0.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/axis-ant.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/httpcore-4.1.2.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/httpclient-cache-4.1.2.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/je-analysis-1[1].3.3.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/antlr-2.7.6.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/jaas.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/axis.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/asm-2.2.3.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/jackson-lgpl-0.9.5.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/propertyset-1.4.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/xalan.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/jdom-1.0.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/gson-1.4.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/xfire-core.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/ehcache-1.4.1.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/wsdl4j-1.5.1.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/bsh-1.2b7.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/jaxen-1.1-beta-7.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/aspectjweaver.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/json.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/ognl-2.7.3.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/commons-dbcp.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/commons-logging-1.1.1.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/xml-apis.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/xstream-1.4.3.jar!/" />
+      <root url="jar://F:/codes/JavaDemo/lib/xwork-core-2.1.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
