@@ -40,5 +40,5 @@ public interface SendEmailBox {
      * @param sendEmail 邮件属性
      * @return 特定类型邮件数量
      */
-    long countEmail(SendEmailExample sendEmail);
+    long countUnknowEmail(SendEmail sendEmail);
 }

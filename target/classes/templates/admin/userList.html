@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      lang="en"
+>
+<head>
+    <meta charset="UTF-8"/>
+    <title>用户列表</title>
+</head>
+<body>
+<table border="2">
+    <tr th:each="user,userStat:${User}">
+        <td th:text="${user}"></td>
+        <td th:text="${user.getName()}"></td>
+        <td th:text="${user.getPhone()}"></td>
+        <td th:text="${user.getPassword()}"></td>
+    </tr>
+</table>
+</body>
+</html>

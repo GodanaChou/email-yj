@@ -82,8 +82,11 @@ public class SendEmailBoxImpl implements SendEmailBox {
      * @return 特定类型邮件数量
      */
     @Override
-    public long countEmail(SendEmailExample sendEmail) {
-        return sendEmailMapper.countByExample(sendEmail);
+    public long countUnknowEmail(SendEmail sendEmail) {
+        SendEmailExample sendEmailExample = new SendEmailExample();
+
+
+        return sendEmailMapper.countByExample(sendEmailExample);
     }
 
 

@@ -17,15 +17,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
     @Override
-    public int addUser(User user){
-        try {
+    public int addUser(User user) throws Exception{
             user.setPassword(new EncryptUtil().md5Digest(user.getPassword()));
-            userMapper.insertSelective(user);
-            return 1;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return 2;
-        }
+            return userMapper.insertSelective(user);
     }
 
     /**
@@ -44,14 +38,17 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 动态语句查询用户
-     *
      * @param user 用户属性
      * @return 用户集合
      */
     @Override
-    public List<User> findByPrimaryKeySelective(User user) {
+    public User findByPhoneAndPSW(User user) throws Exception{
         UserExample userExample = new UserExample();
-        return userMapper.selectByExample(userExample);
+        String password =new EncryptUtil().md5Digest(user.getPassword());
+        userExample.createCriteria().andPhoneEqualTo(user.getPhone()).andPasswordEqualTo(password);
+        List<User> u = userMapper.selectByExample(userExample);
+        if (!u.isEmpty()){     return u.get(0);    }
+       else{    return null;   }
     }
 
     /**

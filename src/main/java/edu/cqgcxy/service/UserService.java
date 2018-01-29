@@ -11,8 +11,9 @@ public interface UserService {
      * 添加用户
      * @param user 用户属性
      * @return 1 添加成功 2 添加失败
+     * @throws Exception
      */
-    int addUser(User user);
+    int addUser(User user) throws Exception;
 
     /**
      * 查询所有用户
@@ -22,12 +23,14 @@ public interface UserService {
      */
     List<User> findAllUser(int pageNum, int pageSize);
 
+
     /**
      * 动态语句查询用户
      * @param user 用户属性
      * @return 用户集合
+     *@throws Exception
      */
-    List<User> findByPrimaryKeySelective(User user);
+    User findByPhoneAndPSW(User user) throws Exception;
 
     /**
      * 通过用户ID查询
