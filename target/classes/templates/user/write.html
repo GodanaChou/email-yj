@@ -5,103 +5,123 @@
     <meta charset="UTF-8"/>
     <title>写信界面</title>
     <link rel="stylesheet" type="text/css" href="/css/index.css" />
+    <script type="text/javascript" charset="utf-8" src="/utf8-jsp/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/utf8-jsp/ueditor.all.min.js"> </script>
     <style type="text/css">
         body{
             overflow:scroll;
             overflow-x:hidden;
         }
-    .title {
-        margin-left: 40%;
-        margin-top: 30px;
-        color: #8b3a80;
-    }
-    .content h5{
-    	display: inline-block;
-    	width: 55px;height: 20px;
-    	text-align: right;
-    	margin-left: 8px;
-    	padding-right: 10px;
-    	font-size: 13px;
-    	color: #784872;
-        margin:0;
-        float: left;
-    }
-    .content p{
-    	padding-top: 1px;
-    }
-    .content input,textarea{
-    box-shadow: 0 -1px 1px #dfa9bf;
-    	width: 75%;
-    }
-    .main{
-        width: 75%;
-    	height: 250px;
-    }
-    .add{
-        width: 75%;
-        margin-left: 80px;
-    }
-    .add span{
-        margin-left: 10px;
-        cursor: pointer;
-    }
-    .add span:hover{
-        text-decoration: underline;
-    }
-    .buttons{
-        float: right;
-        margin-top: 5px;
-    }
-    .buttons button{
-        margin-left: 10px;
-    }
+        .title {
+            margin-left: 40%;
+            margin-top: 30px;
+            color: #8b3a80;
+        }
+
+        .section1 {
+            width: 100%;
+            height: 100px;
+        }
+        .section1 img{
+            float: left;
+            margin-top: 10px;
+            margin-left: 18%;
+            margin-right: 60px;
+        }
+        .section1_ul li {
+            float: left;
+            margin-left: 20px;
+        }
+
+        .content h5 {
+            display: inline-block;
+            width: 55px;
+            height: 20px;
+            text-align: right;
+            margin-left: 8px;
+            padding-right: 10px;
+            font-size: 13px;
+            color: #784872;
+            margin: 0;
+            float: left;
+        }
+
+        .content p {
+            padding-top: 1px;
+        }
+
+        .content input,
+        textarea {
+            box-shadow: 0 -1px 1px #dfa9bf;
+            width: 75%;
+        }
+
+        .ke-container {
+            width: 75% !important;
+        }
     </style>
 </head>
 
 <body >
 <div class="big_box">
-    <div class="box" style="height: 110%">
+    <div class="box">
         <h2 class="title">写信界面</h2>
+        <div class="section1">
+            <img src="img/draft_bg.png" width="80" height="45" />
+            <ul class="section1_ul">
+                <li>
+                    <button>发送</button>
+                </li>
+                <li>
+                    <button>存入草稿箱</button>
+                </li>
+                <li>
+                    <a href="javascript:history.go(-1)">
+                        <button>关闭</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
         <div class="content">
-        	<p><h5>收件人</h5>
-				<input type="text" id="receivePerson"/>
-        	</p>
-        	<p><h5>主题</h5>
-				<input type="text" id="title"/>
-        	</p>
-
-				<div class="add">
-					<span><img src="img/add_file.png" width="15" height="15" />&nbsp;添加附件</span>
-                    <em>|</em>
-					<span><img src="img/emoji.png" width="15" height="15"/>&nbsp;添加表情</span>
-                    <em>|</em>
-                    <span><img src="img/photo.png" width="15" height="15"/>&nbsp;添加图片</span>
-                    <em>|</em>
-                    <span><img src="img/word.png" width="15" height="15"/>&nbsp;选择格式</span>
-
-
-                    <div class="buttons">
-                        <button id="send">发送</button>
-                        <button>存入草稿箱</button>
-                        <a href="javascript:history.go(-1)"><button>关闭</button></a>
-                    </div>
-				</div>
-        	<p><h5 class="textarea">正文</h5>
-				<textarea id="message" class="main"> </textarea>
-        	</p>
-
+            <p>
+            <h5>收件人</h5>
+            <input type="text" id="receivePerson" />
+            </p>
+            <p>
+            <h5>主题</h5>
+            <input type="text" id="title" />
+            </p>
+            <p>
+            <h5 class="textarea">正文</h5>
+            <!-- 加载编辑器的容器 -->
+            <script id="container" name="content" type="text/plain">
+        这里写你的初始化内容
+    </script>
+            <!-- 配置文件 -->
+            <script type="text/javascript" src="/utf8-jsp/ueditor.config.js"></script>
+            <!-- 编辑器源码文件 -->
+            <script type="text/javascript" src="/utf8-jsp/ueditor.all.js"></script>
+            <!-- 实例化编辑器 -->
+            <script type="text/javascript">
+                var ue = UE.getEditor('container');
+            </script>
+            </p>
         </div>
     </div>
 </div>
 <script type="text/javascript">
         $(document).ready(function(){
             $("button#send").click(function(){
-                alert($("#title").val());
-                alert($("#message").val());
-                alert($("#receivePerson").val());
                 $.ajax({
                     url:"/sendEmail",
+                    type:"post",
                     data:{"title":$("#title").val(),"message":$("#message").val(),"receivePerson":$("#receivePerson").val()},
+                    dataType:"json",
+                    success : function () {
+                    alert("success");
+                    }
+
                 });
             });
         });
