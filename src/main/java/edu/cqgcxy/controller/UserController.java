@@ -147,4 +147,6 @@ public class UserController {
         HttpSession session = request.getSession();
         return "user/friendAdd";
     }
+
+
 }

@@ -34,12 +34,8 @@ public class SendEmailBoxImpl implements SendEmailBox {
      */
     @Override
     public int updateEmail(SendEmail sendEmail) {
-        try {
-            sendEmailMapper.updateByPrimaryKeySelective(sendEmail);
-            return 1;
-        }catch (Exception e){
-            return 2;
-        }
+          return sendEmailMapper.updateByPrimaryKeySelective(sendEmail);
+
     }
 
     /**
@@ -50,12 +46,7 @@ public class SendEmailBoxImpl implements SendEmailBox {
      */
     @Override
     public int deleteEmail(int id) {
-        try {
-            sendEmailMapper.deleteByPrimaryKey(id);
-            return 1;
-        }catch (Exception e){
-            return 2;
-        }
+        return sendEmailMapper.deleteByPrimaryKey(id);
     }
 
     /**
@@ -66,13 +57,7 @@ public class SendEmailBoxImpl implements SendEmailBox {
      */
     @Override
     public int insertEmail(SendEmail sendEmail) {
-        try {
-            sendEmailMapper.insertSelective(sendEmail);
-            return 1;
-        }catch (Exception e){
-            return 2;
-        }
-
+          return   sendEmailMapper.insertSelective(sendEmail);
     }
 
     /**

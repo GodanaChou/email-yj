@@ -35,6 +35,10 @@ spring:
       check-template-location: true
     template:
       cache:  false
+    mvc:
+      static-path-pattern: /**
+    resources:
+      static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${web.upload-path}
 mybatis:
   mapper-locations: classpath:mapping/*.xml
   type-aliases-package: edu.cqgcxy.model
@@ -45,3 +49,6 @@ pagehelper:
     reasonable: true
     supportMethodsArguments: true
     params: count=countSql
+
+web:
+    upload-path: E;/
