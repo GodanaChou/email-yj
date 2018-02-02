@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8"/>
@@ -53,7 +53,7 @@
             <div class="content">
                 <div class="section1">
                     <img src="/img/receives.png" width="45" height="45" />
-                    <span>收件箱（<a>未读邮件10</a>）</span>
+                    <span>收件箱（<a th:text="'未读邮件'+${countUnreadEmail}"></a>）</span>
                     <ul class="section1_ul">
                         <li>
                             <button>删除</button>
@@ -65,7 +65,7 @@
                             <a href="write.html"><button>转发</button></a>
                         </li>
                         <li>
-                            <button>全部标记为已读</button>
+                            <button>标记为已读</button>
                         </li>
                     </ul>
                 </div>
@@ -78,26 +78,20 @@
                     		<td width="3%"><img src="/img/reads.png" width="17" height="14" /></td>
                     		<td width="10%">发件人</td>
                     		<td width="60%">主题</td>
-                    		<td width="3%">时间</td>
+                    		<td width="10%">时间</td>
                     	</tr>
-                        <tr class="unread" onclick="change()">
+                        <tr th:each="prod : ${receiveEmails}" th:class="${prod.getReceiveemailid()}" >
                             <td>
                                 <input type="checkbox" name="chk" value=""/>
                             </td>
-                            <td><img src="/img/unread.png" width="17" height="14" /></td>
-                            <td>袁佳</td>
-                            <td>佛挡杀佛手机看对方很伟大时代不</td>
-                            <td>2017.01.15</td>
-                        </tr>
-                        <tr  onclick="change()">
-                            <td>
-                                <input type="checkbox" name="chk" value=""/>
-                            </td>
-                            <td><img src="/img/read.png" width="17" height="14" /></td>
-                            <td>袁佳</td>
-                            <td>佛挡杀佛手机看对方很伟大时代不
-                            	<span>山东快书经典诵读v说得好时间的的出发点不个地方挥洒大话时代开始大撒上</span></td>
-                            <td>2017.01.15</td>
+
+                            <td th:if="${prod.getIsread()}==0"><img src="/img/unread.png" width="17" height="14" /></td>
+                            <td th:if="${prod.getIsread()}==1"><img src="/img/read.png" width="17" height="14" /></td>
+                            <td th:text="${prod.getSendphone()}"></td>
+                            <td th:text="${prod.getTitle()}">
+                                <span th:text="${prod.getMessage()}"></span></td>
+                            <td th:text="${#dates.format(prod.getSendtime(),'yyyy-MM-dd')}"></td>
+                            <a th:href="${#httpServletRequest.getContextPath()}+'/index?receiveEmailID='+${prod.getReceiveemailid()}+'#read'">111 </a>
                         </tr>
                     </table>
                 </div>
@@ -105,5 +99,7 @@
         </div>
     </div>
 </body>
+    <script>
 
+    </script>
 </html>

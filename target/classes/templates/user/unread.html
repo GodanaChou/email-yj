@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8"/>
-    <title>已收信件界面</title>
-    <link rel="stylesheet" type="text/css" href="/css/index.css" />
+    <title>未读邮件界面</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
     <style type="text/css">
-        body{
-            overflow:scroll;
-            overflow-x:hidden;
-        }
+
     .section1 a {
         text-decoration: underline;
+        margin-left: 10px;
     }
 
     .section1_ul {
@@ -46,14 +44,14 @@
     </style>
 </head>
 
-<body >
+<body>
     <div class="big_box">
         <div class="box">
-            <h2 class="title">已收信件界面</h2>
+            <h2 class="title">未读邮件界面</h2>
             <div class="content">
                 <div class="section1">
-                    <img src="/img/receives.png" width="45" height="45" />
-                    <span>收件箱（<a th:text="'未读邮件'+${countUnreadEmail}"></a>）</span>
+                    <img src="img/unread_logo.png" width="68" height="58" />
+                    <span><a>未读邮件10</a></span>
                     <ul class="section1_ul">
                         <li>
                             <button>删除</button>
@@ -65,7 +63,7 @@
                             <a href="write.html"><button>转发</button></a>
                         </li>
                         <li>
-                            <button>标记为已读</button>
+                            <button>全部标记为已读</button>
                         </li>
                     </ul>
                 </div>
@@ -75,31 +73,38 @@
                     	
                     	<tr class="th">
                     		<td width="2%"><input type="checkbox" name="chk" id="all" onclick="checkall('chk')"/></td>
-                    		<td width="3%"><img src="/img/reads.png" width="17" height="14" /></td>
+                    		<td width="3%"><img src="img/reads.png" width="17" height="14" /></td>
                     		<td width="10%">发件人</td>
                     		<td width="60%">主题</td>
-                    		<td width="10%">时间</td>
+                    		<td width="3%">时间</td>
                     	</tr>
-                        <tr th:each="prod : ${receiveEmails}" th:class="${prod.getReceiveemailid()}" >
+                        <tr class="unread" onclick="change()">
                             <td>
                                 <input type="checkbox" name="chk" value=""/>
                             </td>
-
-                            <td th:if="${prod.getIsread()}==0"><img src="/img/unread.png" width="17" height="14" /></td>
-                            <td th:if="${prod.getIsread()}==1"><img src="/img/read.png" width="17" height="14" /></td>
-                            <td th:text="${prod.getSendphone()}"></td>
-                            <td th:text="${prod.getTitle()}">
-                                <span th:text="${prod.getMessage()}"></span></td>
-                            <td th:text="${#dates.format(prod.getSendtime(),'yyyy-MM-dd')}"></td>
-                            <a th:href="${#httpServletRequest.getContextPath()}+'/index?receiveEmailID='+${prod.getReceiveemailid()}+'#read'">111 </a>
+                            <td><img src="img/unread.png" width="17" height="14" /></td>
+                            <td>袁佳</td>
+                            <td>佛挡杀佛手机看对方很伟大时代不</td>
+                            <td>2017.01.15</td>
+                        </tr>
+                        <tr  onclick="change()">
+                            <td>
+                                <input type="checkbox" name="chk" value=""/>
+                            </td>
+                            <td><img src="img/read.png" width="17" height="14" /></td>
+                            <td>袁佳</td>
+                            <td>佛挡杀佛手机看对方很伟大时代不
+                            	<span>山东快书经典诵读v说得好时间的的出发点不个地方挥洒大话时代开始大撒上</span></td>
+                            <td>2017.01.15</td>
                         </tr>
                     </table>
                 </div>
             </div>
         </div>
     </div>
-</body>
-    <script>
+    <script type="text/javascript" src="/js/unread.js">
 
     </script>
+</body>
+
 </html>

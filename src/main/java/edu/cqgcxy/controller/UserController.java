@@ -1,5 +1,6 @@
 package edu.cqgcxy.controller;
 
+import edu.cqgcxy.model.ReceiveEmail;
 import edu.cqgcxy.model.User;
 import edu.cqgcxy.service.ReceiveEmailBox;
 import edu.cqgcxy.service.SendEmailBox;
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.websocket.server.PathParam;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Logger;
@@ -94,12 +96,20 @@ public class UserController {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
         map.addAttribute("user",user);
-        map.addAttribute("count",receiveEmailBox.countUnreadEmail(user.getUserid()));
+        map.addAttribute("count",receiveEmailBox.countUnreadEmail(user.getPhone()));
         return "user/main";
     }
 
+    //收件邮箱
+
     @RequestMapping(value = "get",produces = {"application/json;charset=UTF-8"})
-    public String get(){
+    public String get(HttpServletRequest request,ModelMap modelMap){
+        HttpSession session = request.getSession();
+        User user = (User)session.getAttribute("user");
+        Long countUnreadEmail=receiveEmailBox.countUnreadEmail(user.getPhone());
+        List<ReceiveEmail> receiveEmails = receiveEmailBox.receiveEmail(user.getPhone());
+        modelMap.addAttribute("countUnreadEmail",countUnreadEmail);
+        modelMap.addAttribute("receiveEmails",receiveEmails);
         return "user/get";
     }
 
@@ -148,5 +158,32 @@ public class UserController {
         return "user/friendAdd";
     }
 
+    @RequestMapping(value = "unread",produces = {"application/json;charset=UTF-8"})
+    public String unread(HttpServletRequest request,ModelMap map){
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
+        return "user/unread";
+    }
 
+    @RequestMapping(value = "groupMail",produces = {"application/json;charset=UTF-8"})
+    public String groupMail(HttpServletRequest request,ModelMap map){
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
+        return "user/group_mail";
+    }
+
+    @RequestMapping(value = "read",produces = {"application/json;charset=UTF-8"})
+    public String readMail(HttpServletRequest request,ModelMap map,@PathParam("receiveEmailID") String receiveEmailID){
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
+        ReceiveEmail receiveEmail = receiveEmailBox.findByID(Integer.parseInt(receiveEmailID));
+        if (receiveEmail.getIsread()==0){
+            ReceiveEmail aReceiveEmail = new ReceiveEmail();
+            aReceiveEmail.setIsread(1);
+            aReceiveEmail.setReceiveemailid(receiveEmail.getReceiveemailid());
+            receiveEmailBox.updateReadStatus(aReceiveEmail);
+        }
+        map.addAttribute("receiveEmail",receiveEmail);
+        return "user/read";
+    }
 }

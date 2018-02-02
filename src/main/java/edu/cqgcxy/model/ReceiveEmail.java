@@ -10,14 +10,14 @@ public class ReceiveEmail implements Serializable {
     private Integer receiveemailid;
 
     /**
-     * 收信人ID
+     * 收信人Phone
      */
-    private Integer userid;
+    private String userphone;
 
     /**
-     * 发送人
+     * 发送人Phone
      */
-    private Integer sendid;
+    private String sendphone;
 
     /**
      * 标题
@@ -69,20 +69,20 @@ public class ReceiveEmail implements Serializable {
         this.receiveemailid = receiveemailid;
     }
 
-    public Integer getUserid() {
-        return userid;
+    public String getUserphone() {
+        return userphone;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setUserphone(String userphone) {
+        this.userphone = userphone;
     }
 
-    public Integer getSendid() {
-        return sendid;
+    public String getSendphone() {
+        return sendphone;
     }
 
-    public void setSendid(Integer sendid) {
-        this.sendid = sendid;
+    public void setSendphone(String sendphone) {
+        this.sendphone = sendphone;
     }
 
     public String getTitle() {
@@ -162,8 +162,8 @@ public class ReceiveEmail implements Serializable {
         }
         ReceiveEmail other = (ReceiveEmail) that;
         return (this.getReceiveemailid() == null ? other.getReceiveemailid() == null : this.getReceiveemailid().equals(other.getReceiveemailid()))
-            && (this.getUserid() == null ? other.getUserid() == null : this.getUserid().equals(other.getUserid()))
-            && (this.getSendid() == null ? other.getSendid() == null : this.getSendid().equals(other.getSendid()))
+            && (this.getUserphone() == null ? other.getUserphone() == null : this.getUserphone().equals(other.getUserphone()))
+            && (this.getSendphone() == null ? other.getSendphone() == null : this.getSendphone().equals(other.getSendphone()))
             && (this.getTitle() == null ? other.getTitle() == null : this.getTitle().equals(other.getTitle()))
             && (this.getMessage() == null ? other.getMessage() == null : this.getMessage().equals(other.getMessage()))
             && (this.getIsread() == null ? other.getIsread() == null : this.getIsread().equals(other.getIsread()))
@@ -179,8 +179,8 @@ public class ReceiveEmail implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getReceiveemailid() == null) ? 0 : getReceiveemailid().hashCode());
-        result = prime * result + ((getUserid() == null) ? 0 : getUserid().hashCode());
-        result = prime * result + ((getSendid() == null) ? 0 : getSendid().hashCode());
+        result = prime * result + ((getUserphone() == null) ? 0 : getUserphone().hashCode());
+        result = prime * result + ((getSendphone() == null) ? 0 : getSendphone().hashCode());
         result = prime * result + ((getTitle() == null) ? 0 : getTitle().hashCode());
         result = prime * result + ((getMessage() == null) ? 0 : getMessage().hashCode());
         result = prime * result + ((getIsread() == null) ? 0 : getIsread().hashCode());
@@ -199,8 +199,8 @@ public class ReceiveEmail implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", receiveemailid=").append(receiveemailid);
-        sb.append(", userid=").append(userid);
-        sb.append(", sendid=").append(sendid);
+        sb.append(", userphone=").append(userphone);
+        sb.append(", sendphone=").append(sendphone);
         sb.append(", title=").append(title);
         sb.append(", message=").append(message);
         sb.append(", isread=").append(isread);

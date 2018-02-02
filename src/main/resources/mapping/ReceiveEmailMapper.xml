@@ -3,8 +3,8 @@
 <mapper namespace="edu.cqgcxy.mapper.ReceiveEmailMapper">
   <resultMap id="BaseResultMap" type="edu.cqgcxy.model.ReceiveEmail">
     <id column="receiveEmailID" jdbcType="INTEGER" property="receiveemailid" />
-    <result column="userID" jdbcType="INTEGER" property="userid" />
-    <result column="sendID" jdbcType="INTEGER" property="sendid" />
+    <result column="userPhone" jdbcType="VARCHAR" property="userphone" />
+    <result column="sendPhone" jdbcType="VARCHAR" property="sendphone" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="message" jdbcType="VARCHAR" property="message" />
     <result column="isRead" jdbcType="INTEGER" property="isread" />
@@ -73,7 +73,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    receiveEmailID, userID, sendID, title, message, isRead, isDel, isSave, sendTime, 
+    receiveEmailID, userPhone, sendPhone, title, message, isRead, isDel, isSave, sendTime, 
     annexSign, type
   </sql>
   <select id="selectByExample" parameterType="edu.cqgcxy.model.ReceiveEmailExample" resultMap="BaseResultMap">
@@ -110,11 +110,11 @@
     <selectKey keyProperty="receiveemailid" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into receive_email (userID, sendID, title, 
+    insert into receive_email (userPhone, sendPhone, title, 
       message, isRead, isDel, 
       isSave, sendTime, annexSign, 
       type)
-    values (#{userid,jdbcType=INTEGER}, #{sendid,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, 
+    values (#{userphone,jdbcType=VARCHAR}, #{sendphone,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
       #{message,jdbcType=VARCHAR}, #{isread,jdbcType=INTEGER}, #{isdel,jdbcType=INTEGER}, 
       #{issave,jdbcType=INTEGER}, #{sendtime,jdbcType=TIMESTAMP}, #{annexsign,jdbcType=VARCHAR}, 
       #{type,jdbcType=INTEGER})
@@ -125,11 +125,11 @@
     </selectKey>
     insert into receive_email
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="userid != null">
-        userID,
+      <if test="userphone != null">
+        userPhone,
       </if>
-      <if test="sendid != null">
-        sendID,
+      <if test="sendphone != null">
+        sendPhone,
       </if>
       <if test="title != null">
         title,
@@ -157,11 +157,11 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="userid != null">
-        #{userid,jdbcType=INTEGER},
+      <if test="userphone != null">
+        #{userphone,jdbcType=VARCHAR},
       </if>
-      <if test="sendid != null">
-        #{sendid,jdbcType=INTEGER},
+      <if test="sendphone != null">
+        #{sendphone,jdbcType=VARCHAR},
       </if>
       <if test="title != null">
         #{title,jdbcType=VARCHAR},
@@ -201,11 +201,11 @@
       <if test="record.receiveemailid != null">
         receiveEmailID = #{record.receiveemailid,jdbcType=INTEGER},
       </if>
-      <if test="record.userid != null">
-        userID = #{record.userid,jdbcType=INTEGER},
+      <if test="record.userphone != null">
+        userPhone = #{record.userphone,jdbcType=VARCHAR},
       </if>
-      <if test="record.sendid != null">
-        sendID = #{record.sendid,jdbcType=INTEGER},
+      <if test="record.sendphone != null">
+        sendPhone = #{record.sendphone,jdbcType=VARCHAR},
       </if>
       <if test="record.title != null">
         title = #{record.title,jdbcType=VARCHAR},
@@ -239,8 +239,8 @@
   <update id="updateByExample" parameterType="map">
     update receive_email
     set receiveEmailID = #{record.receiveemailid,jdbcType=INTEGER},
-      userID = #{record.userid,jdbcType=INTEGER},
-      sendID = #{record.sendid,jdbcType=INTEGER},
+      userPhone = #{record.userphone,jdbcType=VARCHAR},
+      sendPhone = #{record.sendphone,jdbcType=VARCHAR},
       title = #{record.title,jdbcType=VARCHAR},
       message = #{record.message,jdbcType=VARCHAR},
       isRead = #{record.isread,jdbcType=INTEGER},
@@ -256,11 +256,11 @@
   <update id="updateByPrimaryKeySelective" parameterType="edu.cqgcxy.model.ReceiveEmail">
     update receive_email
     <set>
-      <if test="userid != null">
-        userID = #{userid,jdbcType=INTEGER},
+      <if test="userphone != null">
+        userPhone = #{userphone,jdbcType=VARCHAR},
       </if>
-      <if test="sendid != null">
-        sendID = #{sendid,jdbcType=INTEGER},
+      <if test="sendphone != null">
+        sendPhone = #{sendphone,jdbcType=VARCHAR},
       </if>
       <if test="title != null">
         title = #{title,jdbcType=VARCHAR},
@@ -291,8 +291,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="edu.cqgcxy.model.ReceiveEmail">
     update receive_email
-    set userID = #{userid,jdbcType=INTEGER},
-      sendID = #{sendid,jdbcType=INTEGER},
+    set userPhone = #{userphone,jdbcType=VARCHAR},
+      sendPhone = #{sendphone,jdbcType=VARCHAR},
       title = #{title,jdbcType=VARCHAR},
       message = #{message,jdbcType=VARCHAR},
       isRead = #{isread,jdbcType=INTEGER},
@@ -303,4 +303,5 @@
       type = #{type,jdbcType=INTEGER}
     where receiveEmailID = #{receiveemailid,jdbcType=INTEGER}
   </update>
+
 </mapper>

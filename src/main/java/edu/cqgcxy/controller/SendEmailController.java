@@ -43,16 +43,20 @@ public class SendEmailController {
         sendEmailBox.insertEmail(sendEmail);
 
         ReceiveEmail receiveEmail = new ReceiveEmail();
-        receiveEmail.setSendid(user.getUserid());
+        receiveEmail.setSendphone(user.getPhone());
+        receiveEmail.setTitle(sendEmail.getTitle());
         receiveEmail.setSendtime(sendEmail.getSendtime());
         receiveEmail.setMessage(sendEmail.getMessage());
+        receiveEmail.setIsread(0);
+        receiveEmail.setIsdel(0);
+        receiveEmail.setIssave(0);
 
         //拆分收件人,分别发送
         RemoveReceivePersonUtil removeReceivePersonUtil = new RemoveReceivePersonUtil();
         List<RemoveReceivePerson> removeReceivePerson=  removeReceivePersonUtil.remove(sendEmail.getReceiveperson());
         for( Iterator iter = removeReceivePerson.iterator();iter.hasNext();){
             RemoveReceivePerson removeReceivePerson1 = (RemoveReceivePerson) iter.next();
-            receiveEmail.setUserid(removeReceivePerson1.getPerson());
+            receiveEmail.setUserphone(removeReceivePerson1.getPerson());
             receiveEmailBox.sendEmail(receiveEmail);
             logger.info(removeReceivePerson1.getPerson()+removeReceivePerson1.getType());
         }
