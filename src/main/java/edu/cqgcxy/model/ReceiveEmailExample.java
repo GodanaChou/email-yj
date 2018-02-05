@@ -685,73 +685,73 @@ public class ReceiveEmailExample {
             return (Criteria) this;
         }
 
-        public Criteria andAnnexsignIsNull() {
-            addCriterion("annexSign is null");
+        public Criteria andSignIsNull() {
+            addCriterion("sign is null");
             return (Criteria) this;
         }
 
-        public Criteria andAnnexsignIsNotNull() {
-            addCriterion("annexSign is not null");
+        public Criteria andSignIsNotNull() {
+            addCriterion("sign is not null");
             return (Criteria) this;
         }
 
-        public Criteria andAnnexsignEqualTo(String value) {
-            addCriterion("annexSign =", value, "annexsign");
+        public Criteria andSignEqualTo(String value) {
+            addCriterion("sign =", value, "sign");
             return (Criteria) this;
         }
 
-        public Criteria andAnnexsignNotEqualTo(String value) {
-            addCriterion("annexSign <>", value, "annexsign");
+        public Criteria andSignNotEqualTo(String value) {
+            addCriterion("sign <>", value, "sign");
             return (Criteria) this;
         }
 
-        public Criteria andAnnexsignGreaterThan(String value) {
-            addCriterion("annexSign >", value, "annexsign");
+        public Criteria andSignGreaterThan(String value) {
+            addCriterion("sign >", value, "sign");
             return (Criteria) this;
         }
 
-        public Criteria andAnnexsignGreaterThanOrEqualTo(String value) {
-            addCriterion("annexSign >=", value, "annexsign");
+        public Criteria andSignGreaterThanOrEqualTo(String value) {
+            addCriterion("sign >=", value, "sign");
             return (Criteria) this;
         }
 
-        public Criteria andAnnexsignLessThan(String value) {
-            addCriterion("annexSign <", value, "annexsign");
+        public Criteria andSignLessThan(String value) {
+            addCriterion("sign <", value, "sign");
             return (Criteria) this;
         }
 
-        public Criteria andAnnexsignLessThanOrEqualTo(String value) {
-            addCriterion("annexSign <=", value, "annexsign");
+        public Criteria andSignLessThanOrEqualTo(String value) {
+            addCriterion("sign <=", value, "sign");
             return (Criteria) this;
         }
 
-        public Criteria andAnnexsignLike(String value) {
-            addCriterion("annexSign like", value, "annexsign");
+        public Criteria andSignLike(String value) {
+            addCriterion("sign like", value, "sign");
             return (Criteria) this;
         }
 
-        public Criteria andAnnexsignNotLike(String value) {
-            addCriterion("annexSign not like", value, "annexsign");
+        public Criteria andSignNotLike(String value) {
+            addCriterion("sign not like", value, "sign");
             return (Criteria) this;
         }
 
-        public Criteria andAnnexsignIn(List<String> values) {
-            addCriterion("annexSign in", values, "annexsign");
+        public Criteria andSignIn(List<String> values) {
+            addCriterion("sign in", values, "sign");
             return (Criteria) this;
         }
 
-        public Criteria andAnnexsignNotIn(List<String> values) {
-            addCriterion("annexSign not in", values, "annexsign");
+        public Criteria andSignNotIn(List<String> values) {
+            addCriterion("sign not in", values, "sign");
             return (Criteria) this;
         }
 
-        public Criteria andAnnexsignBetween(String value1, String value2) {
-            addCriterion("annexSign between", value1, value2, "annexsign");
+        public Criteria andSignBetween(String value1, String value2) {
+            addCriterion("sign between", value1, value2, "sign");
             return (Criteria) this;
         }
 
-        public Criteria andAnnexsignNotBetween(String value1, String value2) {
-            addCriterion("annexSign not between", value1, value2, "annexsign");
+        public Criteria andSignNotBetween(String value1, String value2) {
+            addCriterion("sign not between", value1, value2, "sign");
             return (Criteria) this;
         }
 

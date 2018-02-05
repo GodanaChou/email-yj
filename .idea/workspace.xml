@@ -2,54 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="345953f7-7350-4619-899d-ce61bebd8f5a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/img/draft_logo.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/img/group_logo.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/img/phone.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/img/register_bg.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/img/register_btn.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/img/reply_logo.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/img/return_btn.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/img/unread_logo.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/unread.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/group_mail.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/unread.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/ReceiveEmailController.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/SendEmailController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/SendEmailController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/UserController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/mapper/ReceiveEmailMapper.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/mapper/ReceiveEmailMapper.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/model/ReceiveEmail.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/model/ReceiveEmail.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/model/ReceiveEmailExample.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/model/ReceiveEmailExample.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/service/ReceiveEmailBox.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/service/ReceiveEmailBox.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/service/impl/ReceiveEmailImpl.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/service/impl/ReceiveEmailImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.json" afterPath="$PROJECT_DIR$/src/main/resources/config.json" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/ReceiveEmailMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/ReceiveEmailMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/delete_bg.png" afterPath="$PROJECT_DIR$/src/main/resources/static/img/delete_bg.png" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/draft_bg.png" afterPath="$PROJECT_DIR$/src/main/resources/static/img/draft_bg.png" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/friend.png" afterPath="$PROJECT_DIR$/src/main/resources/static/img/friend.png" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/main_bg.png" afterPath="$PROJECT_DIR$/src/main/resources/static/img/main_bg.png" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/read.png" afterPath="$PROJECT_DIR$/src/main/resources/static/img/read.png" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/read_bg.png" afterPath="$PROJECT_DIR$/src/main/resources/static/img/read_bg.png" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/reads.png" afterPath="$PROJECT_DIR$/src/main/resources/static/img/reads.png" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/receives.png" afterPath="$PROJECT_DIR$/src/main/resources/static/img/receives.png" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/search.png" afterPath="$PROJECT_DIR$/src/main/resources/static/img/search.png" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/send_bg.png" afterPath="$PROJECT_DIR$/src/main/resources/static/img/send_bg.png" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/unread.png" afterPath="$PROJECT_DIR$/src/main/resources/static/img/unread.png" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/user.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/user.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/get.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/get.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/index.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/ReceiveEmailMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapping/ReceiveEmailMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/delete_bg.png" afterPath="$PROJECT_DIR$/target/classes/static/img/delete_bg.png" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/draft_bg.png" afterPath="$PROJECT_DIR$/target/classes/static/img/draft_bg.png" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/friend.png" afterPath="$PROJECT_DIR$/target/classes/static/img/friend.png" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/main_bg.png" afterPath="$PROJECT_DIR$/target/classes/static/img/main_bg.png" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/read.png" afterPath="$PROJECT_DIR$/target/classes/static/img/read.png" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/read_bg.png" afterPath="$PROJECT_DIR$/target/classes/static/img/read_bg.png" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/reads.png" afterPath="$PROJECT_DIR$/target/classes/static/img/reads.png" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/receives.png" afterPath="$PROJECT_DIR$/target/classes/static/img/receives.png" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/search.png" afterPath="$PROJECT_DIR$/target/classes/static/img/search.png" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/send_bg.png" afterPath="$PROJECT_DIR$/target/classes/static/img/send_bg.png" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/unread.png" afterPath="$PROJECT_DIR$/target/classes/static/img/unread.png" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/user.js" afterPath="$PROJECT_DIR$/target/classes/static/js/user.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/get.html" afterPath="$PROJECT_DIR$/target/classes/templates/user/get.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/index.html" afterPath="$PROJECT_DIR$/target/classes/templates/user/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/read.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/read.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/reply.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/reply.html" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" afterPath="$PROJECT_DIR$/target/classes/application.yml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config.json" afterPath="$PROJECT_DIR$/target/classes/config.json" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/read.html" afterPath="$PROJECT_DIR$/target/classes/templates/user/read.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -77,11 +43,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/UserController.java">
+      <file leaf-file-name="ReceiveEmailController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/ReceiveEmailController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3140">
-              <caret line="179" column="37" lean-forward="false" selection-start-line="179" selection-start-column="37" selection-end-line="179" selection-end-column="37" />
+            <state relative-caret-position="144">
+              <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="read.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/read.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="670">
+              <caret line="62" column="122" lean-forward="true" selection-start-line="62" selection-start-column="114" selection-end-line="62" selection-end-column="122" />
               <folding />
             </state>
           </provider>
@@ -90,35 +68,38 @@
       <file leaf-file-name="user.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="25" column="7" lean-forward="false" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+            <state relative-caret-position="100">
+              <caret line="26" column="31" lean-forward="false" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReceiveEmailBox.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cqgcxy/service/ReceiveEmailBox.java">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="34" column="2" lean-forward="false" selection-start-line="34" selection-start-column="2" selection-end-line="37" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;method#countUnreadEmail#0;class#ReceiveEmailBox#0" expanded="false" />
-                <element signature="docComment;method#sendEmail#0;class#ReceiveEmailBox#0" expanded="false" />
-                <element signature="docComment;method#receiveEmail#0;class#ReceiveEmailBox#0" expanded="false" />
-                <element signature="docComment;method#findByID#0;class#ReceiveEmailBox#0" expanded="false" />
-                <element signature="docComment;method#updateReadStatus#0;class#ReceiveEmailBox#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="-160">
+              <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="get.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/get.html">
+      <file leaf-file-name="write.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/write.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1760">
-              <caret line="88" column="113" lean-forward="false" selection-start-line="88" selection-start-column="113" selection-end-line="88" selection-end-column="113" />
+            <state relative-caret-position="0">
+              <caret line="99" column="47" lean-forward="true" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reply.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/reply.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="85" column="20" lean-forward="false" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -127,7 +108,7 @@
       <file leaf-file-name="ReceiveEmailImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/cqgcxy/service/impl/ReceiveEmailImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
+            <state relative-caret-position="353">
               <caret line="70" column="93" lean-forward="false" selection-start-line="70" selection-start-column="93" selection-end-line="70" selection-end-column="93" />
               <folding>
                 <element signature="docComment;method#countUnreadEmail#0;class#ReceiveEmailImpl#0" expanded="false" />
@@ -151,8 +132,8 @@
       <list>
         <option value="HTML File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -177,9 +158,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/templates/user/top.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/index.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/login.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/user/index1.html" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cqgcxy/util/ExampleUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cqgcxy/service/UserService.java" />
@@ -203,10 +181,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/user/UEditorDemo.html" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/UEditorController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/config.json" />
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/ueditor/ConfigManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baidu/ueditor/upload/BinaryUploader.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/write.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/utf8-jsp/ueditor.config.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/user/write.html" />
@@ -215,7 +191,6 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/cqgcxy/util/RemoveReceivePerson.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cqgcxy/util/RemoveReceivePersonUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cqgcxy/model/ReceiveEmail.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/ReceiveEmailMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cqgcxy/mapper/ReceiveEmailMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/SendEmailController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/unread.js" />
@@ -227,7 +202,13 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/cqgcxy/service/impl/ReceiveEmailImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/user/get.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/config.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/ReceiveEmailMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/user/reply.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/user.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/user/read.html" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/ReceiveEmailController.java" />
       </list>
     </option>
   </component>
@@ -303,9 +284,8 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -474,25 +454,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="utf8-jsp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="email-yj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="email-yj" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="utf8-jsp" type="462c0819:PsiDirectoryNode" />
-              <item name="jsp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="email-yj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="email-yj" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -508,6 +469,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -532,23 +494,23 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\gitBase\email-yj\src\main\resources\templates\user" />
-      <recent name="E:\gitBase\email-yj\src\main\resources" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="edu.cqgcxy" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\gitBase\email-yj\src\main\resources\templates\user" />
+      <recent name="E:\gitBase\email-yj\src\main\resources\static\img" />
+      <recent name="E:\gitBase\email-yj\src\main\java" />
+      <recent name="E:\gitBase\email-yj\src\main\resources" />
+      <recent name="E:\gitBase\email-yj\src\main\resources\static\kindeditor" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="edu.cqgcxy.client" />
       <recent name="edu.cqgcxy" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\gitBase\email-yj\src\main\resources\static\img" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\gitBase\email-yj\src\main\resources\templates\user" />
-      <recent name="E:\gitBase\email-yj\src\main\java" />
       <recent name="E:\gitBase\email-yj\src\main\resources" />
-      <recent name="E:\gitBase\email-yj\src\main\resources\static\kindeditor" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -729,14 +691,17 @@
       <workItem from="1517533372402" duration="114000" />
       <workItem from="1517533523985" duration="1829000" />
       <workItem from="1517562301978" duration="598000" />
+      <workItem from="1517792643260" duration="10174000" />
+      <workItem from="1517810772959" duration="9856000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212579000" />
+    <option name="totallyTimeSpent" value="232609000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31389365" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
@@ -749,15 +714,16 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26929674" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32761577" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17495711" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35849056" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933104" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32761577" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28668684" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.295764" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933104" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -767,7 +733,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32761577" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -819,35 +784,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/kindeditor/jquery-3.2.1/jquery插件库.url" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/utf8-jsp/ueditor.parse.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-600">
-          <caret line="3" column="49" lean-forward="true" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/utf8-jsp/ueditor.parse.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1080">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/utf8-jsp/dialogs/anchor/anchor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cqgcxy/service/AnnexService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cqgcxy/service/impl/AnnexServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -880,7 +816,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -895,13 +830,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="46" column="49" lean-forward="false" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -926,14 +854,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="40" column="54" lean-forward="true" selection-start-line="40" selection-start-column="54" selection-end-line="40" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/utf8-jsp/themes/default/css/ueditor.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3180">
@@ -952,13 +872,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="28" column="48" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/utf8-jsp/ueditor.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -990,13 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/write.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="115" column="107" lean-forward="false" selection-start-line="115" selection-start-column="107" selection-end-line="115" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cqgcxy/service/SendEmailBox.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -1018,33 +924,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cqgcxy/util/RemoveReceivePersonUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="13" column="10" lean-forward="false" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cqgcxy/model/ReceiveEmailExample.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/ReceiveEmailMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="305" column="2" lean-forward="false" selection-start-line="305" selection-start-column="2" selection-end-line="305" selection-end-column="2" />
-          <folding>
-            <marker date="1517386879487" expanded="true" signature="4034:4167" ph="select from receive_email" />
-            <marker date="1517386879487" expanded="true" signature="4253:4340" ph="delete from receive_email... " />
-            <marker date="1517386879487" expanded="true" signature="4442:4467" ph="delete from receive_email... " />
-            <marker date="1517386879487" expanded="true" signature="7217:7251" ph="select count... receive_email" />
-            <marker date="1517386879487" expanded="true" signature="8827:9432" ph="update receive_email... " />
-            <marker date="1517386879487" expanded="true" signature="9641:10670" ph="update receive_email... " />
-            <marker date="1517386879487" expanded="true" signature="10768:11299" ph="update receive_email... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1134,16 +1017,91 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/Anchor.js" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cqgcxy/service/ReceiveEmailBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="34" column="2" lean-forward="false" selection-start-line="34" selection-start-column="2" selection-end-line="37" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="docComment;method#countUnreadEmail#0;class#ReceiveEmailBox#0" expanded="false" />
+            <element signature="docComment;method#sendEmail#0;class#ReceiveEmailBox#0" expanded="false" />
+            <element signature="docComment;method#receiveEmail#0;class#ReceiveEmailBox#0" expanded="false" />
+            <element signature="docComment;method#findByID#0;class#ReceiveEmailBox#0" expanded="false" />
+            <element signature="docComment;method#updateReadStatus#0;class#ReceiveEmailBox#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/utf8-jsp/ueditor.parse.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-900">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.23/tomcat-embed-core-8.5.23.jar!/org/apache/tomcat/util/http/fileupload/FileUploadBase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="920">
+          <caret line="51" column="6" lean-forward="false" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="55" column="29" lean-forward="false" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/utf8-jsp/ueditor.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9262">
+          <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/get.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1540">
+          <caret line="1" column="46" lean-forward="false" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/ReceiveEmailMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="305" column="1" lean-forward="false" selection-start-line="305" selection-start-column="1" selection-end-line="305" selection-end-column="1" />
+          <folding>
+            <marker date="1517815522894" expanded="true" signature="4019:4152" ph="select from receive_email" />
+            <marker date="1517815522894" expanded="true" signature="4238:4325" ph="delete from receive_email... " />
+            <marker date="1517815522894" expanded="true" signature="4427:4452" ph="delete from receive_email... " />
+            <marker date="1517815522894" expanded="true" signature="7172:7206" ph="select count... receive_email" />
+            <marker date="1517815522894" expanded="true" signature="8767:9362" ph="update receive_email... " />
+            <marker date="1517815522894" expanded="true" signature="9571:10585" ph="update receive_email... " />
+            <marker date="1517815522894" expanded="true" signature="10683:11204" ph="update receive_email... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
+        <state relative-caret-position="550">
           <caret line="152" column="28" lean-forward="false" selection-start-line="152" selection-start-column="28" selection-end-line="152" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cqgcxy/service/impl/ReceiveEmailImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
+        <state relative-caret-position="353">
           <caret line="70" column="93" lean-forward="false" selection-start-line="70" selection-start-column="93" selection-end-line="70" selection-end-column="93" />
           <folding>
             <element signature="docComment;method#countUnreadEmail#0;class#ReceiveEmailImpl#0" expanded="false" />
@@ -1159,41 +1117,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cqgcxy/service/ReceiveEmailBox.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cqgcxy/util/RemoveReceivePersonUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="34" column="2" lean-forward="false" selection-start-line="34" selection-start-column="2" selection-end-line="37" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#countUnreadEmail#0;class#ReceiveEmailBox#0" expanded="false" />
-            <element signature="docComment;method#sendEmail#0;class#ReceiveEmailBox#0" expanded="false" />
-            <element signature="docComment;method#receiveEmail#0;class#ReceiveEmailBox#0" expanded="false" />
-            <element signature="docComment;method#findByID#0;class#ReceiveEmailBox#0" expanded="false" />
-            <element signature="docComment;method#updateReadStatus#0;class#ReceiveEmailBox#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="140">
+          <caret line="13" column="10" lean-forward="false" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/get.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/ReceiveEmailController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1760">
-          <caret line="88" column="113" lean-forward="false" selection-start-line="88" selection-start-column="113" selection-end-line="88" selection-end-column="113" />
-          <folding />
+        <state relative-caret-position="144">
+          <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3140">
-          <caret line="179" column="37" lean-forward="false" selection-start-line="179" selection-start-column="37" selection-end-line="179" selection-end-column="37" />
+        <state relative-caret-position="-160">
+          <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/write.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="99" column="47" lean-forward="true" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/reply.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="85" column="20" lean-forward="false" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/read.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="62" column="122" lean-forward="true" selection-start-line="62" selection-start-column="114" selection-end-line="62" selection-end-column="122" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="25" column="7" lean-forward="false" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+        <state relative-caret-position="100">
+          <caret line="26" column="31" lean-forward="false" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
           <folding />
         </state>
       </provider>

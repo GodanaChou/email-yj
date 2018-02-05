@@ -11,7 +11,7 @@
     <result column="isDel" jdbcType="INTEGER" property="isdel" />
     <result column="isSave" jdbcType="INTEGER" property="issave" />
     <result column="sendTime" jdbcType="TIMESTAMP" property="sendtime" />
-    <result column="annexSign" jdbcType="VARCHAR" property="annexsign" />
+    <result column="sign" jdbcType="VARCHAR" property="sign" />
     <result column="type" jdbcType="INTEGER" property="type" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -74,7 +74,7 @@
   </sql>
   <sql id="Base_Column_List">
     receiveEmailID, userPhone, sendPhone, title, message, isRead, isDel, isSave, sendTime, 
-    annexSign, type
+    sign, type
   </sql>
   <select id="selectByExample" parameterType="edu.cqgcxy.model.ReceiveEmailExample" resultMap="BaseResultMap">
     select
@@ -112,11 +112,11 @@
     </selectKey>
     insert into receive_email (userPhone, sendPhone, title, 
       message, isRead, isDel, 
-      isSave, sendTime, annexSign, 
+      isSave, sendTime, sign, 
       type)
     values (#{userphone,jdbcType=VARCHAR}, #{sendphone,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
       #{message,jdbcType=VARCHAR}, #{isread,jdbcType=INTEGER}, #{isdel,jdbcType=INTEGER}, 
-      #{issave,jdbcType=INTEGER}, #{sendtime,jdbcType=TIMESTAMP}, #{annexsign,jdbcType=VARCHAR}, 
+      #{issave,jdbcType=INTEGER}, #{sendtime,jdbcType=TIMESTAMP}, #{sign,jdbcType=VARCHAR}, 
       #{type,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="edu.cqgcxy.model.ReceiveEmail">
@@ -149,8 +149,8 @@
       <if test="sendtime != null">
         sendTime,
       </if>
-      <if test="annexsign != null">
-        annexSign,
+      <if test="sign != null">
+        sign,
       </if>
       <if test="type != null">
         type,
@@ -181,8 +181,8 @@
       <if test="sendtime != null">
         #{sendtime,jdbcType=TIMESTAMP},
       </if>
-      <if test="annexsign != null">
-        #{annexsign,jdbcType=VARCHAR},
+      <if test="sign != null">
+        #{sign,jdbcType=VARCHAR},
       </if>
       <if test="type != null">
         #{type,jdbcType=INTEGER},
@@ -225,8 +225,8 @@
       <if test="record.sendtime != null">
         sendTime = #{record.sendtime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.annexsign != null">
-        annexSign = #{record.annexsign,jdbcType=VARCHAR},
+      <if test="record.sign != null">
+        sign = #{record.sign,jdbcType=VARCHAR},
       </if>
       <if test="record.type != null">
         type = #{record.type,jdbcType=INTEGER},
@@ -247,7 +247,7 @@
       isDel = #{record.isdel,jdbcType=INTEGER},
       isSave = #{record.issave,jdbcType=INTEGER},
       sendTime = #{record.sendtime,jdbcType=TIMESTAMP},
-      annexSign = #{record.annexsign,jdbcType=VARCHAR},
+      sign = #{record.sign,jdbcType=VARCHAR},
       type = #{record.type,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -280,8 +280,8 @@
       <if test="sendtime != null">
         sendTime = #{sendtime,jdbcType=TIMESTAMP},
       </if>
-      <if test="annexsign != null">
-        annexSign = #{annexsign,jdbcType=VARCHAR},
+      <if test="sign != null">
+        sign = #{sign,jdbcType=VARCHAR},
       </if>
       <if test="type != null">
         type = #{type,jdbcType=INTEGER},
@@ -299,7 +299,7 @@
       isDel = #{isdel,jdbcType=INTEGER},
       isSave = #{issave,jdbcType=INTEGER},
       sendTime = #{sendtime,jdbcType=TIMESTAMP},
-      annexSign = #{annexsign,jdbcType=VARCHAR},
+      sign = #{sign,jdbcType=VARCHAR},
       type = #{type,jdbcType=INTEGER}
     where receiveEmailID = #{receiveemailid,jdbcType=INTEGER}
   </update>

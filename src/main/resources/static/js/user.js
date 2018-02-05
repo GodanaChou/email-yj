@@ -24,6 +24,7 @@ $(function(){
             case "#friend": pathn = "friend"; i = 8; break;
             case "#friendAdd": pathn = "friendAdd"; i = 8; break;
             case "#read": pathn = "read"+window.location.href.substring(window.location.href.indexOf("?"),window.location.href.indexOf("#"));i = 9;break;
+            case "#reply": pathn = "reply"+window.location.href.substring(window.location.href.indexOf("?"),window.location.href.indexOf("#"));i = 10;break;
             default: pathn = "center"; i = 0; break;
         }
         $("#contentT").load(pathn); //加载相对应的内容
