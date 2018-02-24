@@ -8,10 +8,33 @@ import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomi
 import org.springframework.boot.web.servlet.ErrorPage;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @SpringBootApplication
 @MapperScan("edu.cqgcxy.mapper")
-public class EmailYjApplication {
+public class EmailYjApplication  extends WebMvcConfigurerAdapter{
+
+	/*
+	favorPathExtension表示支持后缀匹配，
+
+	属性ignoreAcceptHeader默认为fasle，表示accept-header匹配，defaultContentType开启默认匹配。
+
+	例如：请求aaa.xx，若设置<entry key="xx" value="application/xml"/> 也能匹配以xml返回。
+
+	根据以上条件进行一一匹配最终，得到相关并符合的策略初始化ContentNegotiationManager
+
+     */
+
+	@Override
+
+	public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
+
+		configurer.favorPathExtension(false);
+
+	}
+
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(EmailYjApplication.class, args);

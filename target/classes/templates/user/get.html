@@ -56,16 +56,16 @@
                     <span>收件箱（<a th:text="'未读邮件'+${countUnreadEmail}"></a>）</span>
                     <ul class="section1_ul">
                         <li>
-                            <button>删除</button>
+                            <button onclick="doDelete()">删除</button>
                         </li>
                         <li>
-                            <button>彻底删除</button>
+                            <button onclick="delete1()">彻底删除</button>
                         </li>
                         <li>
-                            <a href="write.html"><button>转发</button></a>
+                            <button onclick="doForward()">转发</button>
                         </li>
                         <li>
-                            <button>标记为已读</button>
+                            <button onclick="doRead()">标记为已读</button>
                         </li>
                     </ul>
                 </div>
@@ -74,15 +74,15 @@
                     <table width="90%" boder="0" cellspacing="0" cellpadding="0" class="section2_table" id="section2_table">
                     	
                     	<tr class="th">
-                    		<td width="2%"><input type="checkbox" name="chk" id="all" onclick="checkall('chk')"/></td>
+                    		<td width="2%"><input type="checkbox" value="全选" name="chk" id="all" onclick="checkall('chk')"/></td>
                     		<td width="3%"><img src="/img/reads.png" width="17" height="14" /></td>
                     		<td width="10%">发件人</td>
                     		<td width="60%">主题</td>
                     		<td width="10%">时间</td>
                     	</tr>
-                        <tr th:each="prod : ${receiveEmails}" th:class="${prod.getReceiveemailid()}" >
+                        <tr th:each="prod : ${receiveEmails}" th:onclick="'javascript:achange('+${prod.getReceiveemailid()}+');'" th:class="${prod.getReceiveemailid()}" >
                             <td>
-                                <input type="checkbox" name="chk" value=""/>
+                                <input type="checkbox" name="chk"  th:attr="value=${prod.getReceiveemailid()}"/>
                             </td>
 
                             <td th:if="${prod.getIsread()}==0"><img src="/img/unread.png" width="17" height="14" /></td>
@@ -91,15 +91,22 @@
                             <td th:text="${prod.getTitle()}">
                                 <span th:text="${prod.getMessage()}"></span></td>
                             <td th:text="${#dates.format(prod.getSendtime(),'yyyy-MM-dd')}"></td>
-                            <a th:href="${#httpServletRequest.getContextPath()}+'/index?receiveEmailID='+${prod.getReceiveemailid()}+'#read'">111 </a>
+
                         </tr>
                     </table>
+
                 </div>
             </div>
         </div>
     </div>
 </body>
-    <script>
 
-    </script>
+<script type="text/javascript" src="/js/unread.js">
+</script>
+
+<script>
+        function achange(ids) {
+            window.location.href='/index?receiveEmailID='+ids+'#read';
+        }
+</script>
 </html>

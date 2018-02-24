@@ -21,7 +21,7 @@ public class ReceiveEmailImpl implements ReceiveEmailBox {
     @Override
     public long countUnreadEmail(String userPhone) {
         ReceiveEmailExample receiveEmailExample = new ReceiveEmailExample();
-        receiveEmailExample.createCriteria().andUserphoneEqualTo(userPhone).andIsreadEqualTo(0);
+        receiveEmailExample.createCriteria().andUserphoneEqualTo(userPhone).andIsreadEqualTo(0).andIsdelEqualTo(0);
         return receiveEmailMapper.countByExample(receiveEmailExample);
     }
 
@@ -45,7 +45,7 @@ public class ReceiveEmailImpl implements ReceiveEmailBox {
     @Override
     public List<ReceiveEmail> receiveEmail(String phone) {
         ReceiveEmailExample receiveEmailExample = new ReceiveEmailExample();
-        receiveEmailExample.createCriteria().andUserphoneEqualTo(phone);
+        receiveEmailExample.createCriteria().andUserphoneEqualTo(phone).andIsdelEqualTo(0);
         return receiveEmailMapper.selectByExample(receiveEmailExample);
     }
 
@@ -69,5 +69,71 @@ public class ReceiveEmailImpl implements ReceiveEmailBox {
         ReceiveEmailExample receiveEmailExample = new ReceiveEmailExample();
         receiveEmailExample.createCriteria().andReceiveemailidEqualTo(receiveEmail.getReceiveemailid());
         return receiveEmailMapper.updateByExampleSelective(receiveEmail,receiveEmailExample);
+    }
+
+    /**
+     * 查找未读邮件
+     *
+     * @param phone 用户电话
+     * @return 邮件列表
+     */
+    @Override
+    public List<ReceiveEmail> findUnReadEmail(String phone) {
+        ReceiveEmailExample receiveEmailExample = new ReceiveEmailExample();
+        receiveEmailExample.createCriteria().andUserphoneEqualTo(phone).andIsreadEqualTo(0).andIsdelEqualTo(0);
+        return receiveEmailMapper.selectByExample(receiveEmailExample);
+    }
+
+    /**
+     * 查找删除邮件
+     *
+     * @param phone phone
+     * @return 邮件列表
+     */
+    @Override
+    public List<ReceiveEmail> findDeleteEmail(String phone) {
+        ReceiveEmailExample receiveEmailExample = new ReceiveEmailExample();
+        receiveEmailExample.createCriteria().andUserphoneEqualTo(phone).andIsdelEqualTo(1);
+        return receiveEmailMapper.selectByExample(receiveEmailExample);
+    }
+
+    /**
+     * 彻底删除来信
+     *
+     * @param num 来信ID集合
+     * @return int
+     */
+    @Override
+    public int deleteReceiveEmail(String num) {
+
+        String nb = num.replaceAll("\"","");
+        int n;
+        do{
+            nb = nb.substring(1,nb.length());
+            if(!nb.contains(",")){
+                n = Integer.parseInt(nb.substring(0,nb.length()-1));
+                nb = "over";
+            }else {
+                n = Integer.parseInt(nb.substring(0,nb.indexOf(",")));
+
+                nb = nb.substring(nb.indexOf(","),nb.length());
+            }
+            receiveEmailMapper.deleteByPrimaryKey(n);
+        }while (!"over".equals(nb));
+
+        return 1;
+    }
+
+    /**
+     * 更新删除状态
+     *
+     * @param receiveEmail 收信传入del数字和id
+     * @return int
+     */
+    @Override
+    public int updateDeleteStatus(ReceiveEmail receiveEmail) {
+        ReceiveEmailExample receiveEmailExample = new ReceiveEmailExample();
+        receiveEmailExample.createCriteria().andReceiveemailidEqualTo(receiveEmail.getReceiveemailid());
+       return receiveEmailMapper.updateByExampleSelective(receiveEmail,receiveEmailExample);
     }
 }

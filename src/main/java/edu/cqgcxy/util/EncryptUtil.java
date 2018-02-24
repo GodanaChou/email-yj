@@ -16,6 +16,7 @@ import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
 import java.security.MessageDigest;
+import java.util.UUID;
 
 public class EncryptUtil {  
 
@@ -72,5 +73,9 @@ public class EncryptUtil {
             sb.append(s.toUpperCase());  
         }  
         return sb.toString();  
-    }  
+    }
+
+    public String UUID(){
+        return UUID.randomUUID().toString().replaceAll("-","");
+    }
 }  

@@ -16,14 +16,16 @@ public class SendEmailBoxImpl implements SendEmailBox {
 
 
     /**
-     * 通过发件人ID查询邮件详情
+     * 通过发件人ID查询发送邮件
      *
-     * @param sendEmail 邮件属性
+     * @param userID userID
      * @return 邮件详细信息
      */
     @Override
-    public List<SendEmail> findByPrimaryKeySelective(SendEmailExample sendEmail) {
-        return sendEmailMapper.selectByExample(sendEmail);
+    public List<SendEmail> findSendEmailByUserID(int userID) {
+        SendEmailExample sendEmailExample = new SendEmailExample();
+        sendEmailExample.createCriteria().andUseridEqualTo(userID).andIsdelEqualTo(0);
+        return sendEmailMapper.selectByExample(sendEmailExample);
     }
 
     /**
@@ -63,15 +65,51 @@ public class SendEmailBoxImpl implements SendEmailBox {
     /**
      * 计数
      *
-     * @param sendEmail 邮件属性
-     * @return 特定类型邮件数量
+     * @param userID userID
+     * @return 发送邮件数量
      */
     @Override
-    public long countUnknowEmail(SendEmail sendEmail) {
+    public long countEmail(int userID) {
         SendEmailExample sendEmailExample = new SendEmailExample();
-
-
+        sendEmailExample.createCriteria().andUseridEqualTo(userID).andIsdelEqualTo(0);
         return sendEmailMapper.countByExample(sendEmailExample);
+    }
+
+    /**
+     * 通过邮件ID查询邮件
+     *
+     * @param emailID 邮件ID
+     * @return 邮件详情
+     */
+    @Override
+    public SendEmail findByEmailID(int emailID) {
+        return sendEmailMapper.selectByPrimaryKey(emailID);
+    }
+
+    /**
+     * 通过UserID查找草稿箱
+     *
+     * @param userID userID
+     * @return 邮件详情
+     */
+    @Override
+    public List<SendEmail> findDraft(int userID) {
+        SendEmailExample sendEmailExample = new SendEmailExample();
+        sendEmailExample.createCriteria().andUseridEqualTo(userID).andIssaveEqualTo(1).andIsdelEqualTo(0);
+        return sendEmailMapper.selectByExample(sendEmailExample);
+    }
+
+    /**
+     * 通过UserID查找删除邮件
+     *
+     * @param userID userID
+     * @return 邮件列表
+     */
+    @Override
+    public List<SendEmail> findDelete(int userID) {
+        SendEmailExample sendEmailExample = new SendEmailExample();
+        sendEmailExample.createCriteria().andUseridEqualTo(userID).andIsdelEqualTo(1);
+        return sendEmailMapper.selectByExample(sendEmailExample);
     }
 
 

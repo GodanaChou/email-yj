@@ -49,7 +49,7 @@
                     <img src="img/read_bg.png" width="60" height="90" />
                     <div class="section1_con">
                 	<h3 th:text="${receiveEmail.getTitle()}">信件主题</h3>
-                	<p><span>发件人：</span><span style="color: green; font-weight: bold;"  th:text="${receiveEmail.getUserphone()}">袁佳</span></p>
+                	<p><span>发件人：</span><span style="color: green; font-weight: bold;"  th:text="${receiveEmail.getSendphone()}">袁佳</span></p>
                 	<p><span>时 间 ：</span><span th:text="${#dates.format(receiveEmail.getSendtime(),'yyyy-MM-dd')}">2017.01.15</span></p>
                 	</div>
                     <ul class="section1_ul">
@@ -60,7 +60,7 @@
                             <em>｜</em>
                         </li>
                         <li>
-                            <a th:href="@{'/index?receiveEmailID='+${receiveEmail.getReceiveemailid()}+'#reply'}"><button>回复</button></a>
+                            <a th:href="${#httpServletRequest.getContextPath()}+'/index?receiveEmailID='+${receiveEmail.getReceiveemailid()}+'#reply'"><button>回复</button></a>
                         </li>
                         <li>
                             <button>删除</button>

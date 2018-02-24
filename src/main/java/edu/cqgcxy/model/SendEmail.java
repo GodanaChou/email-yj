@@ -47,9 +47,9 @@ public class SendEmail implements Serializable {
     private String receiveperson;
 
     /**
-     * 附件标识
+     * 来往件标识
      */
-    private String annexsign;
+    private String sign;
 
     private static final long serialVersionUID = 1L;
 
@@ -125,12 +125,12 @@ public class SendEmail implements Serializable {
         this.receiveperson = receiveperson;
     }
 
-    public String getAnnexsign() {
-        return annexsign;
+    public String getSign() {
+        return sign;
     }
 
-    public void setAnnexsign(String annexsign) {
-        this.annexsign = annexsign;
+    public void setSign(String sign) {
+        this.sign = sign;
     }
 
     @Override
@@ -154,7 +154,7 @@ public class SendEmail implements Serializable {
             && (this.getIssave() == null ? other.getIssave() == null : this.getIssave().equals(other.getIssave()))
             && (this.getSendtime() == null ? other.getSendtime() == null : this.getSendtime().equals(other.getSendtime()))
             && (this.getReceiveperson() == null ? other.getReceiveperson() == null : this.getReceiveperson().equals(other.getReceiveperson()))
-            && (this.getAnnexsign() == null ? other.getAnnexsign() == null : this.getAnnexsign().equals(other.getAnnexsign()));
+            && (this.getSign() == null ? other.getSign() == null : this.getSign().equals(other.getSign()));
     }
 
     @Override
@@ -170,7 +170,7 @@ public class SendEmail implements Serializable {
         result = prime * result + ((getIssave() == null) ? 0 : getIssave().hashCode());
         result = prime * result + ((getSendtime() == null) ? 0 : getSendtime().hashCode());
         result = prime * result + ((getReceiveperson() == null) ? 0 : getReceiveperson().hashCode());
-        result = prime * result + ((getAnnexsign() == null) ? 0 : getAnnexsign().hashCode());
+        result = prime * result + ((getSign() == null) ? 0 : getSign().hashCode());
         return result;
     }
 
@@ -189,7 +189,7 @@ public class SendEmail implements Serializable {
         sb.append(", issave=").append(issave);
         sb.append(", sendtime=").append(sendtime);
         sb.append(", receiveperson=").append(receiveperson);
-        sb.append(", annexsign=").append(annexsign);
+        sb.append(", sign=").append(sign);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

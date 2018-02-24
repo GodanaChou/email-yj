@@ -83,4 +83,17 @@ public class UserServiceImpl implements UserService {
     public int delete(int id) {
          return userMapper.deleteByPrimaryKey(id);
     }
+
+    /**
+     * 通过phone查询User
+     *
+     * @param phone Phone
+     * @return User
+     */
+    @Override
+    public User findByPhone(String phone) {
+        UserExample userExample = new UserExample();
+        userExample.createCriteria().andPhoneEqualTo(phone);
+        return userMapper.selectByExample(userExample).get(0);
+    }
 }

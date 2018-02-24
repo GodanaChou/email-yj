@@ -22,9 +22,11 @@ $(function(){
 			case "#delete": pathn = "delete"; i = 6; break;
             case "#write": pathn = "write"; i = 7; break;
             case "#friend": pathn = "friend"; i = 8; break;
-            case "#friendAdd": pathn = "friendAdd"; i = 8; break;
-            case "#read": pathn = "read"+window.location.href.substring(window.location.href.indexOf("?"),window.location.href.indexOf("#"));i = 9;break;
-            case "#reply": pathn = "reply"+window.location.href.substring(window.location.href.indexOf("?"),window.location.href.indexOf("#"));i = 10;break;
+            case "#friendAdd": pathn = "friendAdd"; i = 12; break;
+            case "#reply": pathn = "reply"+window.location.href.substring(window.location.href.indexOf("?"),window.location.href.indexOf("#"));i = 9;break;
+            case "#read": pathn = "read"+window.location.href.substring(window.location.href.indexOf("?"),window.location.href.indexOf("#"));i = 10;break;
+            case "#read1": pathn = "read1"+window.location.href.substring(window.location.href.indexOf("?"),window.location.href.indexOf("#"));i = 11;break;
+
             default: pathn = "center"; i = 0; break;
         }
         $("#contentT").load(pathn); //加载相对应的内容

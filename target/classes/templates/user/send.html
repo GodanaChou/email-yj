@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8"/>
@@ -60,7 +60,7 @@
             <div class="content">
                 <div class="section1">
                     <img src="img/send_bg.png" width="45" height="45" />
-                    <span>发件箱（<a>邮件共10</a>）</span>
+                    <span>发件箱（<a th:text="'邮件共'+${anum}"></a>）</span>
                     <ul class="section1_ul">
                         <li>
                             <button>删除</button>
@@ -72,40 +72,37 @@
                 </div>
                 <div class="section2">
                     <h4>最近五天</h4>
-                    <table width="90%" boder="0" cellspacing="0" cellpadding="0" class="section2_table" id="section2_table">
+                    <table width="90%" boder="0" cellspacing="0" cellpadding="0"  style="table-layout: fixed;" class="section2_table" id="section2_table">
                     	
                     	<tr class="th">
-                    		<td width="2%"><input type="checkbox" name="chk" id="all" onclick="checkall('chk')"/></td>
+                    		<td width="2%"><input type="checkbox" name="chk" value="全选" id="all" onclick="checkall('chk')"/></td>
                     		<td width="3%"><img src="img/reads.png" width="17" height="14" /></td>
-                    		<td width="10%">收件人</td>
+                    		<td width="18%">收件人</td>
                     		<td width="60%">主题</td>
-                    		<td width="3%">时间</td>
+                    		<td width="10%">时间</td>
                     	</tr>
-                        <tr class="unread" onclick="change()">
+                        <tr class="unread" th:each="sendEmail:${sendEmails}" th:onclick="'javascript:achange('+${sendEmail.getSendemailid()}+');'">
                             <td>
-                                <input type="checkbox" name="chk" value=""/>
-                            </td>
-                            <td><img src="img/unread.png" width="17" height="14" /></td>
-                            <td>袁佳</td>
-                            <td>佛挡杀佛手机看对方很伟大时代不</td>
-                            <td>2017.01.15</td>
-                        </tr>
-                        <tr  onclick="change()">
-                            <td>
-                                <input type="checkbox" name="chk" value=""/>
+                                <input type="checkbox" name="chk"  th:attr="value=${sendEmail.getSendemailid()}"/>
                             </td>
                             <td><img src="img/read.png" width="17" height="14" /></td>
-                            <td>袁佳</td>
-                            <td>佛挡杀佛手机看对方很伟大时代不
-                            	<span>山东快书经典诵读v说得好时间的的出发点不个地方挥洒大话时代开始大撒上</span></td>
-                            <td>2017.01.15</td>
+                            <td style="overflow:hidden;width:18%;white-space:nowrap;text-overflow:ellipsis;" th:text="${sendEmail.getReceiveperson()}">收信人</td>
+                            <td style="overflow:hidden;width:60%;white-space:nowrap;text-overflow:ellipsis;" th:utext="${sendEmail.getMessage()}" >内容</td>
+                            <td th:text="${#dates.format(sendEmail.getSendtime(),'yyyy-MM-dd')}">时间</td>
                         </tr>
                     </table>
                 </div>
             </div>
         </div>
     </div>
- <script src="/js/send.js"></script>
+
+    <script src="/js/send.js"></script>
+    <script src="/js/unread.js"></script>
+    <script>
+        function achange(ids) {
+            window.location.href='/index?sendEmailID='+ids+'#read1';
+        }
+    </script>
 </body>
 
 </html>

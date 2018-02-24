@@ -52,4 +52,11 @@ public interface UserService {
      * @return 1删除成功 2删除失败
      */
     int delete(int id);
+
+
+    /** 通过phone查询User
+     * @param phone Phone
+     * @return User
+     */
+    User findByPhone(String phone);
 }

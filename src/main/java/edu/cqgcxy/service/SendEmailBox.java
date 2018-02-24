@@ -8,11 +8,11 @@ import java.util.List;
 public interface SendEmailBox {
 
     /**
-     * 通过发件人ID查询邮件详情
-     * @param sendEmail 邮件属性
+     * 通过发件人ID查询发送邮件
+     * @param userID userID
      * @return 邮件详细信息
      */
-    List<SendEmail> findByPrimaryKeySelective(SendEmailExample sendEmail);
+    List<SendEmail> findSendEmailByUserID(int userID);
 
     /**
      * 更新邮箱信息
@@ -37,8 +37,28 @@ public interface SendEmailBox {
 
     /**
      * 计数
-     * @param sendEmail 邮件属性
-     * @return 特定类型邮件数量
+     * @param userID userID
+     * @return 发送邮件数量
      */
-    long countUnknowEmail(SendEmail sendEmail);
+    long countEmail(int userID);
+
+
+    /**通过邮件ID查询邮件
+     * @param emailID 邮件ID
+     * @return 邮件详情
+     */
+    SendEmail findByEmailID(int emailID);
+
+    /** 通过UserID查找草稿箱
+     * @param userID userID
+     * @return 邮件详情
+     */
+    List<SendEmail> findDraft(int userID);
+
+    /** 通过UserID查找删除邮件
+     * @param userID userID
+     * @return 邮件列表
+     */
+    List<SendEmail> findDelete(int userID);
+
 }

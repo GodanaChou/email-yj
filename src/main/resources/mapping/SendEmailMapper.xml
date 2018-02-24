@@ -11,7 +11,7 @@
     <result column="isSave" jdbcType="INTEGER" property="issave" />
     <result column="sendTime" jdbcType="TIMESTAMP" property="sendtime" />
     <result column="receivePerson" jdbcType="VARCHAR" property="receiveperson" />
-    <result column="annexSign" jdbcType="VARCHAR" property="annexsign" />
+    <result column="sign" jdbcType="VARCHAR" property="sign" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -73,7 +73,7 @@
   </sql>
   <sql id="Base_Column_List">
     sendEmailID, userID, title, message, isSuccess, isDel, isSave, sendTime, receivePerson, 
-    annexSign
+    sign
   </sql>
   <select id="selectByExample" parameterType="edu.cqgcxy.model.SendEmailExample" resultMap="BaseResultMap">
     select
@@ -111,11 +111,11 @@
     </selectKey>
     insert into send_email (userID, title, message, 
       isSuccess, isDel, isSave, 
-      sendTime, receivePerson, annexSign
+      sendTime, receivePerson, sign
       )
     values (#{userid,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{message,jdbcType=VARCHAR}, 
       #{issuccess,jdbcType=INTEGER}, #{isdel,jdbcType=INTEGER}, #{issave,jdbcType=INTEGER}, 
-      #{sendtime,jdbcType=TIMESTAMP}, #{receiveperson,jdbcType=VARCHAR}, #{annexsign,jdbcType=VARCHAR}
+      #{sendtime,jdbcType=TIMESTAMP}, #{receiveperson,jdbcType=VARCHAR}, #{sign,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="edu.cqgcxy.model.SendEmail">
@@ -148,8 +148,8 @@
       <if test="receiveperson != null">
         receivePerson,
       </if>
-      <if test="annexsign != null">
-        annexSign,
+      <if test="sign != null">
+        sign,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -177,8 +177,8 @@
       <if test="receiveperson != null">
         #{receiveperson,jdbcType=VARCHAR},
       </if>
-      <if test="annexsign != null">
-        #{annexsign,jdbcType=VARCHAR},
+      <if test="sign != null">
+        #{sign,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -218,8 +218,8 @@
       <if test="record.receiveperson != null">
         receivePerson = #{record.receiveperson,jdbcType=VARCHAR},
       </if>
-      <if test="record.annexsign != null">
-        annexSign = #{record.annexsign,jdbcType=VARCHAR},
+      <if test="record.sign != null">
+        sign = #{record.sign,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -237,7 +237,7 @@
       isSave = #{record.issave,jdbcType=INTEGER},
       sendTime = #{record.sendtime,jdbcType=TIMESTAMP},
       receivePerson = #{record.receiveperson,jdbcType=VARCHAR},
-      annexSign = #{record.annexsign,jdbcType=VARCHAR}
+      sign = #{record.sign,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -269,8 +269,8 @@
       <if test="receiveperson != null">
         receivePerson = #{receiveperson,jdbcType=VARCHAR},
       </if>
-      <if test="annexsign != null">
-        annexSign = #{annexsign,jdbcType=VARCHAR},
+      <if test="sign != null">
+        sign = #{sign,jdbcType=VARCHAR},
       </if>
     </set>
     where sendEmailID = #{sendemailid,jdbcType=INTEGER}
@@ -285,7 +285,8 @@
       isSave = #{issave,jdbcType=INTEGER},
       sendTime = #{sendtime,jdbcType=TIMESTAMP},
       receivePerson = #{receiveperson,jdbcType=VARCHAR},
-      annexSign = #{annexsign,jdbcType=VARCHAR}
+      sign = #{sign,jdbcType=VARCHAR}
     where sendEmailID = #{sendemailid,jdbcType=INTEGER}
   </update>
+
 </mapper>

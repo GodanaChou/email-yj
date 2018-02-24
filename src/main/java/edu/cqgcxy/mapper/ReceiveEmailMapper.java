@@ -4,7 +4,9 @@ import edu.cqgcxy.model.ReceiveEmail;
 import edu.cqgcxy.model.ReceiveEmailExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface ReceiveEmailMapper {
     long countByExample(ReceiveEmailExample example);
 

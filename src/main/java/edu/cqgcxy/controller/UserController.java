@@ -1,6 +1,7 @@
 package edu.cqgcxy.controller;
 
 import edu.cqgcxy.model.ReceiveEmail;
+import edu.cqgcxy.model.SendEmail;
 import edu.cqgcxy.model.User;
 import edu.cqgcxy.service.ReceiveEmailBox;
 import edu.cqgcxy.service.SendEmailBox;
@@ -84,8 +85,17 @@ public class UserController {
     }
 
     @RequestMapping(value = "index",produces = {"application/json;charset=UTF-8"})
-    public String index(HttpServletRequest request, ModelMap modelMap){
+    public String index(HttpServletRequest request, ModelMap modelMap) throws Exception {
         HttpSession session = request.getSession();
+
+        //
+        User user1 = new User();
+        user1.setPhone("18883993870");
+        user1.setPassword("123456");
+        User u = userService.findByPhoneAndPSW(user1);
+        session.setAttribute("user",u);
+        //
+
         User user = (User) session.getAttribute("user");
         modelMap.addAttribute("user",user);
         return "user/index";
@@ -120,21 +130,30 @@ public class UserController {
         return "user/login";
     }
 
-    @RequestMapping(value = "send",produces = {"application/json;charset=UTF-8"})
-    public String send(HttpServletRequest request){
-        HttpSession session = request.getSession();
-        return "user/send";
-    }
 
     @RequestMapping(value = "draft",produces = {"application/json;charset=UTF-8"})
-    public String draft(HttpServletRequest request){
+    public String draft(HttpServletRequest request,ModelMap modelMap){
         HttpSession session = request.getSession();
+        User user = (User)session.getAttribute("user");
+       List<SendEmail> sendEmails = sendEmailBox.findDraft(user.getUserid());
+       int num = sendEmails.size();
+       modelMap.addAttribute("sendEmails",sendEmails);
+       modelMap.addAttribute("num",num);
         return "user/draft";
     }
 
     @RequestMapping(value = "delete",produces = {"application/json;charset=UTF-8"})
-    public String delete(HttpServletRequest request){
+    public String delete(HttpServletRequest request,ModelMap modelMap){
         HttpSession session = request.getSession();
+        User user = (User)session.getAttribute("user");
+        List<SendEmail> sendEmails = sendEmailBox.findDelete(user.getUserid());
+        List<ReceiveEmail> receiveEmails = receiveEmailBox.findDeleteEmail(user.getPhone());
+        int num = sendEmails.size()+receiveEmails.size();
+
+        modelMap.addAttribute("sendEmails",sendEmails);
+        modelMap.addAttribute("receiveEmails",receiveEmails);
+        modelMap.addAttribute("num",num);
+
         return "user/delete";
     }
 
@@ -158,12 +177,7 @@ public class UserController {
         return "user/friendAdd";
     }
 
-    @RequestMapping(value = "unread",produces = {"application/json;charset=UTF-8"})
-    public String unread(HttpServletRequest request,ModelMap map){
-        HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("user");
-        return "user/unread";
-    }
+
 
     @RequestMapping(value = "groupMail",produces = {"application/json;charset=UTF-8"})
     public String groupMail(HttpServletRequest request,ModelMap map){

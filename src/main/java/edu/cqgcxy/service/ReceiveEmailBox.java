@@ -38,4 +38,28 @@ public interface ReceiveEmailBox {
      */
     int updateReadStatus(ReceiveEmail receiveEmail);
 
+    /** 查找未读邮件
+     * @param phone 用户电话
+     * @return 邮件列表
+     */
+    List<ReceiveEmail> findUnReadEmail(String phone);
+
+    /** 查找删除邮件
+     * @param phone phone
+     * @return 邮件列表
+     */
+    List<ReceiveEmail> findDeleteEmail(String phone);
+
+    /**彻底删除来信
+     * @param num 来信ID集合
+     * @return int
+     */
+    int deleteReceiveEmail(String num);
+
+
+    /**更新删除状态
+     * @param receiveEmail 收信传入del数字和id
+     * @return int
+     */
+    int updateDeleteStatus(ReceiveEmail receiveEmail);
 }
