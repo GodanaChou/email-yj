@@ -51,10 +51,10 @@ public interface ReceiveEmailBox {
     List<ReceiveEmail> findDeleteEmail(String phone);
 
     /**彻底删除来信
-     * @param num 来信ID集合
+     * @param id 来信ID
      * @return int
      */
-    int deleteReceiveEmail(String num);
+    int deleteReceiveEmail(int id);
 
 
     /**更新删除状态

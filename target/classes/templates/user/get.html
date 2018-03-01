@@ -81,13 +81,13 @@
                     		<td width="10%">时间</td>
                     	</tr>
                         <tr th:each="prod : ${receiveEmails}" th:onclick="'javascript:achange('+${prod.getReceiveemailid()}+');'" th:class="${prod.getReceiveemailid()}" >
-                            <td>
+                            <td onclick="td_click(event)">
                                 <input type="checkbox" name="chk"  th:attr="value=${prod.getReceiveemailid()}"/>
                             </td>
 
                             <td th:if="${prod.getIsread()}==0"><img src="/img/unread.png" width="17" height="14" /></td>
                             <td th:if="${prod.getIsread()}==1"><img src="/img/read.png" width="17" height="14" /></td>
-                            <td th:text="${prod.getSendphone()}"></td>
+                            <td th:text="${prod.getSendphone()}+'@193.com;'"></td>
                             <td th:text="${prod.getTitle()}">
                                 <span th:text="${prod.getMessage()}"></span></td>
                             <td th:text="${#dates.format(prod.getSendtime(),'yyyy-MM-dd')}"></td>

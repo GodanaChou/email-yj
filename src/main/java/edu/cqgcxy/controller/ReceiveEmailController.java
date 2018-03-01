@@ -95,18 +95,25 @@ public class ReceiveEmailController {
     @ResponseBody
     @RequestMapping(value = "deleteReceiveEmail",produces = {"application/json;charset=UTF-8"})
     public int deleteEmail(HttpServletRequest request,String num){
-
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
-
-//        for(int i =0;i < num.length() % 4;i++){
-//            int n = num.charAt(2)-48;
-//            logger.info(""+n);
-//        }
-        receiveEmailBox.deleteReceiveEmail(num);
-
-
         logger.info("用户"+user.getPhone()+"尝试删除来信ID为"+num+"的邮件");
+
+        String nb = num.replaceAll("\"","");
+        int n;
+        do{
+            nb = nb.substring(1,nb.length());
+            if(!nb.contains(",")){
+                n = Integer.parseInt(nb.substring(0,nb.length()-1));
+                nb = "over";
+            }else {
+                n = Integer.parseInt(nb.substring(0,nb.indexOf(",")));
+
+                nb = nb.substring(nb.indexOf(","),nb.length());
+            }
+            receiveEmailBox.deleteReceiveEmail(n);
+        }while (!"over".equals(nb));
+
         return 1;
     }
 
@@ -160,6 +167,36 @@ public class ReceiveEmailController {
             }
             receiveEmail.setReceiveemailid(n);
             receiveEmail.setIsdel(1);
+            receiveEmailBox.updateDeleteStatus(receiveEmail);
+        }while (!"over".equals(nb));
+
+
+        return 1;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "backReceiveEmail",produces = {"application/json;charset=UTF-8"})
+    public int backReceiveEmail(HttpServletRequest request,String num){
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
+        ReceiveEmail receiveEmail = new ReceiveEmail();
+
+        String nb = num.replaceAll("\"","");
+        logger.info("用户"+user.getPhone()+"标记ID为"+nb+"的信件为未删除");
+
+        int n;
+        do{
+            nb = nb.substring(1,nb.length());
+            if(!nb.contains(",")){
+                n = Integer.parseInt(nb.substring(0,nb.length()-1));
+                nb = "over";
+            }else {
+                n = Integer.parseInt(nb.substring(0,nb.indexOf(",")));
+
+                nb = nb.substring(nb.indexOf(","),nb.length());
+            }
+            receiveEmail.setReceiveemailid(n);
+            receiveEmail.setIsdel(0);
             receiveEmailBox.updateDeleteStatus(receiveEmail);
         }while (!"over".equals(nb));
 

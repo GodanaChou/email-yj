@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8"/>
     <title>通讯录界面</title>
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <style type="text/css">
+    *{margin:0px;padding:0px;}
     .section1{
     	margin-left: 300px;
     }
@@ -44,19 +45,32 @@
     	border: none;
     	padding-left: 6px;
     }
+    #modlue{
+    position:fixed;left:30%;top:25%;width:400px;height:260px; 
+    visibility:hidden;z-index:100;border:1px solid grey;overflow: hidden;background-color: #fff;}
+    .top_content{font-size:24px;text-align:center;padding: 7px;}
+    #cancle{float:right}
+    .MyContent{width:100%;height:64%;background-color:white;}
+    .content_ul{
+        width: 300px;
+             margin-left: 100px;
+    }
+    .content_ul li{
+        margin-top: 20px;
+    }
+    .MyBtn button{
+        margin-left: 130px;margin-right: -80px;
+    }
     </style>
-
-    <script src="/js/friend.js"></script>
 </head>
 
 <body>
-    <div class="big_box" id="contentT">
         <div class="box">
             <h2 class="title">通讯录界面</h2>
             <div class="content">
                 <div class="section1">
-                    <img src="/img/friend.png" width="100" height="75" />
-                    <a title="添加联系人" class="userMenu1 " style="text-decoration:none; border-bottom: 0px solid;" data-id="friendAdd"><em>+</em></a>
+                    <img src="img/friend.png" width="100" height="75" />
+                    <a onclick="ShowDiv()" title="添加联系人" id="add"><em>+</em></a>
                     <div class="search_box">
                     	<input type="text" name="" default="搜索全部联系人" placeholder="搜索全部联系人" autocomplete="off"/>
                     	<button><img src="img/search.png" width="18" height="18" /></button>
@@ -69,34 +83,50 @@
                     		<td><input type="checkbox" name="chk" id="all" onclick="checkall('chk')"/></td>
                     		<td>姓名</td>
                     		<td>邮箱</td>
-                    		<td>电话</td>
                     		<td>操作</td>
                     	</tr>
-                    	<tr>
+                    	<tr th:each="user:${users}">
                             <td>
                                 <input type="checkbox" name="chk" value=""/>
                             </td>
-                    		<td>圆圆圆</td>
-                    		<td>823113578@qq.com</td>
-                    		<td>18324128508</td>
-                    		<td><button><a href="write.html"><img src="img/menu2.png" title="写信" alt="写信" width="15" height="15" /></a></button>
-                    			<button><a href="write.html"><img src="img/menu1.png" title="来往信件" alt="来往信件" width="15" height="15" /></a></button></td>
+                    		<td th:text="${user.getFriendname()}">圆圆圆</td>
+                    		<td th:text="${user.getFriendphone()}">18324128508</td>
+                    		<td><button th:onclick="'javascript:writeToFriend('+${user.getFriendphone()}+');'"><img src="img/menu2.png" title="写信" alt="写信" width="15" height="15" /></button>
+                    			<button th:onclick="'javascript:deleteFriend('+${user.getUserfriendid()}+');'"><img src="img/menu1.png" title="删除" alt="删除" width="15" height="15" /></button></td>
                     	</tr>
-                    	<tr>
-                            <td>
-                                <input type="checkbox" name="chk" value=""/>
-                            </td>
-                    		<td>圆圆圆</td>
-                    		<td>823113578@qq.com</td>
-                    		<td>18324128508</td>
-                    		<td><button><a href="write.html"><img src="img/menu2.png" title="写信" alt="写信" width="15" height="15" /></a></button>
-                    			<button><a href="write.html"><img src="img/menu1.png" title="来往信件" alt="来往信件" width="15" height="15" /></a></button></td>
-                    	</tr>
+
                     </table>
-                </div>
             </div>
         </div>
     </div>
+
+    <div id='AppConfirm'>
+        <div id="modlue">
+            <div>
+                <button id="cancle">X</button>
+                <p class="top_content">增加联系人</p>
+            </div>
+            <div class="MyContent">
+                <p id="TextValue">
+                    <ul class="content_ul">
+                        <li><span >姓名: </span>
+                            <input id="name" type="text"/>
+                        </li>
+                        <li><span>邮箱: </span>
+                            <input id="phone" type="text"/>
+                        </li>
+
+                    </ul>
+                </p>
+            </div>
+            <div class="MyBtn">
+                <button id="confirm">保存</button>
+                <button id="cancleBtn">取消</button>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="js/friendadd.js"></script>
 
 </body>
 

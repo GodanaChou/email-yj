@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>已删除信件界面</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <style type="text/css">
+        .section1 img{
+            margin-right: 10px;
+        }
+        .section1 a {
+            text-decoration: underline;
+        }
+
+        .section1_ul {
+            clear: both;
+            float: right;
+        }
+
+        .section1_ul li {
+            float: left;
+            margin-left: 10px;
+        }
+        .section2_table span {
+            display: inline-block;
+            color: #707271;
+            font-size: 13px;
+            width: 300px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-left: 15px;
+        }
+        .section2_table a{
+            display: block;
+        }
+        .unread {
+            font-weight: bold;
+        }
+        .th{
+            background: #ddd;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+<div class="big_box">
+    <div class="box">
+        <h2 class="title">已删除发件箱邮件</h2>
+        <div class="content">
+            <div class="section1">
+                <img src="img/delete_bg.png" width="60" height="60" />
+                <span>已删邮件（<a th:text="'共计'+${num}"></a>）</span>
+                <ul class="section1_ul">
+                    <li>
+                        <button onclick="doDeleteSendEmail()">彻底删除</button>
+                    </li>
+                    <li>
+                        <button onclick="backSendEmail()">恢复删除发送邮件</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="section2">
+                <h4>最近五天</h4>
+                <table width="90%" boder="0" cellspacing="0" cellpadding="0" class="section2_table" id="section2_table">
+
+                    <tr class="th">
+                        <td width="2%"><input type="checkbox" name="chk" id="all" value="全选" onclick="checkall('chk')"/></td>
+                        <td width="3%"><img src="img/reads.png" width="17" height="14" /></td>
+                        <td width="10%">收件人</td>
+                        <td width="60%">主题</td>
+                        <td width="10%">时间</td>
+                    </tr>
+                    <tr class="unread"  th:each="sendEmail: ${sendEmails}" th:onclick="'javascript sendEmail('+${sendEmail.getSendemailid()}+');'">
+                        <td onclick="td_click(event)">
+                            <input type="checkbox" name="chk" th:attr="value=${sendEmail.getSendemailid()}"/>
+                        </td>
+                        <td><img src="img/unread.png" width="17" height="14" /></td>
+                        <td th:text="${sendEmail.getReceiveperson()}">收件人</td>
+                        <td th:text="${sendEmail.getTitle()}">主题</td>
+                        <td th:text="${#dates.format(sendEmail.getSendtime(),'yyyy-MM-dd HH:mm:ss')}">时间</td>
+                    </tr>
+                </table>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/unread.js"></script>
+<script>
+
+</script>
+</body>
+
+</html>

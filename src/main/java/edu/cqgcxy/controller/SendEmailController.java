@@ -46,10 +46,37 @@ public class SendEmailController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "sendEmail" ,produces = {"application/json;charset=UTF-8"})
-    public String sendEmail(HttpServletRequest request,SendEmail sendEmail){
+    @RequestMapping(value = "saveAsDraft",produces = {"application/json;charset=UTF-8"})
+    public int saveAsDraft(SendEmail sendEmail,HttpServletRequest request){
         HttpSession session = request.getSession();
         User user = (User)session.getAttribute("user");
+
+        if(sendEmail.getReceiveperson().contains("<")){
+            RemoveReceivePersonUtil removeReceivePersonUtil = new RemoveReceivePersonUtil();
+            String removeUserName= removeReceivePersonUtil.removeUserName(sendEmail.getReceiveperson());
+            sendEmail.setReceiveperson(removeUserName);
+        }
+        sendEmail.setIssave(1);
+        sendEmail.setUserid(user.getUserid());
+        sendEmail.setSendtime(new Date());
+        sendEmail.setSign(new EncryptUtil().UUID());
+        sendEmailBox.insertEmail(sendEmail);
+
+        return 1;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "sendEmail" ,produces = {"application/json;charset=UTF-8"})
+    public int sendEmail(HttpServletRequest request,SendEmail sendEmail){
+        HttpSession session = request.getSession();
+        User user = (User)session.getAttribute("user");
+            logger.info(sendEmail.getReceiveperson());
+        if(sendEmail.getReceiveperson().contains("<")){
+            RemoveReceivePersonUtil removeReceivePersonUtil = new RemoveReceivePersonUtil();
+            String removeUserName= removeReceivePersonUtil.removeUserName(sendEmail.getReceiveperson());
+            sendEmail.setReceiveperson(removeUserName);
+        }
+
         sendEmail.setUserid(user.getUserid());
         sendEmail.setSendtime(new Date());
         sendEmail.setSign(new EncryptUtil().UUID());
@@ -78,7 +105,7 @@ public class SendEmailController {
             logger.info(removeReceivePerson1.getPerson()+removeReceivePerson1.getType());
         }
 
-        return "hello";
+        return 1;
     }
 
 
@@ -144,6 +171,35 @@ public class SendEmailController {
                 nb = nb.substring(nb.indexOf(","),nb.length());
             }
            sendEmailBox.updateEmail(sendEmail);
+        }while (!"over".equals(nb));
+        return 1;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "backSendEmail",produces = "application/json;charset=UTF-8")
+    public int backSendEmail(String num,HttpServletRequest request){
+        HttpSession session = request.getSession();
+        User user = (User)session.getAttribute("user");
+
+        SendEmail sendEmail = new SendEmail();
+        String nb = num.replaceAll("\"","");
+        logger.info("用户: "+user.getPhone()+" 更新邮件ID为"+nb+"的状态为未删除   ");
+        int n;
+        do{
+            nb = nb.substring(1,nb.length());
+            if(!nb.contains(",")){
+                n = Integer.parseInt(nb.substring(0,nb.length()-1));
+
+                sendEmail.setSendemailid(n);
+                sendEmail.setIsdel(0);
+                nb = "over";
+            }else {
+                n = Integer.parseInt(nb.substring(0,nb.indexOf(",")));
+                sendEmail.setSendemailid(n);
+                sendEmail.setIsdel(0);
+                nb = nb.substring(nb.indexOf(","),nb.length());
+            }
+            sendEmailBox.updateEmail(sendEmail);
         }while (!"over".equals(nb));
         return 1;
     }

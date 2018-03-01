@@ -79,11 +79,11 @@
                     		<td width="10%">时间</td>
                     	</tr>
                         <tr class="unread"   th:onclick="'javascript:achange('+${receiveEmail.getReceiveemailid()}+');'" th:each="receiveEmail : ${receiveEmails}">
-                            <td>
+                            <td onclick="td_click(event)">
                                 <input type="checkbox" name="chk" th:attr="value=${receiveEmail.getReceiveemailid()}"/>
                             </td>
                             <td><img src="img/unread.png" width="17" height="14" /></td>
-                            <td th:text="${receiveEmail.getUserphone()}">发件人</td>
+                            <td th:text="${receiveEmail.getUserphone()}+'@193.com;'">发件人</td>
                             <td th:utext="${receiveEmail.getMessage()}">内容</td>
                             <td th:text="${#dates.format(receiveEmail.getSendtime(),'yyyy-MM-dd')}">时间</td>
                         </tr>

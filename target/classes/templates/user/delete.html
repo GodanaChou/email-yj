@@ -48,45 +48,22 @@
 <body>
     <div class="big_box">
         <div class="box">
-            <h2 class="title">已删除信件界面</h2>
+            <h2 class="title">已删除收件箱邮件</h2>
             <div class="content">
                 <div class="section1">
                     <img src="img/delete_bg.png" width="60" height="60" />
                     <span>已删邮件（<a th:text="'共计'+${num}"></a>）</span>
                     <ul class="section1_ul">
                         <li>
-                            <button>彻底删除</button>
+                            <button onclick="delete1()">彻底删除</button>
                         </li>
                         <li>
-                            <a href="write.html"><button>转发</button></a>
-                        </li>
-                        <li>
-                            <button>全部标记为已读</button>
+                            <button onclick="backReceiveEmail()">恢复接收邮件</button>
                         </li>
                     </ul>
                 </div>
                 <div class="section2">
                     <h4>最近五天</h4>
-                    <table width="90%" boder="0" cellspacing="0" cellpadding="0" class="section2_table" id="section2_table">
-                    	
-                    	<tr class="th">
-                    		<td width="2%"><input type="checkbox" name="chk" id="all" value="全选" onclick="checkall('chk')"/></td>
-                    		<td width="3%"><img src="img/reads.png" width="17" height="14" /></td>
-                    		<td width="10%">收件人</td>
-                    		<td width="60%">主题</td>
-                    		<td width="10%">时间</td>
-                    	</tr>
-                        <tr class="unread"  th:each="sendEmail: ${sendEmails}" th:onclick="'javascript sendEmail('+${sendEmail.getSendemailid()}+');'">
-                            <td>
-                                <input type="checkbox" name="chk" th:attr="value=${sendEmail.getSendemailid()}"/>
-                            </td>
-                            <td><img src="img/unread.png" width="17" height="14" /></td>
-                            <td th:text="${sendEmail.getReceiveperson()}">收件人</td>
-                            <td th:text="${sendEmail.getTitle()}">主题</td>
-                            <td th:text="${#dates.format(sendEmail.getSendtime(),'yyyy-MM-dd')}">时间</td>
-                        </tr>
-                    </table>
-
                     <table width="90%" boder="0" cellspacing="0" cellpadding="0" class="section2_table" id="section3_table">
 
                         <tr class="th">
@@ -101,9 +78,9 @@
                                 <input type="checkbox" name="ch" th:attr="value=${receiveEmail.getReceiveemailid()}"/>
                             </td>
                             <td><img src="img/unread.png" width="17" height="14" /></td>
-                            <td th:text="${receiveEmail.getSendphone()}">发件人</td>
+                            <td th:text="${receiveEmail.getSendphone()+'@193.com;'}">发件人</td>
                             <td th:text="${receiveEmail.getTitle()}">主题</td>
-                            <td th:text="${#dates.format(receiveEmail.getSendtime(),'yyyy-MM-dd')}">时间</td>
+                            <td th:text="${#dates.format(receiveEmail.getSendtime(),'yyyy-MM-dd HH:mm:ss')}">时间</td>
                         </tr>
                     </table>
 
@@ -111,7 +88,10 @@
             </div>
         </div>
     </div>
-    <script src="/js/unread.js"></script>
+<script src="/js/unread.js"></script>
+<script>
+
+</script>
 </body>
 
 </html>

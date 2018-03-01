@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>已收信件界面</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css" />
+    <style type="text/css">
+        body{
+            overflow:scroll;
+            overflow-x:hidden;
+        }
+    .section1 a {
+        text-decoration: underline;
+    }
+
+    .section1_ul {
+        clear: both;
+        float: right;
+    }
+
+    .section1_ul li {
+        float: left;
+        margin-left: 10px;
+    }
+    .section2_table span {
+    	display: inline-block;
+        color: #707271;
+        font-size: 13px;
+        width: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-left: 15px;
+    }
+	.section2_table a{
+		display: block;
+	}
+    .unread {
+        font-weight: bold;
+    }
+    .th{
+    	background: #ddd;
+    	font-weight: bold;
+    }
+    </style>
+</head>
+
+<body >
+    <div class="big_box">
+        <div class="box">
+            <h2 class="title">已收信件界面</h2>
+            <div class="content">
+                <div class="section1">
+                    <img src="/img/receives.png" width="45" height="45" />
+                    <span>收件箱（<a th:text="'未读邮件'+${countUnreadEmail}"></a>）</span>
+                    <ul class="section1_ul">
+                        <li>
+                            <button onclick="doDelete()">删除</button>
+                        </li>
+                        <li>
+                            <button onclick="delete1()">彻底删除</button>
+                        </li>
+                        <li>
+                            <button onclick="doForward()">转发</button>
+                        </li>
+                        <li>
+                            <button onclick="doRead()">标记为已读</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="section2">
+                    <h4>最近五天</h4>
+                    <table width="90%" boder="0" cellspacing="0" cellpadding="0" class="section2_table" id="section2_table">
+                    	
+                    	<tr class="th">
+                    		<td width="2%"><input type="checkbox" value="全选" name="chk" id="all" onclick="checkall('chk')"/></td>
+                    		<td width="3%"><img src="/img/reads.png" width="17" height="14" /></td>
+                    		<td width="10%">发件人</td>
+                    		<td width="60%">主题</td>
+                    		<td width="10%">时间</td>
+                    	</tr>
+                        <tr th:each="prod : ${receiveEmails}" th:onclick="'javascript:achange('+${prod.getReceiveemailid()}+');'" th:class="${prod.getReceiveemailid()}" >
+                            <td>
+                                <input type="checkbox" name="chk"  th:attr="value=${prod.getReceiveemailid()}"/>
+                            </td>
+
+                            <td th:if="${prod.getIsread()}==0"><img src="/img/unread.png" width="17" height="14" /></td>
+                            <td th:if="${prod.getIsread()}==1"><img src="/img/read.png" width="17" height="14" /></td>
+                            <td th:text="${prod.getSendphone()}"></td>
+                            <td th:text="${prod.getTitle()}">
+                                <span th:text="${prod.getMessage()}"></span></td>
+                            <td th:text="${#dates.format(prod.getSendtime(),'yyyy-MM-dd')}"></td>
+
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="/js/unread.js">
+</script>
+
+<script>
+        function achange(ids) {
+            window.location.href='/index?receiveEmailID='+ids+'#read';
+        }
+</script>
+</html>

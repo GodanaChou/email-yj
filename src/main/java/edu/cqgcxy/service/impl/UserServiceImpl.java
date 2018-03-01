@@ -94,6 +94,11 @@ public class UserServiceImpl implements UserService {
     public User findByPhone(String phone) {
         UserExample userExample = new UserExample();
         userExample.createCriteria().andPhoneEqualTo(phone);
-        return userMapper.selectByExample(userExample).get(0);
+        List<User> user = userMapper.selectByExample(userExample);
+        if(user.size()>=1){
+            return user.get(0);
+        }else{
+            return null;
+        }
     }
 }

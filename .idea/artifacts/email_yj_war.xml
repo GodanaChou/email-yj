@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="email-yj:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="email-yj-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="email-yj:war exploded" />
+    </root>
+  </artifact>
+</component>

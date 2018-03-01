@@ -66,7 +66,7 @@
 <body>
     <div class="box1">
         <ul id="box1">
-            <li><a href="write.html" target="main">
+            <li><a onclick="writeEmail()" >
                 <img src="/img/menu2.png" width="35" height="28" />
                 <em>写信</em>
             </a></li>
@@ -90,7 +90,8 @@
             <li><a href="delete.html" target="main"><span>已删除邮箱</span></a></li>
         </ul>
     </div>
-    <script type="text/javascript">
+<script type="text/javascript">
+
     var change = function(ids, cls) {
         var box = document.getElementById(ids);
         var lis = box.getElementsByTagName('a');

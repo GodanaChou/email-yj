@@ -6,6 +6,7 @@ import edu.cqgcxy.model.User;
 import edu.cqgcxy.service.ReceiveEmailBox;
 import edu.cqgcxy.service.SendEmailBox;
 import edu.cqgcxy.service.UserService;
+import edu.cqgcxy.util.EncryptUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -43,11 +45,52 @@ public class UserController {
         return "user/login";
     }
 
+    @RequestMapping(value = "register",produces = {"application/json;charset=UTF-8"})
+    public String register(){
+        return "user/register";
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "doRegister",produces = {"application/json;charset=UTF-8"})
+    public int doRegister(String phone,String password,String num,HttpServletRequest request) throws Exception {
+        User auser = new User();
+        User user = userService.findByPhone(phone);
+        HttpSession session = request.getSession();
+        String para = (String) session.getAttribute("para");
+        if(user == null && para.equals(num)){
+            auser.setPhone(phone);
+            auser.setPassword(password);
+            userService.addUser(auser);
+            return 1;
+        }else {
+            return 0;
+        }
+
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "registerSMS1",produces = {"application/json;charset=UTF-8"})
+    public int registerSMS1(){
+        return 0;
+    }
+
+
+    @RequestMapping(value = "registerSMS",produces = {"application/json;charset=UTF-8"})
+    public String registerSMS(String phone, RedirectAttributes redirectAttributes){
+        User user = userService.findByPhone(phone);
+        if(user == null){
+            redirectAttributes.addAttribute("phone",phone);
+            return "redirect:sms";
+        }else {
+            return "redirect:registerSMS1";
+        }
+    }
+
     @ResponseBody
     @RequestMapping(value = "doLogin",produces = {"application/json;charset=UTF-8"})
     public String doLogin(@RequestParam(value = "name") String name,
                           @RequestParam(value = "password") String password,
-                          HttpServletRequest request, HttpServletResponse response)
+                          HttpServletRequest request)
             throws Exception {
 
         User user = new User();
@@ -146,15 +189,30 @@ public class UserController {
     public String delete(HttpServletRequest request,ModelMap modelMap){
         HttpSession session = request.getSession();
         User user = (User)session.getAttribute("user");
-        List<SendEmail> sendEmails = sendEmailBox.findDelete(user.getUserid());
-        List<ReceiveEmail> receiveEmails = receiveEmailBox.findDeleteEmail(user.getPhone());
-        int num = sendEmails.size()+receiveEmails.size();
 
-        modelMap.addAttribute("sendEmails",sendEmails);
+        List<ReceiveEmail> receiveEmails = receiveEmailBox.findDeleteEmail(user.getPhone());
+        int num = receiveEmails.size();
+
         modelMap.addAttribute("receiveEmails",receiveEmails);
         modelMap.addAttribute("num",num);
 
         return "user/delete";
+    }
+
+    @RequestMapping(value = "deleteForReceive",produces = {"application/json;charset=UTF-8"})
+    public String deleteForReceive(HttpServletRequest request,ModelMap modelMap){
+        HttpSession session = request.getSession();
+        User user = (User)session.getAttribute("user");
+
+        List<SendEmail> sendEmails = sendEmailBox.findDelete(user.getUserid());
+
+        int num = sendEmails.size();
+
+        modelMap.addAttribute("sendEmails",sendEmails);
+
+        modelMap.addAttribute("num",num);
+
+        return "user/deleteReceive";
     }
 
     @RequestMapping(value = "write",produces = {"application/json;charset=UTF-8"})
@@ -165,16 +223,21 @@ public class UserController {
         return "user/write";
     }
 
-    @RequestMapping(value = "friend",produces = {"application/json;charset=UTF-8"})
-    public String friend(HttpServletRequest request){
-        HttpSession session = request.getSession();
-        return "user/friend";
-    }
+
 
     @RequestMapping(value = "friendAdd",produces = {"application/json;charset=UTF-8"})
     public String friendAdd(HttpServletRequest request){
         HttpSession session = request.getSession();
         return "user/friendAdd";
+    }
+
+    @RequestMapping(value = "edit",produces = {"application/json;charset=UTF-8"})
+    public String edit(HttpServletRequest request,int id,ModelMap modelMap){
+        HttpSession session = request.getSession();
+        User user =(User)session.getAttribute("user");
+
+        modelMap.addAttribute("sendEmail",sendEmailBox.findByEmailID(id));
+        return "user/edit";
     }
 
 
@@ -200,4 +263,6 @@ public class UserController {
         map.addAttribute("receiveEmail",receiveEmail);
         return "user/read";
     }
+
+
 }

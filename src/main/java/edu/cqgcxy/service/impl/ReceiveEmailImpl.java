@@ -100,28 +100,14 @@ public class ReceiveEmailImpl implements ReceiveEmailBox {
     /**
      * 彻底删除来信
      *
-     * @param num 来信ID集合
+     * @param id 来信ID
      * @return int
      */
     @Override
-    public int deleteReceiveEmail(String num) {
+    public int deleteReceiveEmail(int id) {
 
-        String nb = num.replaceAll("\"","");
-        int n;
-        do{
-            nb = nb.substring(1,nb.length());
-            if(!nb.contains(",")){
-                n = Integer.parseInt(nb.substring(0,nb.length()-1));
-                nb = "over";
-            }else {
-                n = Integer.parseInt(nb.substring(0,nb.indexOf(",")));
 
-                nb = nb.substring(nb.indexOf(","),nb.length());
-            }
-            receiveEmailMapper.deleteByPrimaryKey(n);
-        }while (!"over".equals(nb));
-
-        return 1;
+        return receiveEmailMapper.deleteByPrimaryKey(id);
     }
 
     /**

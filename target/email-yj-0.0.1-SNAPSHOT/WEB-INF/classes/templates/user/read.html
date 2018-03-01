@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>信件读取界面</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <style type="text/css">
+    .section1 {
+        margin-top: -15px;
+    }
+	.section1 img{
+		float: left;
+		margin-top: 30px;margin-right: 40px;
+	}
+    .section1_con{
+    	float: left;
+    }
+    .section1_ul {
+    	margin-top: 60px;
+        float: right;
+    } 
+    .section1_ul li {
+        float: left;
+        margin-left: 10px;
+        margin-top: 30px;
+    }
+    .section2 {
+        width: 90%;
+        height: 500px;
+        border-top: 2px solid #dea5c7;
+        clear: both;
+    }
+    .section2_main{
+    	width: 720px;height: 300px; 
+    	padding: 20px 10PX;
+    	margin: 40px auto;
+    	text-indent: 2em;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="big_box">
+        <div class="box">
+            <h2 class="title">信件读取界面</h2>
+            <div class="content">
+                <div class="section1">
+                    <img src="img/read_bg.png" width="60" height="90" />
+                    <div class="section1_con">
+                	<h3 th:text="${receiveEmail.getTitle()}">信件主题</h3>
+                	<p><span>发件人：</span><span style="color: green; font-weight: bold;"  th:text="${receiveEmail.getSendphone()}">袁佳</span></p>
+                	<p><span>时 间 ：</span><span th:text="${#dates.format(receiveEmail.getSendtime(),'yyyy-MM-dd')}">2017.01.15</span></p>
+                	</div>
+                    <ul class="section1_ul">
+                        <li>
+                            <a href="javascript:history.go(-1)"><button>返回</button></a>
+                        </li>
+                        <li>
+                            <em>｜</em>
+                        </li>
+                        <li>
+                            <a th:href="${#httpServletRequest.getContextPath()}+'/index?receiveEmailID='+${receiveEmail.getReceiveemailid()}+'#reply'"><button>回复</button></a>
+                        </li>
+                        <li>
+                            <button>删除</button>
+                        </li>
+                        <li>
+                            <button>彻底删除</button>
+                        </li>
+                        <li>
+                            <a href=""><button>转发</button></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="section2">
+                	<p class="" th:utext="${receiveEmail.getMessage()}"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

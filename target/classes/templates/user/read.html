@@ -60,7 +60,7 @@
                             <em>｜</em>
                         </li>
                         <li>
-                            <a th:href="${#httpServletRequest.getContextPath()}+'/index?receiveEmailID='+${receiveEmail.getReceiveemailid()}+'#reply'"><button>回复</button></a>
+                           <button th:onclick="'javascript:reply('+${receiveEmail.getReceiveemailid()}+')'">回复</button>
                         </li>
                         <li>
                             <button>删除</button>
@@ -79,6 +79,11 @@
             </div>
         </div>
     </div>
+<script>
+    reply = function (id) {
+        window.open("/index?receiveEmailID="+id+"#reply");
+    }
+</script>
 </body>
 
 </html>

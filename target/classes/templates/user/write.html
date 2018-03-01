@@ -95,7 +95,8 @@
             <h5 class="textarea">正文</h5>
                 <div style="margin-left: 63px">
             <!-- 加载编辑器的容器 -->
-                    <script id="editor" type="text/plain" style="width:871px;height:500px;"></script>
+                    <textarea id="editor" style="width:871px;height:500px;"></textarea>
+                    <!--<script id="editor" type="text/plain" style="width:871px;height:500px;"></script>-->
                 </div>
             </p>
 
@@ -105,6 +106,8 @@
             <script type="text/javascript" src="/js/write.js"></script>
 <script type="text/javascript">
         $(document).ready(function(){
+            var work = new Worker("js/workJS.js");
+            work.terminate();
             $("button#send").click(function(){
                 $.ajax({
                     url:"/sendEmail",

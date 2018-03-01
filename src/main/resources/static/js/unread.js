@@ -59,35 +59,37 @@ function delete1(){
 
 function doRead() {
     var num =JSON.stringify(getNum());
-
+    if(window.confirm("确定标记已读?")){
     $.ajax({
         url:"/readReceiveEmail",
         type:"post",
         data:{"num":num},
         dataType:"json",
         success : function (data) {
-            if(data==1){
+            if(data===1){
                 location.reload();
             }
         }
     });
 }
+}
 
 function doDelete() {
     var num =JSON.stringify(getNum());
-
+    if(window.confirm("确定删除?")){
     $.ajax({
         url:"/updateDelete",
         type:"post",
         data:{"num":num},
         dataType:"json",
         success : function (data) {
-            if(data==1){
+            if(data===1){
 
                 location.reload();
             }
         }
     });
+    }
 }
 
 function deleteSendEmail() {
@@ -125,16 +127,58 @@ function doDeleteSendEmail() {
         });
     }
 }
-
+var num2 = new Array() ;
 function getNum() {
     var num = new Array() ;
     var x;
     var i =0;
     $.each($('input:checkbox:checked'),function(){
-        if("全选"!=$(this).val()){
+        if("全选"!==$(this).val()){
             num[i]=$(this).val();
             i++;
         }
     });
     return num;
+}
+
+function td_click(event){
+    event.stopPropagation();
+}
+
+function  backSendEmail() {
+    var num = JSON.stringify(getNum());
+    alert(num);
+    if(window.confirm("确定恢复至发件箱?")){
+        $.ajax({
+            url:"/backSendEmail",
+            type:"post",
+            data:{"num":num},
+            dataType:"json",
+            success : function (data) {
+                if(data === 1){
+                    alert("恢复成功");
+                    location.reload();
+                }
+            }
+        });
+    }
+}
+
+
+function  backReceiveEmail() {
+    var num = JSON.stringify(getNum());
+    if(window.confirm("确定恢复至发件箱?")){
+        $.ajax({
+            url:"/backReceiveEmail",
+            type:"post",
+            data:{"num":num},
+            dataType:"json",
+            success : function (data) {
+                if(data === 1){
+                    alert("恢复成功");
+                    location.reload();
+                }
+            }
+        });
+    }
 }

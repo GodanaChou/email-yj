@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>写信界面</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/index.css" />
+    <style type="text/css">
+        body{
+            overflow:scroll;
+            overflow-x:hidden;
+        }
+        .title {
+            margin-left: 40%;
+            margin-top: 30px;
+            color: #8b3a80;
+        }
+
+        .section1 {
+            width: 100%;
+            height: 100px;
+        }
+        .section1 img{
+            float: left;
+            margin-top: 10px;
+            margin-left: 18%;
+            margin-right: 60px;
+        }
+        .section1_ul li {
+            float: left;
+            margin-left: 20px;
+        }
+
+        .content h5 {
+            display: inline-block;
+            width: 55px;
+            height: 20px;
+            text-align: right;
+            margin-left: 8px;
+            padding-right: 10px;
+            font-size: 13px;
+            color: #784872;
+            margin: 0;
+            float: left;
+        }
+
+        .content p {
+            padding-top: 1px;
+        }
+
+        .content input,
+        textarea {
+            box-shadow: 0 -1px 1px #dfa9bf;
+            width: 75%;
+        }
+
+        .ke-container {
+            width: 75% !important;
+        }
+    </style>
+</head>
+
+<body >
+<div class="big_box">
+    <div class="box">
+        <h2 class="title">写信界面</h2>
+        <div class="section1">
+            <img src="img/draft_bg.png" width="80" height="45" />
+            <ul class="section1_ul">
+                <li>
+                    <button id="send">发送</button>
+                </li>
+                <li>
+                    <button>存入草稿箱</button>
+                </li>
+                <li>
+                    <a href="javascript:history.go(-1)">
+                        <button>关闭</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <p>
+            <h5>收件人</h5>
+            <input type="text" id="receivePerson" th:value="${phone}+'@193.com;'" />
+            </p>
+            <p>
+            <h5>主题</h5>
+            <input type="text" id="title" />
+            </p>
+            <p>
+            <h5 class="textarea">正文</h5>
+            <div style="margin-left: 63px">
+                <!-- 加载编辑器的容器 -->
+                <script id="editor" type="text/plain" style="width:871px;height:500px;"></script>
+                </div>
+                </p>
+
+                </div>
+                </div>
+                </div>
+                <script type="text/javascript" src="/js/write.js"></script>
+                <script type="text/javascript">
+                    $(document).ready(function(){
+                        $("button#send").click(function(){
+                            $.ajax({
+                                url:"/sendEmail",
+                                type:"post",
+                                data:{"title":$("#title").val(),"message":UE.getEditor('editor').getContent(),"receiveperson":$("#receivePerson").val()},
+                                dataType:"json",
+                                success : function () {
+                                    alert("success");
+                                }
+
+                            });
+                        });
+                    });
+
+                </script>
+</body>
+
+</html>

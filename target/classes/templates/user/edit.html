@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>信件回复界面</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="/js/write.js"></script>
+    <style type="text/css">
+
+        .title {
+            margin-left: 40%;
+            margin-top: 30px;
+            color: #8b3a80;
+        }
+        .content h5{
+            display: inline-block;
+            width: 55px;height: 20px;
+            text-align: right;
+            margin-left: 8px;
+            padding-right: 10px;
+            font-size: 13px;
+            color: #784872;
+            margin:0;
+        }
+        .content p{
+            padding-top: 5px;
+        }
+        .content input,textarea{
+            box-shadow: 0 -1px 1px #dfa9bf;
+            width: 75%;
+        }
+        .main{
+            width: 75%;
+            height: 300px;
+        }
+        .textarea{
+            clear: both;
+        }
+        .add{
+            width: 75%;
+            margin-left: 80px;
+        }
+        .add span{
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .add span:hover{
+            text-decoration: underline;
+        }
+        .buttons{
+            float: right;
+            margin-top: 5px;
+        }
+        .buttons button{
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body class="big_box">
+<div class="box">
+    <h2 class="title" >草稿编辑</h2>
+    <div class="content">
+        <p><h5>收件人</h5>
+        <input type="text" id="userPhone" th:value="${sendEmail.getReceiveperson()}" name=""/>
+        </p>
+        <p><h5>主题</h5>
+        <input type="text" id="title" th:value="${sendEmail.getTitle()}" name=""/>
+        </p>
+
+        <div class="add">
+            <div class="buttons">
+                <button id="send">发送</button>
+                <button>存入草稿箱</button>
+                <button>关闭</button>
+            </div>
+        </div>
+        <p><h5 class="textarea">正文</h5>
+        <div style="margin-left: 63px">
+            <textarea id="editor" style="width:871px;height:500px;"></textarea>
+
+        </div>
+        <p th:value="${sendEmail.getMessage()}" id="s"> </p>
+        </p>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        var texts = $("#s").attr("value");
+        var work = new Worker("js/workJS.js");
+
+        work.terminate();
+        $(function(){
+            window.setTimeout(setContent,1000);//一秒后再调用赋值方法
+        });
+        function setContent(){
+            UE.getEditor('editor').execCommand('insertHtml', texts);
+        }
+        var url = window.location.href;
+        var emailID = url.substring(url.indexOf("receiveEmailID=")+15,url.indexOf("#reply"));
+
+        $("#send").click(function () {
+            alert(UE.getEditor('editor').getContent());
+            $.ajax({
+                url:"/sendEmail",
+                type:"post",
+                data:{"title":$("#title").val(), "receiveperson":$("#userPhone").val(),"message":UE.getEditor('editor').getContent()},
+                dataType:"json",
+                success :function () {
+                    alert("发送成功");
+                }
+            });
+        });
+
+        $("button#saveAsDraft").click(function () {
+            $.ajax({
+                url:"/saveAsDraft",
+                type:"post",
+                dataType:"json",
+                data:{"title":$("#title").val(),"message":UE.getEditor('editor').getContent(),"receiveperson":$("#phone").val()},
+                success:function (data) {
+                    if (data === 1){
+                        alert("保存成功");
+
+                    }
+                }
+            })
+        });
+
+    })
+
+</script>
+
+</body>
+
+</html>

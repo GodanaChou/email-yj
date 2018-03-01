@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>目录界面</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css" />
+    <style type="text/css">
+    .box1 {
+        width: 120px;
+        height: 150px;
+        margin-top: 30px;
+    }
+
+    .box1 a {
+        display: block;
+        width: 100px;
+        height: 30px;
+        margin-top: 15px;
+        border-radius: 8px;
+        margin-left: -10px;
+        padding-left: 10px;
+        padding-top: 18px;
+        font-weight: bold;
+        border-bottom: 1px dashed #dea5c7;
+    }
+
+    .box1 a:hover {
+        box-shadow: 1px 0 1px #dea5c7 inset, -1px -1px 1px #dea5c7 inset;
+        border-bottom: 1px solid #dea5c7;
+    }
+
+    .click {
+        box-shadow: 1px 0 1px #dea5c7 inset, -1px -1px 1px #dea5c7 inset;
+        border-bottom: 1px solid #dea5c7;
+    }
+
+    .box2 {
+        width: 120px;
+        height: 250px;
+        margin-top: 100px;
+    }
+
+    .box2 a {
+        display: block;
+        width: 90px;
+        height: 25px;
+        font-size: 14px;
+        line-height: 25px;
+        margin-top: 20px;
+        margin-left: -10px;
+        padding-left: 25px;
+        border-radius: 2px;
+    }
+
+    .box2 a:hover {
+        background: #f3afcc;
+    }
+
+    .clicks {
+        background: #f3afcc;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <ul id="box1">
+            <li><a href="write.html" target="main">
+                <img src="/img/menu2.png" width="35" height="28" />
+                <em>写信</em>
+            </a></li>
+            <li><a href="get.html" target="main">
+                <img src="/img/menu1.png" width="35" height="25" />
+                <em>收信</em>
+            </a></li>
+            <li><a href="friend.html" target="main">
+                <img src="/img/menu3.png" width="35" height="28" />
+                <em>通讯录</em>
+            </a></li>
+        </ul>
+    </div>
+    <div class="box2">
+        <ul id="box2">
+            <li><a href="get.html" target="main"><span>收件邮箱</span></a></li>
+            <li><a href="get.html" target="main"><span>未读邮箱</span></a></li>
+            <li><a href="send.html" target="main"><span>发件邮箱</span></a></li>
+            <li><a href="draft.html" target="main"><span>群邮件箱</span></a></li>
+            <li><a href="draft.html" target="main"><span>草稿邮箱</span></a></li>
+            <li><a href="delete.html" target="main"><span>已删除邮箱</span></a></li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+    var change = function(ids, cls) {
+        var box = document.getElementById(ids);
+        var lis = box.getElementsByTagName('a');
+
+        for (var i = 0; i &lt; lis.length; i++) {
+            lis[i].onclick = function() {
+                for (var i = 0; i &lt; lis.length; i++) {
+                    lis[i].className = "";
+                }
+                this.className = cls;
+            }
+        }
+    }
+    change('box1', 'click');
+    change('box2', 'clicks');
+    </script>
+</body>
+
+</html>

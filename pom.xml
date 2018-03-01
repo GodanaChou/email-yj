@@ -6,7 +6,7 @@
 	<groupId>com.yj</groupId>
 	<artifactId>email-yj</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>email-yj</name>
 	<description>Project for Email By YJ </description>

@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8"/>
     <title>写信界面</title>
+    <link rel="stylesheet" type="text/css"  href="/js/jquery-ui.min.css"/>
     <link rel="stylesheet" type="text/css" href="/css/index.css" />
-
     <style type="text/css">
     .title {
         margin-left: 40%;
@@ -64,26 +64,87 @@
             <img src="img/group_logo.png" width="50" height="50" />
             <ul class="section1_ul">
                 <li>
-                    <button>发送</button>
+                    <button id="send">发送</button>
                 </li>
                 <li>
-                    <button>存入草稿箱</button>
+                    <button id="saveAsDraft">存入草稿箱</button>
                 </li>
             </ul>
         </div>
-            <div class="content">
+            <div class="content ui-widget">
                 <p>
                     <h5>收件人</h5>
-                    <input type="text" name="" />
+                    <input type="text" name="" id="phone" />
                 </p>
                 <p>
                     <h5>主题</h5>
-                    <input type="text" name="" />
+                    <input type="text" id="title" name="" />
                 </p>
 
+                <p>
+                <h5 class="textarea">正文</h5>
+                <div style="margin-left: 63px">
+                    <!-- 加载编辑器的容器 -->
+                    <script id="editor" type="text/plain" style="width:871px;height:500px;"></script>
+                 </div>
+                 </p>
             </div>
     </div>
 </div>
+<script>
+
+    $(document).ready(function (){
+         $.ajax({
+                url:'getFriend',
+                type:"get",
+                dataType:"json",
+                success:function (data) {
+                    autocompleteFn(data);
+                }
+            });
+        });
+   function autocompleteFn(phone) {
+       $( "#phone" ).autocomplete({
+        source:phone
+       });
+    }
+</script>
+<script src="/js/jquery.js"></script>
+<script src="/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript" src="/js/write.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+         $("button#send").click(function(){
+              $.ajax({
+                  url:"/sendEmail",
+                  type:"post",
+                  data:{"title":$("#title").val(),"message":UE.getEditor('editor').getContent(),"receiveperson":$("#phone").val()},
+                  dataType:"json",
+                  success : function (data) {
+                      if (data===1){
+                          alert("发送成功");
+                            }
+                          }
+
+                     });
+         });
+         $("button#saveAsDraft").click(function () {
+             $.ajax({
+                 url:"/saveAsDraft",
+                 type:"post",
+                 dataType:"json",
+                 data:{"title":$("#title").val(),"message":UE.getEditor('editor').getContent(),"receiveperson":$("#phone").val()},
+                 success:function (data) {
+                     if (data === 1){
+                         alert("保存成功");
+
+                     }                 }
+             })
+         })
+    });
+
+</script>
 </body>
 
 </html>

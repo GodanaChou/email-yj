@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <title>注册界面</title>
+
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/register.js"></script>
     <style type="text/css">
     h1 {
         font-size: 50px;
@@ -71,20 +74,22 @@
 
 <body>
     <div class="box">
-        <h1>XXX Email</h1>
+        <h1>佳佳 Email</h1>
         <div class="inputs">
-            <input type="text">
-            <input type="text">
+            <input type="text" id="phone" name="phone"/>
+            <input type="text" id="password" name="password"/>
             <div class="last">
-                <input type="text">
-                <a href=""><img src="img/phone.png" width="150" height="35" /></a>
+                <input type="text" id="num" name="num"/>
+                <input type="button" onclick="setTimes(this)" id="b" name="b" value="免费获取验证码" style="width: 150px;height: 35px;"/>
+                <!--<button onclick="settime(this)" id="btn"><img src="img/phone.png" width="150" height="35" /></button>-->
             </div>
         </div>
         <div class="btn">
-            <a href=""><img src="img/register_btn.png" alt="点击注册" width="70" height="23"></a>
-            <a href="javascript:history.go(-1)"><img src="img/return_btn.png" alt="点击返回" width="70" height="23"></a>
+            <a onclick="doRegister()"><img src="img/register_btn.png" alt="点击注册" width="70" height="23"/></a>
+            <a href="javascript:history.go(-1)"><img src="img/return_btn.png" alt="点击返回" width="70" height="23"/></a>
         </div>
     </div>
 </body>
+
 
 </html>

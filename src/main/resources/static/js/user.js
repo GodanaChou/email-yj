@@ -20,9 +20,12 @@ $(function(){
             case "#group_mail": pathn = "groupMail"; i = 4; break;
 			case "#draft": pathn = "draft"; i = 5; break;
 			case "#delete": pathn = "delete"; i = 6; break;
+            case "#deleteReceive": pathn = "deleteForReceive"; break;
+            case "#edit": pathn = "edit"+window.location.href.substring(window.location.href.indexOf("?"),window.location.href.indexOf("#")); i = 3; break;
             case "#write": pathn = "write"; i = 7; break;
             case "#friend": pathn = "friend"; i = 8; break;
             case "#friendAdd": pathn = "friendAdd"; i = 12; break;
+            case "#writeToFriend":pathn="writeToFriend"+window.location.href.substring(window.location.href.indexOf("?"),window.location.href.indexOf("#"));break;
             case "#reply": pathn = "reply"+window.location.href.substring(window.location.href.indexOf("?"),window.location.href.indexOf("#"));i = 9;break;
             case "#read": pathn = "read"+window.location.href.substring(window.location.href.indexOf("?"),window.location.href.indexOf("#"));i = 10;break;
             case "#read1": pathn = "read1"+window.location.href.substring(window.location.href.indexOf("?"),window.location.href.indexOf("#"));i = 11;break;
