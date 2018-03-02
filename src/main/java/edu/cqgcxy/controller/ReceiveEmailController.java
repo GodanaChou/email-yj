@@ -99,21 +99,25 @@ public class ReceiveEmailController {
         User user = (User) session.getAttribute("user");
         logger.info("用户"+user.getPhone()+"尝试删除来信ID为"+num+"的邮件");
 
-        String nb = num.replaceAll("\"","");
-        int n;
-        do{
-            nb = nb.substring(1,nb.length());
-            if(!nb.contains(",")){
-                n = Integer.parseInt(nb.substring(0,nb.length()-1));
-                nb = "over";
-            }else {
-                n = Integer.parseInt(nb.substring(0,nb.indexOf(",")));
+        if(num.contains("\"")) {
 
-                nb = nb.substring(nb.indexOf(","),nb.length());
-            }
-            receiveEmailBox.deleteReceiveEmail(n);
-        }while (!"over".equals(nb));
+            String nb = num.replaceAll("\"", "");
+            int n;
+            do {
+                nb = nb.substring(1, nb.length());
+                if (!nb.contains(",")) {
+                    n = Integer.parseInt(nb.substring(0, nb.length() - 1));
+                    nb = "over";
+                } else {
+                    n = Integer.parseInt(nb.substring(0, nb.indexOf(",")));
 
+                    nb = nb.substring(nb.indexOf(","), nb.length());
+                }
+                receiveEmailBox.deleteReceiveEmail(n);
+            } while (!"over".equals(nb));
+        }else {
+            receiveEmailBox.deleteReceiveEmail(Integer.parseInt(num));
+        }
         return 1;
     }
 
@@ -151,25 +155,32 @@ public class ReceiveEmailController {
         User user = (User) session.getAttribute("user");
         ReceiveEmail receiveEmail = new ReceiveEmail();
 
-        String nb = num.replaceAll("\"","");
-        logger.info("用户"+user.getPhone()+"标记ID为"+nb+"的信件为删除");
+//        判断是单个还是多个进行删除
+        if(num.contains("\"")) {
 
-        int n;
-        do{
-            nb = nb.substring(1,nb.length());
-            if(!nb.contains(",")){
-                n = Integer.parseInt(nb.substring(0,nb.length()-1));
-                nb = "over";
-            }else {
-                n = Integer.parseInt(nb.substring(0,nb.indexOf(",")));
+            String nb = num.replaceAll("\"", "");
+            logger.info("用户" + user.getPhone() + "标记ID为" + nb + "的信件为删除");
 
-                nb = nb.substring(nb.indexOf(","),nb.length());
-            }
-            receiveEmail.setReceiveemailid(n);
+            int n;
+            do {
+                nb = nb.substring(1, nb.length());
+                if (!nb.contains(",")) {
+                    n = Integer.parseInt(nb.substring(0, nb.length() - 1));
+                    nb = "over";
+                } else {
+                    n = Integer.parseInt(nb.substring(0, nb.indexOf(",")));
+
+                    nb = nb.substring(nb.indexOf(","), nb.length());
+                }
+                receiveEmail.setReceiveemailid(n);
+                receiveEmail.setIsdel(1);
+                receiveEmailBox.updateDeleteStatus(receiveEmail);
+            } while (!"over".equals(nb));
+        }else {
+            receiveEmail.setReceiveemailid(Integer.parseInt(num));
             receiveEmail.setIsdel(1);
             receiveEmailBox.updateDeleteStatus(receiveEmail);
-        }while (!"over".equals(nb));
-
+        }
 
         return 1;
     }
@@ -203,4 +214,46 @@ public class ReceiveEmailController {
 
         return 1;
     }
+
+    @RequestMapping(value = "editReceive",produces = {"application/json;charset=UTF-8"})
+    public String editReceive(String id,ModelMap modelMap){
+
+        logger.info("进入方法editReceive"+Integer.parseInt(id));
+        int aid = Integer.parseInt(id);
+
+        ReceiveEmail receiveEmail= receiveEmailBox.findByID(aid);
+        modelMap.addAttribute("receiveEmail",receiveEmail);
+        return "user/editReceive";
+    }
+
+    @RequestMapping(value = "doForwardReceive",produces = {"application/json;charset=UTF-8"})
+    public String doForwardReceive(String num,ModelMap modelMap,HttpServletRequest request){
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
+        List<ReceiveEmail> receiveEmails = new ArrayList<>();
+
+        String nb = num.replaceAll("\"","");
+        logger.info("用户"+user.getPhone()+"转发邮件,邮件ID为"+nb);
+
+        int n;
+        do{
+            nb = nb.substring(1,nb.length());
+            if(!nb.contains(",")){
+                n = Integer.parseInt(nb.substring(0,nb.length()-1));
+                nb = "over";
+                logger.info("over");
+            }else {
+                n = Integer.parseInt(nb.substring(0,nb.indexOf(",")));
+
+                nb = nb.substring(nb.indexOf(","),nb.length());
+            }
+            receiveEmails.add(receiveEmailBox.findByID(n));
+
+        }while (!"over".equals(nb));
+
+        modelMap.addAttribute("receiveEmails",receiveEmails);
+        return "user/forWard";
+    }
+
+
 }

@@ -72,8 +72,8 @@
 				<div class="add">
                     <div class="buttons">
                         <button id="send">发送</button>
-                        <button>存入草稿箱</button>
-                        <button>关闭</button>
+                        <button id="saveAsDraft">存入草稿箱</button>
+                        <a href="javascript:history.go(-1)"><button>关闭</button></a>
                     </div>
 				</div>
         	<p><h5 class="textarea">正文</h5>
@@ -100,6 +100,21 @@
                   alert("发送成功");
                 }
             });
+        });
+
+        $("button#saveAsDraft").click(function () {
+            $.ajax({
+                url:"/saveAsDraft",
+                type:"post",
+                dataType:"json",
+                data:{"title":$("#title").val(),"message":UE.getEditor('editor').getContent(),"receiveperson":$("#userPhone").val()},
+                success:function (data) {
+                    if (data === 1){
+                        alert("保存成功");
+
+                    }
+                }
+            })
         });
     })
 </script>

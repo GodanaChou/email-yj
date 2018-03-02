@@ -72,7 +72,7 @@
                     <button id="send">发送</button>
                 </li>
                 <li>
-                    <button>存入草稿箱</button>
+                    <button id="saveAsDraft">存入草稿箱</button>
                 </li>
                 <li>
                     <a href="javascript:history.go(-1)">
@@ -119,6 +119,21 @@
                     }
 
                 });
+            });
+
+            $("button#saveAsDraft").click(function () {
+                $.ajax({
+                    url:"/saveAsDraft",
+                    type:"post",
+                    dataType:"json",
+                    data:{"title":$("#title").val(),"message":UE.getEditor('editor').getContent(),"receiveperson":$("#phone").val()},
+                    success:function (data) {
+                        if (data === 1){
+                            alert("保存成功");
+
+                        }
+                    }
+                })
             });
         });
 

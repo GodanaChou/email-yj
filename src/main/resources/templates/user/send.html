@@ -63,10 +63,13 @@
                     <span>发件箱（<a th:text="'邮件共'+${anum}"></a>）</span>
                     <ul class="section1_ul">
                         <li>
-                            <button>删除</button>
+                            <button onclick="deleteSendEmail()">删除</button>
                         </li>
                         <li>
-                            <a href="write.html"><button>转发</button></a>
+                            <button onclick="doDeleteSendEmail()">彻底删除</button>
+                        </li>
+                        <li>
+                            <button onclick="doForwardSend()">转发</button>
                         </li>
                     </ul>
                 </div>
@@ -87,7 +90,7 @@
                             </td>
                             <td><img src="img/read.png" width="17" height="14" /></td>
                             <td style="overflow:hidden;width:18%;white-space:nowrap;text-overflow:ellipsis;" th:text="${sendEmail.getReceiveperson()}">收信人</td>
-                            <td style="overflow:hidden;width:60%;white-space:nowrap;text-overflow:ellipsis;" th:utext="${sendEmail.getMessage()}" >内容</td>
+                            <td style="overflow:hidden;width:60%;white-space:nowrap;text-overflow:ellipsis;" th:utext="${sendEmail.getMessage()}+'&lt;span&gt;'+${sendEmail.getMessage()}+'&lt;/span&gt;'" >内容</td>
                             <td th:text="${#dates.format(sendEmail.getSendtime(),'yyyy-MM-dd')}">时间</td>
                         </tr>
                     </table>

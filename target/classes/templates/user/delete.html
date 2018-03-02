@@ -79,7 +79,7 @@
                             </td>
                             <td><img src="img/unread.png" width="17" height="14" /></td>
                             <td th:text="${receiveEmail.getSendphone()+'@193.com;'}">发件人</td>
-                            <td th:text="${receiveEmail.getTitle()}">主题</td>
+                            <td th:utext="${receiveEmail.getTitle()}+'&lt;span&gt;'+${receiveEmail.getMessage()}+'&lt;/span&gt;'">主题</td>
                             <td th:text="${#dates.format(receiveEmail.getSendtime(),'yyyy-MM-dd HH:mm:ss')}">时间</td>
                         </tr>
                     </table>

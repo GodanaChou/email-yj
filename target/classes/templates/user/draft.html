@@ -78,7 +78,7 @@
                             </td>
                             <td><img src="img/unread.png" width="17" height="14" /></td>
                             <td style="overflow:hidden;width:18%;white-space:nowrap;text-overflow:ellipsis;" th:text="${sendEmail.getReceiveperson()}">收件人</td>
-                            <td style="overflow:hidden;width:60%;white-space:nowrap;text-overflow:ellipsis;" th:utext="${sendEmail.getMessage()}">内容</td>
+                            <td style="overflow:hidden;width:60%;white-space:nowrap;text-overflow:ellipsis;" th:utext="${sendEmail.getTitle()}+'&lt;span&gt;'+${sendEmail.getMessage()}+'&lt;/span&gt;'">标题</td>
                             <td th:text="${#dates.format(sendEmail.getSendtime(),'yyyy-MM-dd HH:mm:ss')}">时间</td>
                         </tr>
 

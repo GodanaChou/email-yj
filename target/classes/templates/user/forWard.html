@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title>信件回复界面</title>
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/css/index.css" />
     <script src="/js/write.js"></script>
     <style type="text/css">
 
@@ -60,13 +60,13 @@
 
 <body class="big_box">
 <div class="box">
-    <h2 class="title" >草稿编辑</h2>
+    <h2 class="title" >邮件转发</h2>
     <div class="content">
         <p><h5>收件人</h5>
-        <input type="text" id="userPhone" th:value="${sendEmail.getReceiveperson()}" name=""/>
+        <input type="text" id="userPhone"  name=""/>
         </p>
         <p><h5>主题</h5>
-        <input type="text" id="title" th:value="${sendEmail.getTitle()}" name=""/>
+        <input type="text" id="title"  name=""/>
         </p>
 
         <div class="add">
@@ -81,12 +81,20 @@
             <textarea id="editor" style="width:871px;height:500px;"></textarea>
 
         </div>
-        <p th:value="${sendEmail.getMessage()}" id="s"> </p>
+        <div th:each="receiveEmail:${receiveEmails}">
+        <p  th:value="'&lt;p&gt;转发邮件&lt;/p&gt;'
+        +'&lt;p&gt;发件人: '+${receiveEmail.getSendphone()}+'@193.com;'+'&lt;/p&gt;'
+        +'&lt;p&gt;收件人: '+${session.user.getPhone()}+'@193.com;'+'&lt;/p&gt;'
+        +'&lt;p&gt;邮件主题: '+${receiveEmail.getTitle()}+'&lt;/p&gt;'
+        +'&lt;p&gt;发送时间: '+${#dates.format(receiveEmail.getSendtime(),'yyyy-MM-dd HH:mm')}+'&lt;/p&gt;'
+        +'&lt;p&gt;邮件内容: '+'&lt;/p&gt;'
+        +${receiveEmail.getMessage()}+'&lt;hr/&gt;'" class="message"> </p>
+        </div>
         </p>
     </div>
 </div>
 
-<script src="/js/edit.js"></script>
+<script src="/js/forward.js"></script>
 
 </body>
 

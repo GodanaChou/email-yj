@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -202,5 +203,34 @@ public class SendEmailController {
             sendEmailBox.updateEmail(sendEmail);
         }while (!"over".equals(nb));
         return 1;
+    }
+
+    @RequestMapping(value = "doForwardSend",produces = "application/json;charset=UTF-8")
+    public String doForwardSend(String num,HttpServletRequest request,ModelMap modelMap){
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
+        List<SendEmail> sendEmails = new ArrayList<>();
+
+        String nb = num.replaceAll("\"","");
+        logger.info("用户"+user.getPhone()+"转发邮件,邮件ID为"+nb);
+
+        int n;
+        do{
+            nb = nb.substring(1,nb.length());
+            if(!nb.contains(",")){
+                n = Integer.parseInt(nb.substring(0,nb.length()-1));
+                nb = "over";
+                logger.info("over");
+            }else {
+                n = Integer.parseInt(nb.substring(0,nb.indexOf(",")));
+
+                nb = nb.substring(nb.indexOf(","),nb.length());
+            }
+            sendEmails.add(sendEmailBox.findByEmailID(n));
+
+        }while (!"over".equals(nb));
+
+        modelMap.addAttribute("sendEmails",sendEmails);
+        return "user/forwardSend";
     }
 }

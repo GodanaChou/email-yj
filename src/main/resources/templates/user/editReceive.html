@@ -60,13 +60,13 @@
 
 <body class="big_box">
 <div class="box">
-    <h2 class="title" >草稿编辑</h2>
+    <h2 class="title" >转发邮件</h2>
     <div class="content">
         <p><h5>收件人</h5>
-        <input type="text" id="userPhone" th:value="${sendEmail.getReceiveperson()}" name=""/>
+        <input type="text" id="userPhone"  name=""/>
         </p>
         <p><h5>主题</h5>
-        <input type="text" id="title" th:value="${sendEmail.getTitle()}" name=""/>
+        <input type="text" id="title" th:value="${receiveEmail.getTitle()}" name=""/>
         </p>
 
         <div class="add">
@@ -81,7 +81,7 @@
             <textarea id="editor" style="width:871px;height:500px;"></textarea>
 
         </div>
-        <p th:value="${sendEmail.getMessage()}" id="s"> </p>
+        <p th:value="${receiveEmail.getMessage()}" id="s"> </p>
         </p>
     </div>
 </div>

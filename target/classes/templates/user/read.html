@@ -60,16 +60,16 @@
                             <em>｜</em>
                         </li>
                         <li>
-                           <button th:onclick="'javascript:reply('+${receiveEmail.getReceiveemailid()}+')'">回复</button>
+                           <button th:onclick="'javascript:reply('+${receiveEmail.getReceiveemailid()}+');'">回复</button>
                         </li>
                         <li>
-                            <button>删除</button>
+                            <button th:onclick="'javascript:doDeleteOne('+${receiveEmail.getReceiveemailid()}+');'">删除</button>
                         </li>
                         <li>
-                            <button>彻底删除</button>
+                            <button th:onclick="'javascript:delete1One('+${receiveEmail.getReceiveemailid()}+');'">彻底删除</button>
                         </li>
                         <li>
-                            <a href=""><button>转发</button></a>
+                            <a th:href="'/index?id='+${receiveEmail.getReceiveemailid()}+'#editReceive'"><button>转发</button></a>
                         </li>
                     </ul>
                 </div>
@@ -84,6 +84,7 @@
         window.open("/index?receiveEmailID="+id+"#reply");
     }
 </script>
+<script src="/js/unread.js"></script>
 </body>
 
 </html>

@@ -72,8 +72,8 @@
         <div class="add">
             <div class="buttons">
                 <button id="send">发送</button>
-                <button>存入草稿箱</button>
-                <button>关闭</button>
+                <button id="saveAsDraft">存入草稿箱</button>
+                <a href="javascript:history.go(-1)"><button>关闭</button></a>
             </div>
         </div>
         <p><h5 class="textarea">正文</h5>
@@ -86,52 +86,7 @@
     </div>
 </div>
 
-<script>
-    $(document).ready(function () {
-        var texts = $("#s").attr("value");
-        var work = new Worker("js/workJS.js");
-
-        work.terminate();
-        $(function(){
-            window.setTimeout(setContent,1000);//一秒后再调用赋值方法
-        });
-        function setContent(){
-            UE.getEditor('editor').execCommand('insertHtml', texts);
-        }
-        var url = window.location.href;
-        var emailID = url.substring(url.indexOf("receiveEmailID=")+15,url.indexOf("#reply"));
-
-        $("#send").click(function () {
-            alert(UE.getEditor('editor').getContent());
-            $.ajax({
-                url:"/sendEmail",
-                type:"post",
-                data:{"title":$("#title").val(), "receiveperson":$("#userPhone").val(),"message":UE.getEditor('editor').getContent()},
-                dataType:"json",
-                success :function () {
-                    alert("发送成功");
-                }
-            });
-        });
-
-        $("button#saveAsDraft").click(function () {
-            $.ajax({
-                url:"/saveAsDraft",
-                type:"post",
-                dataType:"json",
-                data:{"title":$("#title").val(),"message":UE.getEditor('editor').getContent(),"receiveperson":$("#phone").val()},
-                success:function (data) {
-                    if (data === 1){
-                        alert("保存成功");
-
-                    }
-                }
-            })
-        });
-
-    })
-
-</script>
+<script src="/js/edit.js"></script>
 
 </body>
 

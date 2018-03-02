@@ -37,11 +37,27 @@ function acheckall(obj) {
 //     });
 // }
 
+function delete1One(id) {
+    if(window.confirm("确定是否彻底删除")){
+    $.ajax({
+        url:"/deleteReceiveEmail",
+        type:"post",
+        data:{"num":id},
+        dataType:"json",
+        success : function (data) {
+            if(data===1){
+                alert("删除成功");
+                history.go(-1);
+            }
+        }
+    });
+}
+}
 
 
 function delete1(){
    var num =JSON.stringify(getNum());
-
+if(window.confirm("确定是否彻底删除")){
    $.ajax({
        url:"/deleteReceiveEmail",
        type:"post",
@@ -54,6 +70,7 @@ function delete1(){
            }
        }
    });
+}
 }
 
 
@@ -72,6 +89,24 @@ function doRead() {
         }
     });
 }
+}
+
+
+
+function doDeleteOne(id) {
+    if(window.confirm("确定删除?")){
+        $.ajax({
+            url:"/updateDelete",
+            type:"post",
+            data:{"num":id},
+            dataType:"json",
+            success : function (data) {
+                if(data===1){
+                    history.go(-1);
+                }
+            }
+        });
+    }
 }
 
 function doDelete() {
@@ -130,7 +165,6 @@ function doDeleteSendEmail() {
 var num2 = new Array() ;
 function getNum() {
     var num = new Array() ;
-    var x;
     var i =0;
     $.each($('input:checkbox:checked'),function(){
         if("全选"!==$(this).val()){
@@ -181,4 +215,17 @@ function  backReceiveEmail() {
             }
         });
     }
+}
+
+function  doForwardReceive() {
+    var num = JSON.stringify(getNum());
+    window.location.href = "/index?num="+num+"#doForwardReceive";
+
+}
+
+
+function  doForwardSend() {
+    var num = JSON.stringify(getNum());
+    window.location.href = "/index?num="+num+"#doForwardSend";
+
 }

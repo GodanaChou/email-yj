@@ -60,7 +60,7 @@
                             <button onclick="delete1()">彻底删除</button>
                         </li>
                         <li>
-                            <button onclick="doForward()">转发</button>
+                            <button onclick="doForwardReceive()">转发</button>
                         </li>
                         <li>
                             <button onclick="doRead()">全部标记为已读</button>
@@ -84,7 +84,7 @@
                             </td>
                             <td><img src="img/unread.png" width="17" height="14" /></td>
                             <td th:text="${receiveEmail.getUserphone()}+'@193.com;'">发件人</td>
-                            <td th:utext="${receiveEmail.getMessage()}">内容</td>
+                            <td th:utext="${receiveEmail.getTitle()}+'&lt;span&gt;'+${receiveEmail.getMessage()}+'&lt;/span&gt;'">标题</td>
                             <td th:text="${#dates.format(receiveEmail.getSendtime(),'yyyy-MM-dd')}">时间</td>
                         </tr>
 

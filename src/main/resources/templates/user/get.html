@@ -62,7 +62,7 @@
                             <button onclick="delete1()">彻底删除</button>
                         </li>
                         <li>
-                            <button onclick="doForward()">转发</button>
+                            <button onclick="doForwardReceive()">转发</button>
                         </li>
                         <li>
                             <button onclick="doRead()">标记为已读</button>
@@ -88,8 +88,7 @@
                             <td th:if="${prod.getIsread()}==0"><img src="/img/unread.png" width="17" height="14" /></td>
                             <td th:if="${prod.getIsread()}==1"><img src="/img/read.png" width="17" height="14" /></td>
                             <td th:text="${prod.getSendphone()}+'@193.com;'"></td>
-                            <td th:text="${prod.getTitle()}">
-                                <span th:text="${prod.getMessage()}"></span></td>
+                            <td th:utext="${prod.getTitle()}+'&lt;span&gt;'+${prod.getMessage()}+'&lt;/span&gt;'"></td>
                             <td th:text="${#dates.format(prod.getSendtime(),'yyyy-MM-dd')}"></td>
 
                         </tr>
