@@ -14,11 +14,6 @@ public class Permissions implements Serializable {
     private String name;
 
     /**
-     * 权限接口
-     */
-    private String service;
-
-    /**
      * 日志
      */
     private String log;
@@ -39,14 +34,6 @@ public class Permissions implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getService() {
-        return service;
-    }
-
-    public void setService(String service) {
-        this.service = service;
     }
 
     public String getLog() {
@@ -71,7 +58,6 @@ public class Permissions implements Serializable {
         Permissions other = (Permissions) that;
         return (this.getPermissionsid() == null ? other.getPermissionsid() == null : this.getPermissionsid().equals(other.getPermissionsid()))
             && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
-            && (this.getService() == null ? other.getService() == null : this.getService().equals(other.getService()))
             && (this.getLog() == null ? other.getLog() == null : this.getLog().equals(other.getLog()));
     }
 
@@ -81,7 +67,6 @@ public class Permissions implements Serializable {
         int result = 1;
         result = prime * result + ((getPermissionsid() == null) ? 0 : getPermissionsid().hashCode());
         result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
-        result = prime * result + ((getService() == null) ? 0 : getService().hashCode());
         result = prime * result + ((getLog() == null) ? 0 : getLog().hashCode());
         return result;
     }
@@ -94,7 +79,6 @@ public class Permissions implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", permissionsid=").append(permissionsid);
         sb.append(", name=").append(name);
-        sb.append(", service=").append(service);
         sb.append(", log=").append(log);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

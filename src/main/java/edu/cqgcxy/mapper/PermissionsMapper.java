@@ -4,9 +4,7 @@ import edu.cqgcxy.model.Permissions;
 import edu.cqgcxy.model.PermissionsExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
 
-@Repository
 public interface PermissionsMapper {
     long countByExample(PermissionsExample example);
 

@@ -3,14 +3,14 @@ package edu.cqgcxy.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PermissionsExample {
+public class AdminExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public PermissionsExample() {
+    public AdminExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -104,63 +104,63 @@ public class PermissionsExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andPermissionsidIsNull() {
-            addCriterion("permissionsID is null");
+        public Criteria andAdminidIsNull() {
+            addCriterion("adminID is null");
             return (Criteria) this;
         }
 
-        public Criteria andPermissionsidIsNotNull() {
-            addCriterion("permissionsID is not null");
+        public Criteria andAdminidIsNotNull() {
+            addCriterion("adminID is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPermissionsidEqualTo(Integer value) {
-            addCriterion("permissionsID =", value, "permissionsid");
+        public Criteria andAdminidEqualTo(Integer value) {
+            addCriterion("adminID =", value, "adminid");
             return (Criteria) this;
         }
 
-        public Criteria andPermissionsidNotEqualTo(Integer value) {
-            addCriterion("permissionsID <>", value, "permissionsid");
+        public Criteria andAdminidNotEqualTo(Integer value) {
+            addCriterion("adminID <>", value, "adminid");
             return (Criteria) this;
         }
 
-        public Criteria andPermissionsidGreaterThan(Integer value) {
-            addCriterion("permissionsID >", value, "permissionsid");
+        public Criteria andAdminidGreaterThan(Integer value) {
+            addCriterion("adminID >", value, "adminid");
             return (Criteria) this;
         }
 
-        public Criteria andPermissionsidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("permissionsID >=", value, "permissionsid");
+        public Criteria andAdminidGreaterThanOrEqualTo(Integer value) {
+            addCriterion("adminID >=", value, "adminid");
             return (Criteria) this;
         }
 
-        public Criteria andPermissionsidLessThan(Integer value) {
-            addCriterion("permissionsID <", value, "permissionsid");
+        public Criteria andAdminidLessThan(Integer value) {
+            addCriterion("adminID <", value, "adminid");
             return (Criteria) this;
         }
 
-        public Criteria andPermissionsidLessThanOrEqualTo(Integer value) {
-            addCriterion("permissionsID <=", value, "permissionsid");
+        public Criteria andAdminidLessThanOrEqualTo(Integer value) {
+            addCriterion("adminID <=", value, "adminid");
             return (Criteria) this;
         }
 
-        public Criteria andPermissionsidIn(List<Integer> values) {
-            addCriterion("permissionsID in", values, "permissionsid");
+        public Criteria andAdminidIn(List<Integer> values) {
+            addCriterion("adminID in", values, "adminid");
             return (Criteria) this;
         }
 
-        public Criteria andPermissionsidNotIn(List<Integer> values) {
-            addCriterion("permissionsID not in", values, "permissionsid");
+        public Criteria andAdminidNotIn(List<Integer> values) {
+            addCriterion("adminID not in", values, "adminid");
             return (Criteria) this;
         }
 
-        public Criteria andPermissionsidBetween(Integer value1, Integer value2) {
-            addCriterion("permissionsID between", value1, value2, "permissionsid");
+        public Criteria andAdminidBetween(Integer value1, Integer value2) {
+            addCriterion("adminID between", value1, value2, "adminid");
             return (Criteria) this;
         }
 
-        public Criteria andPermissionsidNotBetween(Integer value1, Integer value2) {
-            addCriterion("permissionsID not between", value1, value2, "permissionsid");
+        public Criteria andAdminidNotBetween(Integer value1, Integer value2) {
+            addCriterion("adminID not between", value1, value2, "adminid");
             return (Criteria) this;
         }
 
@@ -234,73 +234,143 @@ public class PermissionsExample {
             return (Criteria) this;
         }
 
-        public Criteria andLogIsNull() {
-            addCriterion("log is null");
+        public Criteria andPasswardIsNull() {
+            addCriterion("passward is null");
             return (Criteria) this;
         }
 
-        public Criteria andLogIsNotNull() {
-            addCriterion("log is not null");
+        public Criteria andPasswardIsNotNull() {
+            addCriterion("passward is not null");
             return (Criteria) this;
         }
 
-        public Criteria andLogEqualTo(String value) {
-            addCriterion("log =", value, "log");
+        public Criteria andPasswardEqualTo(String value) {
+            addCriterion("passward =", value, "passward");
             return (Criteria) this;
         }
 
-        public Criteria andLogNotEqualTo(String value) {
-            addCriterion("log <>", value, "log");
+        public Criteria andPasswardNotEqualTo(String value) {
+            addCriterion("passward <>", value, "passward");
             return (Criteria) this;
         }
 
-        public Criteria andLogGreaterThan(String value) {
-            addCriterion("log >", value, "log");
+        public Criteria andPasswardGreaterThan(String value) {
+            addCriterion("passward >", value, "passward");
             return (Criteria) this;
         }
 
-        public Criteria andLogGreaterThanOrEqualTo(String value) {
-            addCriterion("log >=", value, "log");
+        public Criteria andPasswardGreaterThanOrEqualTo(String value) {
+            addCriterion("passward >=", value, "passward");
             return (Criteria) this;
         }
 
-        public Criteria andLogLessThan(String value) {
-            addCriterion("log <", value, "log");
+        public Criteria andPasswardLessThan(String value) {
+            addCriterion("passward <", value, "passward");
             return (Criteria) this;
         }
 
-        public Criteria andLogLessThanOrEqualTo(String value) {
-            addCriterion("log <=", value, "log");
+        public Criteria andPasswardLessThanOrEqualTo(String value) {
+            addCriterion("passward <=", value, "passward");
             return (Criteria) this;
         }
 
-        public Criteria andLogLike(String value) {
-            addCriterion("log like", value, "log");
+        public Criteria andPasswardLike(String value) {
+            addCriterion("passward like", value, "passward");
             return (Criteria) this;
         }
 
-        public Criteria andLogNotLike(String value) {
-            addCriterion("log not like", value, "log");
+        public Criteria andPasswardNotLike(String value) {
+            addCriterion("passward not like", value, "passward");
             return (Criteria) this;
         }
 
-        public Criteria andLogIn(List<String> values) {
-            addCriterion("log in", values, "log");
+        public Criteria andPasswardIn(List<String> values) {
+            addCriterion("passward in", values, "passward");
             return (Criteria) this;
         }
 
-        public Criteria andLogNotIn(List<String> values) {
-            addCriterion("log not in", values, "log");
+        public Criteria andPasswardNotIn(List<String> values) {
+            addCriterion("passward not in", values, "passward");
             return (Criteria) this;
         }
 
-        public Criteria andLogBetween(String value1, String value2) {
-            addCriterion("log between", value1, value2, "log");
+        public Criteria andPasswardBetween(String value1, String value2) {
+            addCriterion("passward between", value1, value2, "passward");
             return (Criteria) this;
         }
 
-        public Criteria andLogNotBetween(String value1, String value2) {
-            addCriterion("log not between", value1, value2, "log");
+        public Criteria andPasswardNotBetween(String value1, String value2) {
+            addCriterion("passward not between", value1, value2, "passward");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhoneIsNull() {
+            addCriterion("phone is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhoneIsNotNull() {
+            addCriterion("phone is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhoneEqualTo(String value) {
+            addCriterion("phone =", value, "phone");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhoneNotEqualTo(String value) {
+            addCriterion("phone <>", value, "phone");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhoneGreaterThan(String value) {
+            addCriterion("phone >", value, "phone");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhoneGreaterThanOrEqualTo(String value) {
+            addCriterion("phone >=", value, "phone");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhoneLessThan(String value) {
+            addCriterion("phone <", value, "phone");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhoneLessThanOrEqualTo(String value) {
+            addCriterion("phone <=", value, "phone");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhoneLike(String value) {
+            addCriterion("phone like", value, "phone");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhoneNotLike(String value) {
+            addCriterion("phone not like", value, "phone");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhoneIn(List<String> values) {
+            addCriterion("phone in", values, "phone");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhoneNotIn(List<String> values) {
+            addCriterion("phone not in", values, "phone");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhoneBetween(String value1, String value2) {
+            addCriterion("phone between", value1, value2, "phone");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhoneNotBetween(String value1, String value2) {
+            addCriterion("phone not between", value1, value2, "phone");
             return (Criteria) this;
         }
     }

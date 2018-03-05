@@ -4,7 +4,6 @@
   <resultMap id="BaseResultMap" type="edu.cqgcxy.model.Permissions">
     <id column="permissionsID" jdbcType="INTEGER" property="permissionsid" />
     <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="service" jdbcType="VARCHAR" property="service" />
     <result column="log" jdbcType="VARCHAR" property="log" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -66,7 +65,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    permissionsID, name, service, log
+    permissionsID, name, log
   </sql>
   <select id="selectByExample" parameterType="edu.cqgcxy.model.PermissionsExample" resultMap="BaseResultMap">
     select
@@ -102,10 +101,8 @@
     <selectKey keyProperty="permissionsid" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into permissions (name, service, log
-      )
-    values (#{name,jdbcType=VARCHAR}, #{service,jdbcType=VARCHAR}, #{log,jdbcType=VARCHAR}
-      )
+    insert into permissions (name, log)
+    values (#{name,jdbcType=VARCHAR}, #{log,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="edu.cqgcxy.model.Permissions">
     <selectKey keyProperty="permissionsid" order="AFTER" resultType="java.lang.Integer">
@@ -116,9 +113,6 @@
       <if test="name != null">
         name,
       </if>
-      <if test="service != null">
-        service,
-      </if>
       <if test="log != null">
         log,
       </if>
@@ -126,9 +120,6 @@
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="service != null">
-        #{service,jdbcType=VARCHAR},
       </if>
       <if test="log != null">
         #{log,jdbcType=VARCHAR},
@@ -150,9 +141,6 @@
       <if test="record.name != null">
         name = #{record.name,jdbcType=VARCHAR},
       </if>
-      <if test="record.service != null">
-        service = #{record.service,jdbcType=VARCHAR},
-      </if>
       <if test="record.log != null">
         log = #{record.log,jdbcType=VARCHAR},
       </if>
@@ -165,7 +153,6 @@
     update permissions
     set permissionsID = #{record.permissionsid,jdbcType=INTEGER},
       name = #{record.name,jdbcType=VARCHAR},
-      service = #{record.service,jdbcType=VARCHAR},
       log = #{record.log,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -177,9 +164,6 @@
       <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="service != null">
-        service = #{service,jdbcType=VARCHAR},
-      </if>
       <if test="log != null">
         log = #{log,jdbcType=VARCHAR},
       </if>
@@ -189,7 +173,6 @@
   <update id="updateByPrimaryKey" parameterType="edu.cqgcxy.model.Permissions">
     update permissions
     set name = #{name,jdbcType=VARCHAR},
-      service = #{service,jdbcType=VARCHAR},
       log = #{log,jdbcType=VARCHAR}
     where permissionsID = #{permissionsid,jdbcType=INTEGER}
   </update>

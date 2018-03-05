@@ -2,38 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="345953f7-7350-4619-899d-ce61bebd8f5a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/edit.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/forward.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/editReceive.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/forWard.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/forwardSend.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/ReceiveEmailController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/ReceiveEmailController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/SendEmailController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/SendEmailController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/unread.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/unread.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/user.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/user.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/delete.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/delete.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/deleteReceive.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/deleteReceive.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/draft.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/draft.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/edit.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/edit.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/get.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/get.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/index.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/read.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/read.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/reply.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/reply.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/send.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/send.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/unread.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/unread.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/write.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/write.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/unread.js" afterPath="$PROJECT_DIR$/target/classes/static/js/unread.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/user.js" afterPath="$PROJECT_DIR$/target/classes/static/js/user.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/draft.html" afterPath="$PROJECT_DIR$/target/classes/templates/user/draft.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/edit.html" afterPath="$PROJECT_DIR$/target/classes/templates/user/edit.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/get.html" afterPath="$PROJECT_DIR$/target/classes/templates/user/get.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/index.html" afterPath="$PROJECT_DIR$/target/classes/templates/user/index.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/read.html" afterPath="$PROJECT_DIR$/target/classes/templates/user/read.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/reply.html" afterPath="$PROJECT_DIR$/target/classes/templates/user/reply.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/send.html" afterPath="$PROJECT_DIR$/target/classes/templates/user/send.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/unread.html" afterPath="$PROJECT_DIR$/target/classes/templates/user/unread.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/write.html" afterPath="$PROJECT_DIR$/target/classes/templates/user/write.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/mapper/PermissionsMapper.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/mapper/PermissionsMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/model/Permissions.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/model/Permissions.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/model/PermissionsExample.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cqgcxy/model/PermissionsExample.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/PermissionsMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/PermissionsMapper.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -64,17 +37,17 @@
       <file leaf-file-name="read1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/read1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="59" column="38" lean-forward="true" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
+            <state relative-caret-position="0">
+              <caret line="59" column="38" lean-forward="false" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SendEmailController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SendEmailController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/SendEmailController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
+            <state relative-caret-position="180">
               <caret line="233" column="32" lean-forward="false" selection-start-line="233" selection-start-column="32" selection-end-line="233" selection-end-column="32" />
               <folding />
             </state>
@@ -84,8 +57,8 @@
       <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="25" column="59" lean-forward="true" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
+            <state relative-caret-position="500">
+              <caret line="25" column="59" lean-forward="false" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -94,8 +67,8 @@
       <file leaf-file-name="forwardSend.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/forwardSend.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="88" column="100" lean-forward="true" selection-start-line="86" selection-start-column="7" selection-end-line="88" selection-end-column="100" />
+            <state relative-caret-position="780">
+              <caret line="88" column="100" lean-forward="false" selection-start-line="86" selection-start-column="7" selection-end-line="88" selection-end-column="100" />
               <folding>
                 <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
               </folding>
@@ -103,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="get.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="get.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/get.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="85" column="33" lean-forward="true" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="33" />
+            <state relative-caret-position="20">
+              <caret line="90" column="64" lean-forward="false" selection-start-line="90" selection-start-column="64" selection-end-line="90" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -116,7 +89,7 @@
       <file leaf-file-name="draft.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/draft.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
+            <state relative-caret-position="1600">
               <caret line="80" column="200" lean-forward="false" selection-start-line="80" selection-start-column="142" selection-end-line="80" selection-end-column="200" />
               <folding />
             </state>
@@ -158,7 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/edu/cqgcxy/mapper/ReceiveEmailMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cqgcxy/EmailYjApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cqgcxy/mapper/SendEmailMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cqgcxy/service/SendEmailBox.java" />
@@ -209,6 +181,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/user/send.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/user/unread.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/user/get.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/PermissionsMapper.xml" />
       </list>
     </option>
   </component>
@@ -288,6 +261,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -365,16 +342,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="edu" type="462c0819:PsiDirectoryNode" />
               <item name="cqgcxy" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="email-yj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="email-yj" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="edu" type="462c0819:PsiDirectoryNode" />
-              <item name="cqgcxy" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -414,6 +381,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="email-yj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="email-yj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapping" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="email-yj" type="b2602c69:ProjectViewProjectNode" />
@@ -517,10 +492,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -762,11 +733,14 @@
       <workItem from="1519865861505" duration="21520000" />
       <workItem from="1519951924547" duration="7665000" />
       <workItem from="1519960416153" duration="12334000" />
+      <workItem from="1519980718891" duration="435000" />
+      <workItem from="1520213970715" duration="599000" />
+      <workItem from="1520218490801" duration="192000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="402867000" />
+    <option name="totallyTimeSpent" value="404093000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -779,7 +753,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39108062" sideWeight="0.5045386" order="7" side_tool="true" content_ui="tabs" />
@@ -801,7 +774,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.296741" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933104" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32761577" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22163388" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30559757" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933104" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -862,21 +835,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="57" column="44" lean-forward="false" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/RegisterSMS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="62" column="78" lean-forward="false" selection-start-line="62" selection-start-column="78" selection-end-line="62" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cqgcxy/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -1090,9 +1048,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
           <caret line="71" column="50" lean-forward="false" selection-start-line="71" selection-start-column="50" selection-end-line="71" selection-end-column="50" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1100,7 +1055,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
           <caret line="74" column="42" lean-forward="false" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1108,7 +1062,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="64" column="23" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="92" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1116,7 +1069,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="9" column="58" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1124,7 +1076,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="105" column="20" lean-forward="true" selection-start-line="105" selection-start-column="20" selection-end-line="105" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1132,33 +1083,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/forwardSend.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="83" column="65" lean-forward="true" selection-start-line="83" selection-start-column="65" selection-end-line="83" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/SendEmailController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="233" column="32" lean-forward="false" selection-start-line="233" selection-start-column="32" selection-end-line="233" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/forwardSend.fxml" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="25" column="59" lean-forward="true" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
+        <state relative-caret-position="500">
+          <caret line="25" column="59" lean-forward="false" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
           <folding />
         </state>
       </provider>
@@ -1167,7 +1099,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="81" column="129" lean-forward="false" selection-start-line="81" selection-start-column="68" selection-end-line="81" selection-end-column="129" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1175,7 +1106,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="80" column="78" lean-forward="true" selection-start-line="80" selection-start-column="78" selection-end-line="80" selection-end-column="78" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1191,7 +1121,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="91" column="159" lean-forward="true" selection-start-line="91" selection-start-column="159" selection-end-line="91" selection-end-column="159" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1199,7 +1128,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="227" column="39" lean-forward="true" selection-start-line="227" selection-start-column="39" selection-end-line="227" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1207,16 +1135,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="84" column="47" lean-forward="true" selection-start-line="84" selection-start-column="47" selection-end-line="84" selection-end-column="47" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/forwardSend.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="88" column="100" lean-forward="true" selection-start-line="86" selection-start-column="7" selection-end-line="88" selection-end-column="100" />
+        <state relative-caret-position="780">
+          <caret line="88" column="100" lean-forward="false" selection-start-line="86" selection-start-column="7" selection-end-line="88" selection-end-column="100" />
           <folding>
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
           </folding>
@@ -1225,15 +1150,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/read1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="59" column="38" lean-forward="true" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
+        <state relative-caret-position="0">
+          <caret line="59" column="38" lean-forward="false" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/draft.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
+        <state relative-caret-position="1600">
           <caret line="80" column="200" lean-forward="false" selection-start-line="80" selection-start-column="142" selection-end-line="80" selection-end-column="200" />
           <folding />
         </state>
@@ -1243,14 +1168,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
           <caret line="85" column="93" lean-forward="true" selection-start-line="85" selection-start-column="93" selection-end-line="85" selection-end-column="93" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/PermissionsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3560">
+          <caret line="178" column="9" lean-forward="false" selection-start-line="178" selection-start-column="9" selection-end-line="178" selection-end-column="9" />
+          <folding>
+            <marker date="1520218616716" expanded="true" signature="3372:3501" ph="select from permissions" />
+            <marker date="1520218616716" expanded="true" signature="3587:3670" ph="delete from permissions... " />
+            <marker date="1520218616716" expanded="true" signature="3771:3794" ph="delete from permissions... " />
+            <marker date="1520218616716" expanded="true" signature="4987:5019" ph="select count... permissions" />
+            <marker date="1520218616716" expanded="true" signature="5717:5890" ph="update permissions... " />
+            <marker date="1520218616716" expanded="true" signature="6098:6362" ph="update permissions... " />
+            <marker date="1520218616716" expanded="true" signature="6459:6614" ph="update permissions... " />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/get.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="85" column="33" lean-forward="true" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="33" />
+        <state relative-caret-position="20">
+          <caret line="90" column="64" lean-forward="false" selection-start-line="90" selection-start-column="64" selection-end-line="90" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cqgcxy/mapper/AdminMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-140">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cqgcxy/controller/SendEmailController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="233" column="32" lean-forward="false" selection-start-line="233" selection-start-column="32" selection-end-line="233" selection-end-column="32" />
           <folding />
         </state>
       </provider>
