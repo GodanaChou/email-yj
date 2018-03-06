@@ -3,6 +3,7 @@
 <mapper namespace="edu.cqgcxy.mapper.PermissionsMapper">
   <resultMap id="BaseResultMap" type="edu.cqgcxy.model.Permissions">
     <id column="permissionsID" jdbcType="INTEGER" property="permissionsid" />
+    <result column="img" jdbcType="VARCHAR" property="img" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="log" jdbcType="VARCHAR" property="log" />
   </resultMap>
@@ -65,7 +66,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    permissionsID, name, log
+    permissionsID, img, name, log
   </sql>
   <select id="selectByExample" parameterType="edu.cqgcxy.model.PermissionsExample" resultMap="BaseResultMap">
     select
@@ -101,8 +102,10 @@
     <selectKey keyProperty="permissionsid" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into permissions (name, log)
-    values (#{name,jdbcType=VARCHAR}, #{log,jdbcType=VARCHAR})
+    insert into permissions (img, name, log
+      )
+    values (#{img,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{log,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="edu.cqgcxy.model.Permissions">
     <selectKey keyProperty="permissionsid" order="AFTER" resultType="java.lang.Integer">
@@ -110,6 +113,9 @@
     </selectKey>
     insert into permissions
     <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="img != null">
+        img,
+      </if>
       <if test="name != null">
         name,
       </if>
@@ -118,6 +124,9 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="img != null">
+        #{img,jdbcType=VARCHAR},
+      </if>
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>
@@ -138,6 +147,9 @@
       <if test="record.permissionsid != null">
         permissionsID = #{record.permissionsid,jdbcType=INTEGER},
       </if>
+      <if test="record.img != null">
+        img = #{record.img,jdbcType=VARCHAR},
+      </if>
       <if test="record.name != null">
         name = #{record.name,jdbcType=VARCHAR},
       </if>
@@ -152,6 +164,7 @@
   <update id="updateByExample" parameterType="map">
     update permissions
     set permissionsID = #{record.permissionsid,jdbcType=INTEGER},
+      img = #{record.img,jdbcType=VARCHAR},
       name = #{record.name,jdbcType=VARCHAR},
       log = #{record.log,jdbcType=VARCHAR}
     <if test="_parameter != null">
@@ -161,6 +174,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="edu.cqgcxy.model.Permissions">
     update permissions
     <set>
+      <if test="img != null">
+        img = #{img,jdbcType=VARCHAR},
+      </if>
       <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
       </if>
@@ -172,8 +188,10 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="edu.cqgcxy.model.Permissions">
     update permissions
-    set name = #{name,jdbcType=VARCHAR},
+    set img = #{img,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
       log = #{log,jdbcType=VARCHAR}
     where permissionsID = #{permissionsid,jdbcType=INTEGER}
   </update>
+
 </mapper>
