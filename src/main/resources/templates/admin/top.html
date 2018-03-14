@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>顶栏页面</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css" />
+    <script type="text/javascript" src="/js/time.js"></script>
+    <style type="text/css">
+    body {
+        background: pink;
+     margin: 0;
+    }
+    .time {
+        margin-left: 40px;
+        margin-top: 20px;
+        float: left;
+        position: relative;
+    }
+    .time span{
+    	margin-left: 8px;font-weight: bold;
+    	font-size: 18px;
+    }
+    #time {
+        margin-left: 80px;
+        margin-top: 5px;
+    }
+
+    .logout {
+        margin-top: 40px;
+        margin-right: 50px;
+        float: right;
+        cursor: pointer;
+    }
+    .logout a:hover{
+		color: red;text-decoration: underline;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="time">
+    	<img src="/img/logo.png" width="43" height="21" />
+        <span th:text="'欢迎'+${session.admin.getName()}"></span>
+        <p id="time">0000年00月00日&nbsp;00:00:00 星期x</p>
+    </div>
+    <div class="logout">
+        <a onclick="logout()">退出登录</a>
+    </div>
+    <script language="javascript" type="text/javascript">
+        function logout(){
+    //        if (confirm("您确定要退出控制面板吗？"))
+                top.location = "login.html";
+             return false;
+        }
+    </script>
+</body>
+
+</html>

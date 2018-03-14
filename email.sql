@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2018-03-06 16:16:16
+Date: 2018-03-14 11:21:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,11 +25,13 @@ CREATE TABLE `admin` (
   `passward` varchar(64) DEFAULT NULL,
   `phone` varchar(11) DEFAULT NULL,
   PRIMARY KEY (`adminID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admin
 -- ----------------------------
+INSERT INTO `admin` VALUES ('1', '袁佳', '', '18883993870');
+INSERT INTO `admin` VALUES ('2', null, null, null);
 
 -- ----------------------------
 -- Table structure for admin_permissions
@@ -40,11 +42,15 @@ CREATE TABLE `admin_permissions` (
   `adminID` int(16) DEFAULT NULL,
   `permissions_id` int(16) DEFAULT NULL,
   PRIMARY KEY (`adminPerID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admin_permissions
 -- ----------------------------
+INSERT INTO `admin_permissions` VALUES ('1', '1', '1');
+INSERT INTO `admin_permissions` VALUES ('2', '1', '2');
+INSERT INTO `admin_permissions` VALUES ('3', '1', '3');
+INSERT INTO `admin_permissions` VALUES ('4', '1', '4');
 
 -- ----------------------------
 -- Table structure for annex
@@ -65,6 +71,21 @@ CREATE TABLE `annex` (
 -- ----------------------------
 
 -- ----------------------------
+-- Table structure for message_board
+-- ----------------------------
+DROP TABLE IF EXISTS `message_board`;
+CREATE TABLE `message_board` (
+  `id` int(16) NOT NULL AUTO_INCREMENT,
+  `userName` varchar(64) DEFAULT NULL,
+  `userMessage` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of message_board
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for permissions
 -- ----------------------------
 DROP TABLE IF EXISTS `permissions`;
@@ -73,12 +94,18 @@ CREATE TABLE `permissions` (
   `img` varchar(64) DEFAULT NULL,
   `name` varchar(60) DEFAULT NULL COMMENT '权限名称',
   `log` varchar(100) DEFAULT NULL COMMENT '日志',
+  `url` varchar(255) DEFAULT NULL,
+  `style` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`permissionsID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of permissions
 -- ----------------------------
+INSERT INTO `permissions` VALUES ('1', '../img/menu2.png', '控制面板', null, '/admin/panel', 'width:35px; height:28px;');
+INSERT INTO `permissions` VALUES ('2', '../img/admin_men1.png', '角色管理', null, '/admin/role', 'width:20px; height:16px;');
+INSERT INTO `permissions` VALUES ('3', '../img/admin_men2.png', '权限管理', null, '/admin/power', 'width:25; height:20px;');
+INSERT INTO `permissions` VALUES ('4', '../img/menu3.png', '用户管理', null, '/admin/user', 'width:35px ;height:28px;');
 
 -- ----------------------------
 -- Table structure for receive_email
@@ -127,6 +154,22 @@ INSERT INTO `receive_email` VALUES ('33', '18883993681', '18883993870', '111', '
 INSERT INTO `receive_email` VALUES ('34', '18883993681', '18883993870', '111', '<p>1111</p>', '0', '0', '0', '2018-03-01 15:38:10', '6a918112612343b2a85ca2c6c62b233b', null);
 INSERT INTO `receive_email` VALUES ('35', '18883993681', '18883993870', '111', '<p style=\"line-height: 16px;\"><img src=\"/utf8-jsp/dialogs/attachment/fileTypeImages/icon_txt.gif\"/><a style=\"font-size:12px; color:#0066cc;\" href=\"/ueditor/jsp/upload/file/20180301/1519890487624047310/新建文本文档.txt\" title=\"新建文本文档.txt\">新建文本文档.txt</a></p><p>11111<br/></p>', '0', '0', '0', '2018-03-01 15:48:12', '2980af467fd941d99d9dc2fcf5bea42e', null);
 INSERT INTO `receive_email` VALUES ('36', '18883993870', '18883993870', '111', '<p>转发邮件</p><p>发件人: 18883993871@193.com;</p><p>邮件内容:</p><p>414141<img src=\"/ueditor/jsp/upload/image/20180131/1517386083933004478.jpg\" title=\"1517386083933004478.jpg\" alt=\"1517362624878099879.jpg\"/><img src=\"http://img.baidu.com/hi/jx2/j_0049.gif\"/></p><hr/><p>转发邮件</p><p>发件人: 18883993870@193.com;</p><p>邮件内容:</p><p>1111</p><hr/><p><br/></p>', '0', '0', '0', '2018-03-02 15:45:09', 'e8a594ed829a45b88219401e95041cf1', null);
+
+-- ----------------------------
+-- Table structure for report
+-- ----------------------------
+DROP TABLE IF EXISTS `report`;
+CREATE TABLE `report` (
+  `id` int(16) NOT NULL AUTO_INCREMENT,
+  `userID` int(16) DEFAULT NULL,
+  `reportPhone` varchar(22) DEFAULT NULL,
+  `reportEmailID` int(16) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of report
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for send_email
@@ -257,7 +300,7 @@ CREATE TABLE `user_friend` (
   `friendPhone` varchar(32) DEFAULT NULL,
   `friendName` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`userFriendID`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user_friend

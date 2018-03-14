@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>目录界面</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css" />
+    <style type="text/css">
+    body {
+        background: pink;
+        margin: 0;
+    }
+
+    .box1 {
+        width: 120px;
+        height: 150px;
+        margin-top: 100px;
+    }
+
+    .box1 a {
+        display: block;
+        width: 120px;
+        height: 40px;
+        margin-top: 30px;
+        border-radius: 8px;
+        margin-left: -10px;
+        padding-left: 10px;
+        padding-top: 18px;
+        font-weight: bold;
+        border-bottom: 1px dashed #dea5c7;
+    }
+
+    .box1 a:hover {
+        box-shadow: 1px 0 1px #dea5c7 inset, -1px -1px 1px #dea5c7 inset;
+        border-bottom: 1px solid #dea5c7;
+    }
+
+    .click {
+        box-shadow: 1px 0 1px #dea5c7 inset, -1px -1px 1px #dea5c7 inset;
+        border-bottom: 1px solid #dea5c7;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <ul id="box1">
+            <li th:each="per:${perList}">
+                <a  th:href="${per.getUrl()}" target="main">
+                    <img  th:src="${per.getImg()}" th:style="${per.getStyle()}" />
+                    <em th:text="${per.getName()}"></em>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+ <script src="/js/admin_men.js"></script>
+</body>
+
+</html>

@@ -32,4 +32,15 @@ $(function () {
         time.innerHTML = year + "年" + month + "月" + date + "日" + "&nbsp;" + hours + ":" + minutes + ":" + second + "&nbsp;" + week;
 
     }, 1000);
+
+    function checks(id1,id2) {
+        var name = document.getElementById(id1).value;
+        var message = document.getElementById(id2).value;
+        if (name === null || name === '' || message == null || message === '') {
+            alert("请填写完整");
+            return false;
+        }
+        return true;
+    }
+
 });

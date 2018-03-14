@@ -1,62 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="UTF-8"/>
 	<title>登录注册界面</title>
 	<script src="/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="/js/login.js"></script>
 	<style type="text/css">
-	a{
-		text-decoration: none;color: #7c8688;
-	}
-		.box{
-			width: 1200px;height: 960px;
-			margin: auto;
-			background: url(img/login_bg.jpg) no-repeat left top;
-			background-size: 100%;
+		a {
+			text-decoration: none;
+			color: #7c8688;
+		}
+
+		.box {
+			width: 100%;
+			height: 640px;
+			background: url(/img/111.png) repeat left top;
 			position: relative;
 		}
-		.time{
+
+		.time {
 			position: absolute;
-			top: 50px;left: 100px;
+			top: 50px;
+			left: 100px;
 		}
-		.inputs{
+		.bg{
+			width: 400px;height: 500px;position: absolute;top:15%;left: 35%;
+		}
+
+		.inputs {
 			position: absolute;
-			top: 25%;left: 38%;
-			color: #7c8688;	
+			top: 25%;
+			left: 38%;
+			color: #7c8688;
 		}
-		.inputs h2{
+
+		.inputs h2 {
 			text-align: center;
 			margin: 40px;
 		}
-		.inputs input{
+
+		.inputs .inp {
 			display: block;
-			width: 300px;height: 35px;
+			width: 300px;
+			height: 35px;
 			margin-bottom: 20px;
 			text-align: center;
 			box-shadow: 1px 1px 1px #ddd inset;
 			border-radius: 8px;
 		}
-		.btn{
+
+		.btn {
 			display: block;
-			margin: 50px 30px;
+			margin: 30px 30px;
 		}
-		.register{
+
+		.register {
 			float: right;
-			color: red;text-decoration: underline;
+			color: red;
+			text-decoration: underline;
+		}
+		.roles{
+			width: 300px;margin: 0 auto;
+		}
+		.roles input{
+			width: 30px;
+			margin-left: 5px;
+			margin-bottom: 40px;
 		}
 	</style>
 </head>
 <body>
 	<div class="box">
     <div class="time">
+		<h1>欢迎使用 佳佳 Email</h1>
         <p id="time">0000年00月00日&nbsp;00:00:00 星期x</p>
     </div>
+		<img src="/img/back_bg.png" class="bg" />
 		<div class="inputs">
 		<h2> USER LOGIN</h2>
 			<form action="/doLogin" id="login">
-			<input type="text" id="name" placeholder="手机号/用户名" />
-			<input type="password" id="password" placeholder="密码" />
+			<input type="text" id="name" class="inp" placeholder="手机号/用户名" />
+			<input type="password" id="password" class="inp" placeholder="密码" />
+			<div class="roles">
+				<input type="radio" name="role" checked="checked" value="1">用户&nbsp;</input>
+				<input type="radio" name="role" value="2">管理员</input>
+				<input type="radio" name="role" value="3">超级管理员&nbsp;</input>
+			</div>
 			<div>
 				<a href="#">忘记密码</a>
 				<a href="/register" class="register">注 册 ?</a>
@@ -69,6 +98,8 @@
 	function login(){
         var name = document.getElementById("name").value;
         var password = document.getElementById("password").value;
+        var role = $('input:radio:checked').val();
+       	if(role === "1"){
         $.ajax({
 			url:"/doLogin",
 			type:'get',
@@ -85,7 +116,27 @@
 			    alert("系统异常");
 			}
 		});
+	}else if(role === "2"){
+            $.ajax({
+                url:"admin/doLogin",
+                type:'get',
+                dataType:'json',
+                data:{phone:name,password:password},
+                success:function(data){
+                    if (data === 1){
+                        window.location.href="admin";
+                    }else {
+                        alert("登录失败");
+                    }
+                },
+                fail:function(){
+                    alert("系统异常");
+                }
+            });
+		}
+
 	}
 </script>
+
 </body>
 </html>

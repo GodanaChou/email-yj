@@ -6,6 +6,8 @@
     <result column="img" jdbcType="VARCHAR" property="img" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="log" jdbcType="VARCHAR" property="log" />
+    <result column="url" jdbcType="VARCHAR" property="url"/>
+    <result column="style" jdbcType="VARCHAR" property="style"/>
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -66,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    permissionsID, img, name, log
+    permissionsID, img, name, log,url,style
   </sql>
   <select id="selectByExample" parameterType="edu.cqgcxy.model.PermissionsExample" resultMap="BaseResultMap">
     select
@@ -82,6 +84,18 @@
       order by ${orderByClause}
     </if>
   </select>
+
+  <select id="selectByAdmPerAdmID" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from permissions
+    where permissionsID in(
+    select permissionsID
+    FROM admin_permissions
+    where adminID = #{adminID,jdbcType=INTEGER}
+    )
+  </select>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

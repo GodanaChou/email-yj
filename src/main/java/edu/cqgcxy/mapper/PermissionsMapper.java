@@ -4,7 +4,9 @@ import edu.cqgcxy.model.Permissions;
 import edu.cqgcxy.model.PermissionsExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface PermissionsMapper {
     long countByExample(PermissionsExample example);
 
@@ -27,4 +29,6 @@ public interface PermissionsMapper {
     int updateByPrimaryKeySelective(Permissions record);
 
     int updateByPrimaryKey(Permissions record);
+
+    List<Permissions> selectByAdmPerAdmID(Integer adminID);
 }

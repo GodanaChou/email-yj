@@ -4,7 +4,9 @@ import edu.cqgcxy.model.AdminPermissions;
 import edu.cqgcxy.model.AdminPermissionsExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface AdminPermissionsMapper {
     long countByExample(AdminPermissionsExample example);
 
