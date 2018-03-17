@@ -373,10 +373,68 @@ public class AdminExample {
             addCriterion("phone not between", value1, value2, "phone");
             return (Criteria) this;
         }
+
+        public Criteria andIsvoidIsNull() {
+            addCriterion("isvoid is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsvoidIsNotNull() {
+            addCriterion("isvoid is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsvoidEqualTo(Integer value) {
+            addCriterion("isvoid =", value, "isvoid");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsvoidNotEqualTo(Integer value) {
+            addCriterion("isvoid <>", value, "isvoid");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsvoidGreaterThan(Integer value) {
+            addCriterion("isvoid >", value, "isvoid");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsvoidGreaterThanOrEqualTo(Integer value) {
+            addCriterion("isvoid >=", value, "isvoid");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsvoidLessThan(Integer value) {
+            addCriterion("isvoid <", value, "isvoid");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsvoidLessThanOrEqualTo(Integer value) {
+            addCriterion("isvoid <=", value, "isvoid");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsvoidIn(List<Integer> values) {
+            addCriterion("isvoid in", values, "isvoid");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsvoidNotIn(List<Integer> values) {
+            addCriterion("isvoid not in", values, "isvoid");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsvoidBetween(Integer value1, Integer value2) {
+            addCriterion("isvoid between", value1, value2, "isvoid");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsvoidNotBetween(Integer value1, Integer value2) {
+            addCriterion("isvoid not between", value1, value2, "isvoid");
+            return (Criteria) this;
+        }
     }
 
-    /**
-     */
     public static class Criteria extends GeneratedCriteria {
 
         protected Criteria() {

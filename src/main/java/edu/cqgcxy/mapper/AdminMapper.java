@@ -3,12 +3,12 @@ package edu.cqgcxy.mapper;
 import edu.cqgcxy.model.Admin;
 import edu.cqgcxy.model.AdminExample;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
 
-@Repository
+import edu.cqgcxy.model.PowerModel;
+import org.apache.ibatis.annotations.Param;
+
 public interface AdminMapper {
-    long countByExample(AdminExample example);
+    int countByExample(AdminExample example);
 
     int deleteByExample(AdminExample example);
 
@@ -29,4 +29,6 @@ public interface AdminMapper {
     int updateByPrimaryKeySelective(Admin record);
 
     int updateByPrimaryKey(Admin record);
+
+    List<PowerModel> findPowerModel();
 }

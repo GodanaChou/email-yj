@@ -19,9 +19,15 @@ public interface UserService {
      * 查询所有用户
      * @param pageNum 分页 第几页
      * @param pageSize 分页 一页显示多少条信息
-     * @return
+     * @return list
      */
     List<User> findAllUser(int pageNum, int pageSize);
+
+    /**
+     * 查询所有用户
+     * @return list
+     */
+    List<User> findAllUser();
 
 
     /**
@@ -59,4 +65,16 @@ public interface UserService {
      * @return User
      */
     User findByPhone(String phone);
+
+
+    /**查找被举报过多的用户
+     * @return list
+     */
+    List<User> findReport();
+
+    /** 举报后更新举报统计
+     * @param user user
+     * @return int
+     */
+    int updataReport(User user);
 }

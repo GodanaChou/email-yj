@@ -20,6 +20,7 @@ public class RegisterSMS {
     private final String token="752b3e32a541922f11c9a682a8fef738";
     private final String appId="28fa6f1433a949b4a52c6e41678e4c03";
     private final String templateId="250386";
+    private final String templateId2="291394";
 
 
     static AbsRestClient InstantiationRestAPI(boolean enable) {
@@ -66,5 +67,21 @@ public class RegisterSMS {
             System.out.println("生成的验证码:" + para);
             //短信发送接口
             return 1;
+    }
+
+    @ResponseBody
+    @RequestMapping("admin/smsAdmin")
+    public int registerAdmin(@RequestParam(value = "phone")String phone, HttpServletRequest request, HttpServletResponse response){
+
+
+        boolean json = true;
+        String to = phone;
+        String para = sendNumber();
+        testTemplateSMS(json, accountSid,token,appId, templateId2,to,para);
+        HttpSession session = request.getSession();
+        session.setAttribute("paraAdmin",para);
+        System.out.println("生成的验证码:" + para);
+        //短信发送接口
+        return 1;
     }
 }

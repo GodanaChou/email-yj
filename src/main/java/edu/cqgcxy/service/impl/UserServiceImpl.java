@@ -37,6 +37,18 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
+     * 查询所有用户
+     *
+     * @return list
+     */
+    @Override
+    public List<User> findAllUser() {
+        UserExample userExample = new UserExample();
+        userExample.createCriteria().andUseridIsNotNull();
+        return userMapper.selectByExample(userExample);
+    }
+
+    /**
      * 动态语句查询用户
      * @param user 用户属性
      * @return 用户集合
@@ -100,5 +112,28 @@ public class UserServiceImpl implements UserService {
         }else{
             return null;
         }
+    }
+
+    /**
+     * 查找被举报过多的用户
+     *
+     * @return list
+     */
+    @Override
+    public List<User> findReport() {
+        UserExample userExample = new UserExample();
+        userExample.createCriteria().andComplaintCountGreaterThanOrEqualTo(20).andIsvoidEqualTo(0);
+        return userMapper.selectByExample(userExample);
+    }
+
+    /**
+     * 举报后更新举报统计
+     *
+     * @param user user
+     * @return int
+     */
+    @Override
+    public int updataReport(User user) {
+        return userMapper.updateByPrimaryKeySelective(user);
     }
 }

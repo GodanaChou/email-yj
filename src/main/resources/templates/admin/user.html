@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8"/>
     <title>用户管理界面</title>
     <link rel="stylesheet" type="text/css" href="/css/index.css" />
+    <script src="/js/jquery-3.2.1.min.js"></script>
     <style type="text/css">
     </style>
 </head>
@@ -19,44 +20,52 @@
                 <h4>最近五天</h4>
                 <table width="90%" boder="0" cellspacing="0" cellpadding="0" class="section2_table" id="section2_table">
                     <tr class="th">
-                        <td width="2%">
-                            <input type="checkbox" name="chk" id="all" onclick="checkall('chk')"/>
-                        </td>
+
                         <td width="1%"><img src="../img/reads.png" width="17" height="14" /></td>
-                        <td width="6%">举报人</td>
-                        <td width="1%"><img src="../img/admin_bad.png" width="17" height="14" /></td>
-                        <td width="6%">被举报人</td>
-                        <td width="50%">主题</td>
-                        <td width="3%">时间</td>
+                        <td width="6%">用户</td>
+                        <td width="2%"><img src="../img/admin_bad.png" width="17" height="14" /></td>
+                        <td width="8%" style="text-align: center">被举报次数</td>
+                        <td width="9%" >用户帐号</td>
+                        <td width="10%">操作</td>
                     </tr>
-                    <tr class="unread" onclick="change('../admin/user_read.html')">
-                        <td>
-                            <input type="checkbox" name="chk" value=""/>
-                        </td>
+                    <tr class="unread" th:each="user : ${users}" >
+
                         <td><img src="../img/unread.png" width="17" height="14" /></td>
-                        <td>袁佳</td>
-                        <td><img src="../img/admin_bad1.png" width="15" height="15" /></td>
-                        <td>袁佳</td>
-                        <td>佛挡杀佛手机看对方很伟大时代不</td>
-                        <td>2017.01.15</td>
+                        <td th:text="${user.getName()}">20</td>
+                        <td th:if="${user.getComplaintCount()}lt 50"><img src="../img/admin_bad1.png" width="15" height="15" /></td>
+                        <td th:if="${user.getComplaintCount()}ge 50"><img src="../img/admin_bad2.png" width="15" height="15" /></td>
+                        <td th:text="${user.getComplaintCount()}" style="text-align: center">30</td>
+                        <td th:text="${user.getPhone()+'@193.com'}"></td>
+                        <td> <button th:onclick="'javascript : ensureUser('+${user.getUserid()}+');'" >封禁帐号</button></td>
                     </tr>
-                    <tr onclick="change('../admin/user_read.html')">
-                        <td>
-                            <input type="checkbox" name="chk" value=""/>
-                        </td>
-                        <td><img src="../img/read.png" width="17" height="14" /></td>
-                        <td>袁佳</td>
-                        <td><img src="../img/admin_bad2.png" width="15" height="15" /></td>
-                        <td>袁佳</td>
-                        <td>佛挡杀佛手机看对方很伟大时代不
-                            <span>山东快书经典诵读v说得好时间的的出发点不个地方挥洒大话时代开始大撒上</span></td>
-                        <td>2017.01.15</td>
-                    </tr>
+
                 </table>
             </div>
         </div>
     </div>
     <script type="text/javascript" src="/js/admin_user.js"></script>
+<script >
+    ensureUser = function (id) {
+        var isvoid =1;
+        $.ajax({
+            url:'changeRunUser',
+            type:'post',
+            dataType:'json',
+            data:{userid:id,isvoid:isvoid},
+            success:function (data) {
+                if(data === 1){
+                    alert("封禁成功！");
+                    window.location.href = "user";
+
+                }else if(data === 2){
+                    alert("封禁失败！");
+                }else {
+                    alert("封禁失败，系统故障！");
+                }
+            }
+        });
+    };
+</script>
 </body>
 
 </html>

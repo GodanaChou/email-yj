@@ -1,9 +1,11 @@
 package edu.cqgcxy.controller;
 
 import edu.cqgcxy.model.ReceiveEmail;
+import edu.cqgcxy.model.Report;
 import edu.cqgcxy.model.SendEmail;
 import edu.cqgcxy.model.User;
 import edu.cqgcxy.service.ReceiveEmailBox;
+import edu.cqgcxy.service.ReportService;
 import edu.cqgcxy.service.SendEmailBox;
 import edu.cqgcxy.service.UserService;
 
@@ -35,6 +37,9 @@ public class ReceiveEmailController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private ReportService reportService;
 
     //跳转回信界面
 
@@ -255,5 +260,30 @@ public class ReceiveEmailController {
         return "user/forWard";
     }
 
+    //举报
+    @ResponseBody
+    @RequestMapping(value = "reportPerson",produces = {"application/json;charset=UTF-8"})
+    public int reportPerson(int id,HttpServletRequest request){
+        HttpSession session = request.getSession();
+        User user =(User)session.getAttribute("user");
+        Report rep = reportService.findByUserIDAndReEmlID(user.getUserid(),id);
+        if(rep == null){
+            ReceiveEmail receiveEmail = receiveEmailBox.findByID(id);
+            int isreport = reportService.findByUserID(user.getUserid(),receiveEmail.getSendphone());
+            Report report = new Report();
+            report.setReportemailid(id);
+            report.setReportphone(receiveEmail.getSendphone());
+            report.setUserid(user.getUserid());
+            reportService.insert(report);
+            if( isreport ==0){
+            User u = userService.findByPhone(receiveEmail.getSendphone());
+            u.setComplaintCount(u.getComplaintCount()+1);
+            userService.updataReport(u);
+            }
+            return 1;
+        }else {
+            return 2;
+        }
 
+    }
 }

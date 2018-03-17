@@ -71,6 +71,9 @@
                         <li>
                             <a th:href="'/index?id='+${receiveEmail.getReceiveemailid()}+'#editReceive'"><button>转发</button></a>
                         </li>
+                        <li>
+                            <button th:onclick="'javascript:report('+${receiveEmail.getReceiveemailid()}+');'">举报</button>
+                        </li>
                     </ul>
                 </div>
                 <div class="section2">
@@ -82,6 +85,22 @@
 <script>
     reply = function (id) {
         window.open("/index?receiveEmailID="+id+"#reply");
+    };
+
+    report = function (id) {
+        $.ajax({
+            url:'reportPerson',
+            type:'post',
+            dataType:'json',
+            data:{id:id},
+            success:function (data) {
+                if(data ===1){
+                    alert("举报成功");
+                }else {
+                    alert("您已进行举报！请不要重复操作!!");
+                }
+            }
+        })
     }
 </script>
 <script src="/js/unread.js"></script>

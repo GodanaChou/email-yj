@@ -5,6 +5,7 @@
     <meta charset="UTF-8"/>
     <title>主界面</title>
     <link rel="stylesheet" type="text/css" href="../css/index.css" />
+    <script src="/js/jquery-3.2.1.min.js"></script>
     <style type="text/css">
     h1 {
         float: left;
@@ -60,24 +61,24 @@
         </div>
         <div class="content content1">
             <em>修改用户名：</em>
-            <form class="con_box" method="post" onsubmit="return check('name','message')">
+            <form class="con_box"   >
                 原用户名：<span th:text="${session.admin.getName()}"></span>
                 <br/>
                 <br/> 现用户名：
                 <input type="text" id="name" />
                 <br/>
                 <br/> 短信验证：
-                <input type="text" id="message" />&nbsp;<a>获取短信验证码</a>
+                <input type="text" id="message" />&nbsp;<a th:onclick="'javascript: SMSAdmin('+${session.admin.getPhone()}+');'">获取短信验证码</a>
                 <br/>
                 <br/>
                 <br/>
-                <input type="submit" name="" value="确定修改" />
+                <input type="button" id="doChange" value="确定修改" />
                 <input type="reset" name="" value="重置" />
             </form>
         </div>
         <div class="content content2">
             <em>修改密码：</em>
-            <form class="con_box" method="post" onsubmit="return check('pass','password')">
+            <form class="con_box">
                 原 密 码 ：
                 <input type="text" id="pass" />
                 <br/>
@@ -86,29 +87,24 @@
                 <br/>
                 <br/>
                 <br/>
-                <input type="submit" name="" value="确定修改" />
+                <input type="button" id="doChangePSW" value="确定修改" />
                 <input type="reset" name="button" value="重置" />
             </form>
         </div>
-        <div class="content content3">
+        <div class="content content3" >
             <em>留言簿：</em>
-            <form class="con_box" method="post" onsubmit="return check2()">
-                <span>袁佳111：</span>
-                <span>记得关电脑</span>
+            <form class="con_box" style="margin-top: 10px;" method="post" >
+                <div  th:each="message : ${messageBoards}">
+                 <br/>
+                <span th:text="${message.getUsername()}+' : '">姓名</span>&nbsp;&nbsp;
+                <span th:text="${message.getUsermessage()}">留言</span>&nbsp;&nbsp;
+                <span th:text="${#dates.format(message.getTime(),'MM-dd HH:ss')}">时间</span>
+                <br/>
+                </div>
+                <textarea id="text" style="margin-top: 10px;"></textarea>
                 <br/>
                 <br/>
-                <span>袁佳222：</span>
-                <span>已拉黑</span>
-                <br/>
-                <br/>
-                <span>袁佳333：</span>
-                <span>明天我上班</span>
-                <br/>
-                <br/>
-                <textarea id="text"></textarea>
-                <br/>
-                <br/>
-                <input type="submit" name="" value="确定留言" />
+                <input type="button" id="ensure" value="确定留言" />
                 <input type="reset" name="" value="重置" />
             </form>
         </div>

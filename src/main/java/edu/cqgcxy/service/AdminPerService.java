@@ -1,5 +1,6 @@
 package edu.cqgcxy.service;
 
+import edu.cqgcxy.model.AdminPermissions;
 import edu.cqgcxy.model.Permissions;
 
 import java.util.List;
@@ -11,4 +12,10 @@ public interface AdminPerService {
      * @return 权限数组
      */
     List<Permissions> findPerByAdminID(int id);
+
+    int addPer(AdminPermissions permissions);
+
+    AdminPermissions findByIDAndPerID(int id,int perId);
+
+    int deletePer(int id);
 }
